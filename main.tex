@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{202F}{\,}
+\usepackage[margin=.7in]{geometry}
+
+% --- BIBLIOGRAFIA (Opcoes compactadas para evitar erro de espaco invisivel) ---
+\usepackage[backend=biber,maxnames=20,style=nature,sorting=ydnt,defernumbers=true]{biblatex}
+\addbibresource{ref.bib}
+
+% --- PACOTES ---
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{bookmark}
+\usepackage{fontawesome}
+\usepackage{ragged2e}
+\usepackage{soul}
+\usepackage{kpfonts}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% --- CARREGAR CORES ---
+\input{colors.tex}
+
+% --- LINKS E PDF ---
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,breaklinks=true,linkcolor=cornflowerblue,urlcolor=cornflowerblue,anchorcolor=cornflowerblue,citecolor=cornflowerblue,pdftitle={CV - Alex Monito Nhancololo},pdfauthor={Alex Monito Nhancololo},bookmarksopen=true}
+
+\begin{document}
+
+% TÍTULO
+\begin{center}
+    {\LARGE \textbf{ALEX MONITO NHANCOLOLO}}\\[0.2em]
+    \textit{PhD Student of Statistics and Probability}\\[0.2em]
+    Institute of Mathematics and Statistics, University of São Paulo, Brazil\\[0.2em]
+    \href{https://orcid.org/0000-0001-8438-2605}{ORCID} \,|\, 
+    \href{https://www.linkedin.com/in/alex-monito-nhancololo-3221a1282}{LinkedIn} \,|\, 
+    \href{mailto:amnhancololo@gmail.com}{amnhancololo@gmail.com} \,|\, 
+    \href{mailto:amnhancololo@ime.usp.br}{amnhancololo@ime.usp.br} \,|\, 
+    +55~35~99409-233*\\[0.5em]
+    \textit{Last modified: \today}
+\end{center}
+
+\vspace{0.1in}
+
+% --- PERSONAL PROFILE ---
+\section*{PERSONAL PROFILE}
+\vspace{-0.3in}
+\noindent\rule{\textwidth}{0.5pt}
+
+\noindent
+A. M. Nhancololo is a Ph.D. student in Statistics and Probability at the Institute of Mathematics and Statistics, University of São Paulo (IME–USP). He holds an M.Sc. in Statistics and Agricultural Experimentation from the Federal University of Lavras (UFLA), where he received the Best Thesis Award (2024), and a Bachelor of Education in Mathematics with a specialization in Statistics from Universidade Save (Mozambique). He is also pursuing an M.Sc. in Financial Engineering at WorldQuant University and an MBA in Artificial Intelligence and Big Data at the Institute of Mathematical and Computer Sciences, University of São Paulo (ICMC–USP). He was awarded third place in the Spatial AI Challenge 2024 (I-GUIDE), together with Julian Huang and Yue Lin (University of Chicago). His primary research interests lie in spatio-temporal statistics and their applications to the social sciences, environmental studies, ecology, agriculture, and medicine. Methodologically, his work focuses on natural language processing, spatial point processes, lattice/area data, geostatistics, and time-series analysis.
+
+% --- SEÇÕES DO CV ---
+
+\pdfbookmark[1]{Education}{}
+\section*{EDUCATION}
+\vspace{-0.3in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{education.tex}
+
+\vspace{-.2in}
+\pdfbookmark[1]{Supplementary Education}{}
+\section*{SUPPLEMENTARY EDUCATION}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{Supplementary education.tex}
+
+\pdfbookmark[1]{Research Experience}{exp_research}
+\section*{PROFESSIONAL APPOINTMENTS}
+\vspace{-0.3in}
+\noindent\rule{\textwidth}{0.5pt}
+\label{exp_research}
+\vspace{-.2in}
+\input{exp_research.tex}
+
+\pdfbookmark[1]{Awards \& Honors}{awards}
+\section*{AWARDS \& HONORS}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\label{awards}
+\vspace{-.2in}
+\input{awards.tex}
+
+\vspace{-.3in}
+\pdfbookmark[1]{Publications}{pubs}
+\section*{PUBLICATIONS}
+\label{pubs}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{Publications.tex}
+
+\pdfbookmark[2]{Working papers}{working-papers}
+\subsection*{WORKING PAPERS}
+\label{working-papers}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{WORKING PAPER.tex}
+
+\pdfbookmark[1]{Tools \& Software}{tools}
+\section*{TOOLS \& SOFTWARE}
+\label{tools}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{-0.3in}
+\input{tools.tex}
+
+\pdfbookmark[1]{Presentations}{presentations}
+\section*{PRESENTATIONS}
+\label{presentations}
+
+\pdfbookmark[2]{Talks}{talks}
+\subsection*{TALKS}
+\label{talks}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{TALKS}
+
+\vspace{-0.3in}
+\pdfbookmark[2]{Posters}{posters}
+\subsection*{POSTERS}
+\label{posters}
+\vspace{-.2in}
+\noindent\rule{\textwidth}{0.5pt}
+\input{POSTER}
+
+\pdfbookmark[1]{Participation in Events}{PARTICIPATION IN EVENTS}
+\section*{PARTICIPATION IN EVENTS, CONGRESSES, EXHIBITIONS, AND FAIRS}
+\input{Participation in events}
+
+\vspace{-.4in}
+\input{EVENTS ORGANIZATIONS}
+
+\input{References}
+
+\end{document}
