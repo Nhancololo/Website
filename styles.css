@@ -1,0 +1,222 @@
+/* --- 1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Aumentei levemente para garantir que a navbar não corte o topo */
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    
+    /* Sticky Footer: Garante que o rodapé vá para o fundo em páginas curtas */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Garante que o conteúdo principal expanda e empurre o footer */
+.page-footer {
+    margin-top: auto;
+}
+
+/* --- 2. BARRA DE NAVEGAÇÃO (NAVBAR) --- */
+.navbar-brand {
+    white-space: pre-wrap !important;
+    text-align: center;
+    line-height: 1.1;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+/* CORREÇÃO PARA MENUS LONGOS (Scrollbar) */
+.dropdown-menu {
+    max-height: 500px;  /* Altura máxima do menu */
+    overflow-y: auto;   /* Cria barra de rolagem se passar da altura */
+}
+
+/* Estilo da barra de rolagem do menu (Opcional - Fica mais bonito) */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* --- 3. SEÇÃO ABOUT (FUNDO CINZA) --- */
+.about-wrapper {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.section-header-about {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #dee2e6; /* Engrossei um pouco a linha */
+    padding-bottom: 10px;
+    display: inline-block; /* A linha fica apenas do tamanho do texto */
+}
+
+/* Foto de Perfil */
+.profile-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    /* Sombra mais suave e moderna */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse na foto */
+.profile-img:hover {
+    transform: scale(1.02); 
+}
+
+.about-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #212529;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #495057; /* Cinza escuro elegante */
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    color: #333;
+    line-height: 1.7; /* Melhor leitura */
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    text-align: justify; /* Opcional: deixa o texto quadrado */
+}
+
+/* Botão Pílula */
+.btn-pill {
+    display: inline-block;
+    background-color: #212529;
+    color: white !important;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+    border: 2px solid #212529; /* Garante tamanho igual no hover */
+}
+
+.btn-pill:hover {
+    background-color: white;
+    color: #212529 !important;
+    transform: translateY(-2px); /* O botão "sobe" levemente */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- 4. SEÇÃO AWARDS & NEWS --- */
+.awards-wrapper {
+    background-color: white;
+    padding: 80px 0;
+    width: 100%;
+}
+
+.section-header-awards {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #f8f9fa;
+    display: inline-block;
+}
+
+.award-meta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.award-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.8rem;
+}
+
+.award-content {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.award-img {
+    max-height: 220px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px; /* Cantos arredondados na imagem */
+}
+
+/* --- 5. RODAPÉ --- */
+.footer-wrapper {
+    background-color: #1a1a1a; /* Mais escuro para contraste */
+    color: #adb5bd;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 0;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- 6. RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 767px) {
+    /* Ajusta padding para telas pequenas */
+    .about-wrapper, .awards-wrapper {
+        padding: 40px 0; 
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px; /* Espaço abaixo da foto no celular */
+    }
+    
+    .section-header-about, .section-header-awards {
+        font-size: 1.75rem;
+        text-align: center;
+        display: block;
+    }
+    
+    /* Ordem dos elementos no carrossel/grid */
+    .carousel-item .col-md-8 { order: 1; }
+    .carousel-item .col-md-4 { 
+        order: 2; 
+        min-height: 180px; 
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
