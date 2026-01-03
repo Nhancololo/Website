@@ -121,3 +121,30 @@ data/
 _freeze/
 _files/
 rosm.cache/
+
+# --- Quarto ---
+/_site/
+/.quarto/
+/site_libs/
+
+# --- LaTeX (Arquivos temporários de compilação) ---
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# --- Sistema Operacional e Editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.Rproj.user
+.Rhistory
+.RData
