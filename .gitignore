@@ -121,3 +121,6 @@ data/
 _freeze/
 _files/
 rosm.cache/
+
+/.quarto/
+**/*.quarto_ipynb
