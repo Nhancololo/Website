@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "Consulting.html",
-    "href": "Consulting.html",
-    "title": "Consulting",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "I am available for consulting regarding statistical analysis, data science projects, and academic collaborations.\nIf you are interested in discussing a potential opportunity, please contact me via email at amnhancololo@gmail.com or amnhancololo@ime.usp.br."
-  },
-  {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "News & Updates",
-    "section": "",
-    "text": "Fique por dentro das últimas atividades, publicações e cursos.\n\n\n\n\n\n\n\n\nData\n\nAtividade\nDetalhes\n\n\n\n\nJanuary 2026\n🎓\nCurso de Verão IME-USP\nLançamento oficial das notas de aula e site.\n\n\nDecember 2025\n🏆\nPublicação Aceita\nNovo artigo sobre processos pontuais aceito.\n\n\nNovember 2025\n🎤\nWorkshop R Spatial\nPalestrante convidado no encontro nacional."
+    "text": "About this site\n\n\n[1] 2"
   },
   {
     "objectID": "availability.html",
@@ -21,10 +14,150 @@
     "text": "I am actively seeking new academic and research opportunities. I am currently available for:\n\nResearch Collaboration: Open to collaborating on projects involving statistical analysis and data science.\nPostdoctoral Positions: Interested in proposals and fellowships in the fields of Statistics, Spatial Statistics, or Biostatistics."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News & Updates",
     "section": "",
-    "text": "About this site\n\n\n[1] 2"
+    "text": "Fique por dentro das últimas atividades, publicações e cursos.\n\n\n\n\n\n\n\n\nData\n\nAtividade\nDetalhes\n\n\n\n\nJanuary 2026\n🎓\nCurso de Verão IME-USP\nLançamento oficial das notas de aula e site.\n\n\nDecember 2025\n🏆\nPublicação Aceita\nNovo artigo sobre processos pontuais aceito.\n\n\nNovember 2025\n🎤\nWorkshop R Spatial\nPalestrante convidado no encontro nacional."
+  },
+  {
+    "objectID": "Consulting.html",
+    "href": "Consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I am available for consulting regarding statistical analysis, data science projects, and academic collaborations.\nIf you are interested in discussing a potential opportunity, please contact me via email at amnhancololo@gmail.com or amnhancololo@ime.usp.br."
+  },
+  {
+    "objectID": "Slides/Aula01.html#o-que-é-estatística",
+    "href": "Slides/Aula01.html#o-que-é-estatística",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "O que é Estatística?",
+    "text": "O que é Estatística?\n\nÉ a ciência de aprender com dados, e de medir, controlar e comunicar a incerteza (ASA cit in Wild; Utts; Horton, 2017).\nÉ uma  metadisciplina  e foca em transformar dados em conhecimento (Fienberg, 2014).\nDedica-se ao estudo da variabilidade e tomada de decisão sob incerteza (Bartholomew, 1995).\n\n\n\n\n\n\n\n\n\nDe que incerteza estamos falando?\n\n\n\nNa estatística, assumimos que existe uma  verdade  na natureza. Essa  verdade  é:\n\n\nUm  número fixo e desconhecido  (n.f.d) , \\(\\Longrightarrow\\) abordagem frequentista;\nÉ uma  variável aleatória  (v.a) , \\(\\Longrightarrow\\) abordagem Bayesiana;\n\n\nEsse n.f.d (ou v.a) é parâmetro (\\(\\theta\\)).\nComo não temos acesso a toda a população, nós estimamos esse valor usando amostra.\nA incerteza é a dúvida sobre o quão perto nossa estimativa está do verdadeiro \\(\\theta\\).\n“Todos os modelos estão errados, mas alguns são úteis.” — George E. P. Box"
+  },
+  {
+    "objectID": "Slides/Aula01.html#modelo-estatístico",
+    "href": "Slides/Aula01.html#modelo-estatístico",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Modelo Estatístico",
+    "text": "Modelo Estatístico\n\\(\\Longrightarrow (\\Omega, \\mathcal{P})\\)\n\n\\(\\Omega \\supseteq \\{Y_i\\}_{i=1}^{n}\\) é espaço amostral e \\(\\{Y_i\\}_{i=1}^{n}\\) dados observados;\n\\(\\mathcal{P} = \\{P_\\theta : \\theta \\in \\Theta\\}\\) família de distribuições de probabilidade indexada por \\(\\theta\\) ;\n\\(\\Theta\\) o espaço paramétrico.\n\n\n\\(\\Longrightarrow\\) Estatística clássica\n\\(\\{Y_i\\}_{i=1}^{n}\\) são i.i.d. \\(\\Longrightarrow\\) \\(\\forall_{\\text{informação}} \\in Y_i\\) não altera \\(P(Y_j), i \\neq j\\)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#autocorrelação-dependência-e-vizinhança-espacial",
+    "href": "Slides/Aula01.html#autocorrelação-dependência-e-vizinhança-espacial",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Autocorrelação, dependência e vizinhança espacial",
+    "text": "Autocorrelação, dependência e vizinhança espacial\n\\(\\Longrightarrow\\) Dependência espacial\nValores de \\(Y\\) na localização geográfica \\((s_i)\\) estão  funcionalmente  relacionados aos valores do mesmo \\(Y\\) nas localizações \\(s_j\\) vizinhas (Figura 1 direita) (Crawford, 2009)\n\\(\\Downarrow\\)\n\nA Primeira Lei da Geografia\n\n\n“Everything is related to everything else, but near things are more related than distant things.” (Todas as coisas estão relacionadas entre si, mas coisas próximas estão mais relacionadas do que coisas distantes.) — Waldo Tobler (1970)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#níveis-de-estacionariedade",
+    "href": "Slides/Aula01.html#níveis-de-estacionariedade",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Níveis de estacionariedade",
+    "text": "Níveis de estacionariedade\n\nEstacionariedade de 1ª ordem (Média)\n\nO valor esperado é constante em todo o domínio.\n\\(E[Y(\\mathbf{s})] = \\mu, \\quad \\forall \\mathbf{s} \\in D\\)\n\\(\\Longrightarrow\\) Não há tendência (trend) global.\n\nEstacionariedade de 2ª Ordem (estacionaridade fraca)\n\nA covariância depende apenas da distância e direção (\\(\\mathbf{h}\\)), não do local absoluto.\n\\(Cov[Y(\\mathbf{s}), Y(\\mathbf{s}+\\mathbf{h})] = C(\\mathbf{h})\\)\n\\(\\Longrightarrow\\) A “regra” de como os pontos interagem é a mesma em toda a região."
+  },
+  {
+    "objectID": "Slides/Aula01.html#a-forma-da-terra",
+    "href": "Slides/Aula01.html#a-forma-da-terra",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "A forma da Terra",
+    "text": "A forma da Terra\nComo representamos o planeta matematicamente para poder medir distâncias e localizar lugares?\n\nTrabalhamos com três “Terras” diferentes:\n\n\nSuperfície topográfica\n\n\nÉ a superfície real da Terra, onde caminhamos e construímos cidades.\n\nNela existem montanhas, vales, rios e oceanos.\nÉ muito irregular, cheia de altos e baixos.\n\n\n\n\n\n\n\n\n\nAviso\n\n\nPor ser tão irregular, ela não é adequada para fazer cálculos matemáticos em grande escala."
+  },
+  {
+    "objectID": "Slides/Aula01.html#o-datum",
+    "href": "Slides/Aula01.html#o-datum",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "O Datum",
+    "text": "O Datum\nO elipsoide é apenas uma forma matemática idealizada. Sozinho, ele não sabe onde está a Terra de verdade.\n\nPara usar latitude, longitude e calcular distâncias, precisamos posicionar esse elipsoide em relação ao planeta.\nEsse processo de “ancoragem” é feito pelo Datum.\n\n\n\n\n\n\n\n\n\n\nDefinição\n\n\nÉ o sistema de referência que ancora o elipsoide à Terra, definindo:\n\nOnde está o centro do elipsoide;\nComo ele está orientado;\nQual é a sua escala."
+  },
+  {
+    "objectID": "Slides/Aula01.html#tipos-de-datum",
+    "href": "Slides/Aula01.html#tipos-de-datum",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Tipos de Datum",
+    "text": "Tipos de Datum\nExistem duas grandes famílias, dependendo do objetivo do mapeamento:\n\nTopocêntrico (Local)Geocêntrico (Global)\n\n\n\n\nEncaixa perfeitamente em uma região específica (país/continente).\nO centro do elipsoide não coincide com o centro de massa da Terra.\nMinimiza erros localmente, mas erra fora da região.\n\n\n\n\n\n\n\n\n\n\nExemplo: SAD69\n\n\n\nSAD69: South American Datum (1969).\nInadequado para GPS moderno.\n\n\n\n\n\n\n\n\n\n\nRepresenta a Terra como um todo (na média).\nO centro do elipsoide coincide com o centro de massa da Terra.\n\n\n\n\n\n\n\n\n\n\nExemplos\n\n\n\nWGS84: World Geodetic System 1984: Padrão mundial do GPS e Google Maps.\nSIRGAS 2000: Sistema de Referência Geocêntrico para as Américas: Padrão oficial atual do Brasil (compatível com GPS).\nNAD83: North American Datum 1983: Padrão nos EUA e Canadá."
+  },
+  {
+    "objectID": "Slides/Aula01.html#coordenadas-geográficas",
+    "href": "Slides/Aula01.html#coordenadas-geográficas",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Coordenadas Geográficas",
+    "text": "Coordenadas Geográficas\nJá temos o formato (Elipsoide) e a posição (Datum). Como descrevemos um ponto sobre ele?\n\nLatitude (\\(\\phi\\))Longitude (\\(\\lambda\\))\n\n\n\nÂngulo entre o plano equatorial e a reta normal (perpendicular) à superfície.\nVaria de \\(-90^\\circ\\) (Sul) a \\(+90^\\circ\\) (Norte).\nInforma o quão para cima (N) ou para baixo (S) estamos.\n\n\n\n\nÂngulo medido a partir do Meridiano de Greenwich.\nVaria de \\(-180^\\circ\\) (Oeste) a \\(+180^\\circ\\) (Leste).\nInforma o quão para a esquerda (W) ou direita (E) estamos."
+  },
+  {
+    "objectID": "Slides/Aula01.html#graus-minutos-e-segundos-vs.-coordenadas-decimais",
+    "href": "Slides/Aula01.html#graus-minutos-e-segundos-vs.-coordenadas-decimais",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Graus, minutos e segundos vs. coordenadas decimais",
+    "text": "Graus, minutos e segundos vs. coordenadas decimais\nQual é a forma mais encontrada de representação de lugar?\n\n\n\\(23^\\circ 33' 15'' S\\)\n\n\n\nQual é a forma mais usada pelos softwares?\n\n\n\n\\(-23,554167^\\circ\\)\n\n\n\nPara o computador (R, Python), precisamos de Graus Decimais (DD), não Minutos/Segundos.\n\n\nFórmula:\n\\[\nDD = (\\text{Sinal}) \\times \\left(D + \\frac{M}{60} + \\frac{S}{3600}\\right)\n\\]\n\n\n\n\n\nAviso\n\n\nRegra dos Sinais: Sul (S) e Oeste (W) \\(\\Longrightarrow\\) Negativo (-)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#sistemas-de-referência-crs",
+    "href": "Slides/Aula01.html#sistemas-de-referência-crs",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Sistemas de Referência (CRS)",
+    "text": "Sistemas de Referência (CRS)\nPara calcular distâncias em metros num computador, precisamos “traduzir” a Terra curva para formato plano.\n\nCRS (Coordinate Reference System): Define como o mapa 2D (\\(x,y\\)) se relaciona com a Terra real.\nEle contém :\n\nO Datum (onde ancora);\nO Elipsoide (a forma);\nA Projeção.\n\n\n\n\n\n\n\n\n\n\n\nSem CRS, não há análise\n\n\nSem CRS o software trata seus dados apenas como desenhos abstratos, impedindo sobreposição de camadas e cálculos reais."
+  },
+  {
+    "objectID": "Slides/Aula01.html#projeções-comuns-na-prática",
+    "href": "Slides/Aula01.html#projeções-comuns-na-prática",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Projeções Comuns na Prática",
+    "text": "Projeções Comuns na Prática\n\nUTM : Universal Transversa de MercatorAlbers: Cônica EquivalenteMercator\n\n\n\nDivide a Terra em 60 fatias (zonas). Dentro da zona, a distorção é mínima.\nPadrão para escala Local/Regional.\n\n\n\n\n\n\n\nFigura 11: Sistema UTM, Fonte: Wikipedia\n\n\n\n\n\n\nPreserva áreas. Padrão para mapas de países continentais para garantir comparações justas de densidade.\n\n\n\n\n\n\n\nFigura 12: Projeção Cônica de Albers, Fonte: Wikipedia\n\n\n\n\n\n\nCilíndrica Conforme & Padrão da Web (Google Maps).\nDistorce áreas nos polos (Groenlândia parece maior que a África).\n\n\n\n\n\n\n\nFigura 13: Projeção Mercator, Fonte: Wikipedia"
+  },
+  {
+    "objectID": "Slides/Aula01.html#padronização-epsg-e-proj",
+    "href": "Slides/Aula01.html#padronização-epsg-e-proj",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Padronização: EPSG e PROJ",
+    "text": "Padronização: EPSG e PROJ\nPara não decorar parâmetros complexos, usamos códigos numéricos EPSG: European Petroleum Survey Group.\n\nEPSG:4326EPSG:31983\n\n\n\nWGS 84 - World Geodetic System versão 1984\n\nUsa coordenadas em latitude e longitude.\nUnidade de medida: graus ( \\(^\\circ\\)).\nUsado para localização global, GPS e visualização em mapas.\nNota: Não recomendável para cálculo de distâncias ou áreas.\n\n\n\n\n\nSIRGAS 2000 - Sistema de Referência Geocêntrico para as Américas. / UTM zona 23S, sistema projetado\n\nUsa coordenadas planas.\nUnidade de medida: metros (m).\nNota: Usado para medições de distância, área e análises espaciais no Brasil.\n\n\n\n\n\n\nEstes códigos numéricos curtos funcionam como identificadores para um CRS.\n\n\n\n\n\n\n\n\n\nFerramenta Essencial\n\n\nNão decore códigos. Use epsg.io. Clique no mapa para descobrir a zona UTM e o código da sua região de estudo."
+  },
+  {
+    "objectID": "Slides/Aula01.html#modelo-vetorial",
+    "href": "Slides/Aula01.html#modelo-vetorial",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Modelo Vetorial",
+    "text": "Modelo Vetorial\n\nA unidade fundamental de análise vetorial é a Feição Simples (ISO 19125 - International Organization for Standardization);\n\nDefine que um objeto espacial é composto pela sua forma (onde?) e seus dados /atributos (O quê?)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#formas-geométricas-simples",
+    "href": "Slides/Aula01.html#formas-geométricas-simples",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Formas geométricas simples",
+    "text": "Formas geométricas simples\n\n\n\n1. Ponto (POINT)\n\n\n\n\n\n\n\n\n\n\n\n\n2. Linha (LINESTRING)\n\n\n\n\n\n\n\n\n\n\n\n\n3. Polígono (POLYGON)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#formas-geométricas-complexas",
+    "href": "Slides/Aula01.html#formas-geométricas-complexas",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Formas geométricas complexas",
+    "text": "Formas geométricas complexas\n\n\n\n4. Multi-geometrias\n\n\n\n\n\n\n\n\n\n\n\n\n5. Polígono com Buraco"
+  },
+  {
+    "objectID": "Slides/Aula01.html#modelo-raster-matricial",
+    "href": "Slides/Aula01.html#modelo-raster-matricial",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Modelo Raster (Matricial)",
+    "text": "Modelo Raster (Matricial)\nO espaço particionado em uma grade regular de células (pixels) Figura 14.\n\nPixels: Cada célula da grade armazena um valor numérico único.\nResolução: Tamanho do pixel (ex: 30m x 30m).\nTrade-off: Mais detalhe \\(\\leftrightarrow\\) Arquivo gigante."
+  },
+  {
+    "objectID": "Slides/Aula01.html#para-saber-mais",
+    "href": "Slides/Aula01.html#para-saber-mais",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Para saber mais",
+    "text": "Para saber mais\n\n\nVídeos Recomendados\n\nCiência Todo Dia: Por que mapas estão errados?\nVox: Why all world maps are wrong\nProf. Ricardo Marcílio: Projeções\n\n\nLeitura\n\nSpatial Data Science (Pebesma & Bivand), capítulos 1 a 6\nDisponível Online"
+  },
+  {
+    "objectID": "Slides/Aula01.html#próximos-passos-parte-2",
+    "href": "Slides/Aula01.html#próximos-passos-parte-2",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "Próximos Passos (Parte 2)",
+    "text": "Próximos Passos (Parte 2)\nAgora que entendemos os conceitos de dependência, projeção e tipos de dados, vamos para a prática:\n\nUsar o pacote sf para manipular vetores.\nBaixar dados reais do Brasil com geobr.\nCriar mapas temáticos profissionais com mapsf e ggplot2.\n\n\n\n\n\n\n\nImportante\n\n\nLer a seção 2.8 e 2.9 do material de didatico, disponível no link: https://nhancololo.github.io/, a aba Teaching, opção Spatial statistics.\n\n\n\nFim da Parte Teórica\n\n\n  Download Script da Aula (.R)"
+  },
+  {
+    "objectID": "Slides/Aula01.html#references",
+    "href": "Slides/Aula01.html#references",
+    "title": "Fundamentos da Estatística Espacial",
+    "section": "",
+    "text": "BANDYOPADHYAY, Soutir; RAO, Suhasini Subba. A test for stationarity for irregularly spaced spatial data. Journal of the Royal Statistical Society Series B: Statistical Methodology, v. 79, n. 1, p. 95–123, 2017.\n\n\nBARTHOLOMEW, David J. What is statistics? Journal of the Royal Statistical Society Series A: Statistics in Society, v. 158, n. 1, p. 1–20, 1995.\n\n\nBOSCHMA, Ron. Proximity and innovation: a critical assessment. Regional studies, v. 39, n. 1, p. 61–74, 2005.\n\n\nCRAWFORD, T. W. Scale Analytical. In: [S.l.]: Elsevier, 2009. p. 29–36.\n\n\nFIENBERG, Stephen E. What is statistics? Annual review of statistics and its application, v. 1, n. 1, p. 1–9, 2014.\n\n\nJANSSEN, Volker. Understanding coordinate reference systems, datums and transformations. 2009.\n\n\nKELEJIAN, Harry; PIRAS, Gianfranco. Spatial econometrics. [S.l.]: Academic Press, 2017.\n\n\nMONMONIER, Mark. How to lie with maps. [S.l.]: University of Chicago Press, 2022.\n\n\nSCHMIDT, Alexandra M.; O’HAGAN, Anthony. Bayesian inference for non-stationary spatial covariance structure via spatial deformations. Journal of the Royal Statistical Society Series B: Statistical Methodology, v. 65, n. 3, p. 743–758, 2003.\n\n\nWILD, Christopher J.; UTTS, Jessica M.; HORTON, Nicholas J. What is statistics? In: International handbook of research in statistics education. [S.l.]: Springer, 2017. p. 5–36."
   }
 ]

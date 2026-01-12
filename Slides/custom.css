@@ -1,0 +1,56 @@
+/* custom.css */
+
+/* Ajustes específicos para o Slide de Título */
+.reveal .slides section.title-slide {
+  padding-top: 100px !important; /* Empurra todo o texto para baixo para dar espaço ao logo */
+  text-align: center;
+}
+
+/* Estilização do Título (Caixa Azul) */
+.reveal .slides section.title-slide h1 {
+  background-color: #1a2e5a; /* Cor azul escura (copiada da imagem do IME) */
+  color: #ffffff;            /* Texto branco */
+  padding: 0.8em;            /* Espaçamento interno */
+  border-radius: 15px;       /* Bordas arredondadas */
+  font-size: 2.2em;          /* Tamanho da fonte */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Sombra suave */
+  margin-bottom: 1em;        /* Espaço abaixo do título */
+  margin-top: 1em;           /* Espaço entre logo e título */
+}
+
+/* Estilização dos Autores e Data */
+.reveal .slides section.title-slide .quarto-title-authors,
+.reveal .slides section.title-slide .quarto-title-affiliation,
+.reveal .slides section.title-slide .date {
+  color: #000000;            /* Cor preta para o resto do texto */
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* ============================
+   SLIDE DE TÍTULO – METADADOS
+   ============================ */
+
+/* Bloco que contém autor + instituto */
+.reveal .slides section.title-slide .quarto-title-authors {
+  margin-top: 3cm;      /* distância do título */
+  margin-bottom: 3cm;   /* distância até a data */
+}
+
+/* Autor */
+.reveal .title-slide p.author {
+  margin-bottom: 3cm;   /* autor → instituto */
+  font-size: 1.2em;
+}
+
+/* Instituto */
+.reveal .title-slide p.institute {
+  margin-bottom: 3cm;   /* instituto → data */
+  font-size: 1.1em;
+}
+
+/* Data */
+.reveal .title-slide p.date {
+  margin: 0;
+  font-size: 1.1em;
+}
