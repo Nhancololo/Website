@@ -151,7 +151,7 @@
     "href": "Slides/Aula01.html#próximos-passos-parte-2",
     "title": "Fundamentos da Estatística Espacial",
     "section": "Próximos Passos (Parte 2)",
-    "text": "Próximos Passos (Parte 2)\nAgora que entendemos os conceitos de dependência, projeção e tipos de dados, vamos para a prática:\n\nUsar o pacote sf para manipular vetores.\nBaixar dados reais do Brasil com geobr.\nCriar mapas temáticos profissionais com mapsf e ggplot2.\n\n\n\n\n\n\n\nImportante\n\n\nLer a seção 2.8 e 2.9 do material de didatico, disponível no link: https://nhancololo.github.io/, a aba Teaching, opção Spatial statistics.\n\n\n\nFim da Parte Teórica\n\n\n  Download Script da Aula (.R)"
+    "text": "Próximos Passos (Parte 2)\nAgora que entendemos os conceitos de dependência, projeção e tipos de dados, vamos para a prática:\n\nUsar o pacote sf para manipular vetores.\nBaixar dados reais do Brasil com geobr.\nCriar mapas temáticos profissionais com mapsf e ggplot2.\n\n\n\n\n\n\n\nImportante\n\n\nLer a seção 2.8 e 2.9 do material de didatico, disponível no link: https://nhancololo.github.io/, a aba Teaching, opção Spatial statistics.\n\n\n\nFim da Parte Teórica\n\n\n  Baixar Script da Aula 02 (.R)"
   },
   {
     "objectID": "Slides/Aula01.html#references",
