@@ -322,6 +322,13 @@
     "text": "Métodos comuns\n\\(\\Longrightarrow\\) Validação Cruzada (Leave-One-Out)\n\nRemove-se o ponto observado \\(Y(\\mathbf{s}_i)\\).\nEstima-se \\(\\hat{Y}_{-i}(\\mathbf{s}_i)\\) usando os \\(n-1\\) vizinhos.\nCalcula-se o erro e a variância \\(\\sigma_E^2(\\mathbf{s}_i)\\).\n\n\n\\[\\begin{aligned}\n\\varepsilon_i &= Y(\\mathbf{s}_i) - \\hat{Y}_{-i}(\\mathbf{s}_i) \\\\\n\\varepsilon_i &\\sim \\mathcal{N}(0, \\sigma_E^2(\\mathbf{s}_i))\n\\end{aligned}\\]"
   },
   {
+    "objectID": "Slides/Aula03.html#casos-de-uso-por-área-de-conhecimento",
+    "href": "Slides/Aula03.html#casos-de-uso-por-área-de-conhecimento",
+    "title": "Geoestatística",
+    "section": "Casos de uso por Área de Conhecimento",
+    "text": "Casos de uso por Área de Conhecimento\n\nGeociências e EngenhariasAgrárias e AmbienteSaúde, Sociais e Exatas\n\n\n\nMineração: Estimativa de teores e tonelagem em blocos não lavrados. Essencial para avaliação de recursos minerais.\nEngenharia Civil/Elétrica: Mapeamento da resistividade elétrica do solo para projetos de aterramento e segurança de subestações.\nGeofísica/Petróleo: Simulação estocástica de porosidade e permeabilidade em reservatórios para análise de fluxo de fluidos.\nEnergias Renováveis: Interpolação de potencial eólico ou solar a partir de estações esparsas para prospeção energética.\n\n\n\n\nAgricultura: Mapeamento de nutrientes (pH, P, K, etc.) para aplicação de fertilizantes à taxa variável.\nCiências do Solo: Estudo da compactação e humidade do solo para planeamento de rega.\nMonitorização Ambiental: Delimitação de plumas de contaminação (metais pesados) em lençóis freáticos ou solos industriais.\nEcologia: Estimativa de biomassa e stocks de carbono florestal combinando inventários de campo e deteção remota.\n\n\n\n\nSaúde Pública: Mapeamento de superfícies de risco contínuo para doenças vetoriais (ex: Malária) correlacionadas com variáveis ambientais.\nEconomia/Atuária: Previsão de preços imobiliários em zonas não amostradas e tarifação de seguros agrícolas (risco sistémico)."
+  },
+  {
     "objectID": "Slides/Aula03.html#próximos-passos",
     "href": "Slides/Aula03.html#próximos-passos",
     "title": "Geoestatística",
