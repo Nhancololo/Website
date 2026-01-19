@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n\n[1] 2"
-  },
-  {
-    "objectID": "availability.html",
-    "href": "availability.html",
-    "title": "Availability",
-    "section": "",
-    "text": "I am actively seeking new academic and research opportunities. I am currently available for:\n\nResearch Collaboration: Open to collaborating on projects involving statistical analysis and data science.\nPostdoctoral Positions: Interested in proposals and fellowships in the fields of Statistics, Spatial Statistics, or Biostatistics."
-  },
-  {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "News & Updates",
-    "section": "",
-    "text": "Fique por dentro das últimas atividades, publicações e cursos.\n\n\n\n\n\n\n\n\nData\n\nAtividade\nDetalhes\n\n\n\n\nJanuary 2026\n🎓\nCurso de Verão IME-USP\nLançamento oficial das notas de aula e site.\n\n\nDecember 2025\n🏆\nPublicação Aceita\nNovo artigo sobre processos pontuais aceito.\n\n\nNovember 2025\n🎤\nWorkshop R Spatial\nPalestrante convidado no encontro nacional."
-  },
-  {
-    "objectID": "Consulting.html",
-    "href": "Consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I am available for consulting regarding statistical analysis, data science projects, and academic collaborations.\nIf you are interested in discussing a potential opportunity, please contact me via email at amnhancololo@gmail.com or amnhancololo@ime.usp.br."
-  },
-  {
     "objectID": "Slides/Aula01.html#o-que-é-estatística",
     "href": "Slides/Aula01.html#o-que-é-estatística",
     "title": "Fundamentos da Estatística Espacial",
@@ -159,5 +131,208 @@
     "title": "Fundamentos da Estatística Espacial",
     "section": "",
     "text": "BANDYOPADHYAY, Soutir; RAO, Suhasini Subba. A test for stationarity for irregularly spaced spatial data. Journal of the Royal Statistical Society Series B: Statistical Methodology, v. 79, n. 1, p. 95–123, 2017.\n\n\nBARTHOLOMEW, David J. What is statistics? Journal of the Royal Statistical Society Series A: Statistics in Society, v. 158, n. 1, p. 1–20, 1995.\n\n\nBOSCHMA, Ron. Proximity and innovation: a critical assessment. Regional studies, v. 39, n. 1, p. 61–74, 2005.\n\n\nCRAWFORD, T. W. Scale Analytical. In: [S.l.]: Elsevier, 2009. p. 29–36.\n\n\nFIENBERG, Stephen E. What is statistics? Annual review of statistics and its application, v. 1, n. 1, p. 1–9, 2014.\n\n\nJANSSEN, Volker. Understanding coordinate reference systems, datums and transformations. 2009.\n\n\nKELEJIAN, Harry; PIRAS, Gianfranco. Spatial econometrics. [S.l.]: Academic Press, 2017.\n\n\nMONMONIER, Mark. How to lie with maps. [S.l.]: University of Chicago Press, 2022.\n\n\nSCHMIDT, Alexandra M.; O’HAGAN, Anthony. Bayesian inference for non-stationary spatial covariance structure via spatial deformations. Journal of the Royal Statistical Society Series B: Statistical Methodology, v. 65, n. 3, p. 743–758, 2003.\n\n\nWILD, Christopher J.; UTTS, Jessica M.; HORTON, Nicholas J. What is statistics? In: International handbook of research in statistics education. [S.l.]: Springer, 2017. p. 5–36."
+  },
+  {
+    "objectID": "Consulting.html",
+    "href": "Consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I am available for consulting regarding statistical analysis, data science projects, and academic collaborations.\nIf you are interested in discussing a potential opportunity, please contact me via email at amnhancololo@gmail.com or amnhancololo@ime.usp.br."
+  },
+  {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News & Updates",
+    "section": "",
+    "text": "Fique por dentro das últimas atividades, publicações e cursos.\n\n\n\n\n\n\n\n\nData\n\nAtividade\nDetalhes\n\n\n\n\nJanuary 2026\n🎓\nCurso de Verão IME-USP\nLançamento oficial das notas de aula e site.\n\n\nDecember 2025\n🏆\nPublicação Aceita\nNovo artigo sobre processos pontuais aceito.\n\n\nNovember 2025\n🎤\nWorkshop R Spatial\nPalestrante convidado no encontro nacional."
+  },
+  {
+    "objectID": "availability.html",
+    "href": "availability.html",
+    "title": "Availability",
+    "section": "",
+    "text": "I am actively seeking new academic and research opportunities. I am currently available for:\n\nResearch Collaboration: Open to collaborating on projects involving statistical analysis and data science.\nPostdoctoral Positions: Interested in proposals and fellowships in the fields of Statistics, Spatial Statistics, or Biostatistics."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n[1] 2"
+  },
+  {
+    "objectID": "Slides/Aula03.html#intuição-visual-ruído-vs.-estrutura",
+    "href": "Slides/Aula03.html#intuição-visual-ruído-vs.-estrutura",
+    "title": "Geoestatística",
+    "section": "Intuição Visual: Ruído vs. Estrutura",
+    "text": "Intuição Visual: Ruído vs. Estrutura\n\n\n\n\n\n\n\n\n\n\n\n(a) Estatística Clássica\n\n\n\n\n\n\n\n\n\n\n\n(b) Geoestatística\n\n\n\n\n\n\n\nFigura 1: Comparação: Ruído Branco (Independente) vs. Continuidade Espacial."
+  },
+  {
+    "objectID": "Slides/Aula03.html#variável-regionalizada",
+    "href": "Slides/Aula03.html#variável-regionalizada",
+    "title": "Geoestatística",
+    "section": "Variável regionalizada",
+    "text": "Variável regionalizada\n\nFunção numérica \\(f(\\mathbf{s})\\) que descreve a distribuição espacial de uma grandeza física (ex: teor de ouro, pH do solo) num domínio \\(D^{G}\\).\nPossui um aspecto estruturado (tendência) e um aspecto aleatório (irregularidade local) (Matheron, 1971).\nAs variáveis regionalizadas são tratadas como realizações de um campo aleatório \\(\\{Y(s) : s \\in D^{G}\\}\\), onde \\(s\\) é um vetor de coordenadas em \\(\\mathbb{R}^d\\) (Cressie, 1991)."
+  },
+  {
+    "objectID": "Slides/Aula03.html#processo-estocástico-espacial",
+    "href": "Slides/Aula03.html#processo-estocástico-espacial",
+    "title": "Geoestatística",
+    "section": "Processo estocástico espacial",
+    "text": "Processo estocástico espacial\n\nColeção de variáveis aleatórias \\(\\{Y(\\mathbf{s}) : \\mathbf{s} \\in D^{G}\\}\\) num domínio contínuo. O objetivo é reconstruir a lei de probabilidade a partir de observações finitas (Cressie, 1993).\nDiferente de séries temporais (passado \\(\\to\\) futuro), o índice espacial \\(\\mathbf{s}\\) não possui ordenação natural em \\(d \\ge 2\\), complexificando a modelagem da dependência (Cressie; Moores, 2022)."
+  },
+  {
+    "objectID": "Slides/Aula03.html#decomposição-da-variável-ymathbfs",
+    "href": "Slides/Aula03.html#decomposição-da-variável-ymathbfs",
+    "title": "Geoestatística",
+    "section": "Decomposição da variável \\(Y(\\mathbf{s})\\)",
+    "text": "Decomposição da variável \\(Y(\\mathbf{s})\\)\n\nPara tornar o processo estocástico tratável, decompomos a variável aleatória \\(Y(\\mathbf{s})\\) em componentes que explicam diferentes escalas de variação.\n\n\n\\(\\Longrightarrow\\) Decomposição simples:\n\\[Y(\\mathbf{s}) = \\mu(\\mathbf{s}) + \\delta(\\mathbf{s})\\]\n\n\n\\(\\mu(\\mathbf{s})\\): Tendência (Trend/Drift). Variação sistemática de larga escala (função das coordenadas ou covariáveis).\n\\(\\delta(\\mathbf{s})\\): Erro Estocástico. Captura a dependência espacial (correlação) com média zero."
+  },
+  {
+    "objectID": "Slides/Aula03.html#estacionariedade-e-inferência-estatística",
+    "href": "Slides/Aula03.html#estacionariedade-e-inferência-estatística",
+    "title": "Geoestatística",
+    "section": "Estacionariedade e inferência estatística",
+    "text": "Estacionariedade e inferência estatística\n\nA unicidade da realização \\(\\{y(\\mathbf{s})\\}\\) (impossibilidade de repetição do processo natural) impede o cálculo direto da média\n\n\n\\[\\mu(\\mathbf{s})=E[Y(\\mathbf{s})] = \\int_{-\\infty}^{+\\infty} y \\cdot f(y; \\mathbf{s}) \\, dy\\:, \\]\n\n\ne variância\n\\[\\sigma^2(\\mathbf{s}) = \\text{Var}(Y(\\mathbf{s})) = E\\left[(Y(\\mathbf{s}) - \\mu(\\mathbf{s}))^2\\right], \\]\nem cada local \\(\\mathbf{s}\\) (Cressie, 1993).\n\n\n\nPara viabilizar a inferência estatística (i.e., estimar os parâmetros do processo a partir de uma única realização), é imperativo invocar a hipótese de estacionariedade (Ver aula 01 )."
+  },
+  {
+    "objectID": "Slides/Aula03.html#estacionariedade-intrínseca",
+    "href": "Slides/Aula03.html#estacionariedade-intrínseca",
+    "title": "Geoestatística",
+    "section": "Estacionariedade intrínseca",
+    "text": "Estacionariedade intrínseca\n\\[\n\\begin{aligned}\nE[Y(\\mathbf{s}+\\mathbf{h}) - Y(\\mathbf{s})] &= 0 \\\\\nVar(Y(\\mathbf{s}+\\mathbf{h}) - Y(\\mathbf{s})) &= 2\\gamma(\\mathbf{h})\n\\end{aligned}\n\\]\n\nA função \\(2\\gamma(\\mathbf{h})\\) é denominada variograma, e \\(\\gamma(\\mathbf{h})\\) semivariograma."
+  },
+  {
+    "objectID": "Slides/Aula03.html#função-de-covariância-cmathbfh",
+    "href": "Slides/Aula03.html#função-de-covariância-cmathbfh",
+    "title": "Geoestatística",
+    "section": "Função de Covariância \\(C(\\mathbf{h})\\)",
+    "text": "Função de Covariância \\(C(\\mathbf{h})\\)\n\n\nQuantifica a covariância linear entre \\(Y(\\mathbf{s})\\) e \\(Y(\\mathbf{s} + \\mathbf{h})\\). Sob estacionariedade de segunda ordem: \\(C(\\mathbf{h}) = E[(Y(\\mathbf{s}) - \\mu)(Y(\\mathbf{s} + \\mathbf{h}) - \\mu)]\\)\n\n\\(C(\\mathbf{h}) = C(-\\mathbf{h})\\).\n\\(C(\\mathbf{0}) = \\sigma^2\\) (Variância a priori).\nAssume que a variância global é finita e constante.\nNão pode ser definida para processos com variância infinita (ex: movimento Browniano, onde a dispersão cresce com o domínio \\(|D| \\to \\infty\\))."
+  },
+  {
+    "objectID": "Slides/Aula03.html#o-variograma-2gammamathbfh",
+    "href": "Slides/Aula03.html#o-variograma-2gammamathbfh",
+    "title": "Geoestatística",
+    "section": "O Variograma \\(2\\gamma(\\mathbf{h})\\)",
+    "text": "O Variograma \\(2\\gamma(\\mathbf{h})\\)\n\nPara lidar com fenômenos onde a variância pode não ser finita, Matheron introduziu a Hipótese Intrínseca, focada na estacionariedade dos incrementos.\n\n\n\\[2\\gamma(\\mathbf{h}) = Var(Y(\\mathbf{s} + \\mathbf{h}) - Y(\\mathbf{s})) = E[(Y(\\mathbf{s} + \\mathbf{h}) - Y(\\mathbf{s}))^2]\\]\n\n\nO Semivariograma é definido como \\(\\gamma(\\mathbf{h})\\) (metade do variograma).\nÉ mais robusto que a covariância, pois os incrementos permanecem finitos mesmo se a variância global divergir.\nSe a variância for finita (2ª ordem), existe a relação: \\(\\gamma(\\mathbf{h}) = C(0) - C(\\mathbf{h})\\)."
+  },
+  {
+    "objectID": "Slides/Aula03.html#elementos-do-semivariograma",
+    "href": "Slides/Aula03.html#elementos-do-semivariograma",
+    "title": "Geoestatística",
+    "section": "Elementos do semivariograma",
+    "text": "Elementos do semivariograma\nPara a modelagem teórica, é crucial identificar os parâmetros que condicionam a predição espacial:\n\nAlcance (Range, \\(a\\)): Distância \\(\\|\\mathbf{h}\\|\\) onde a correlação espacial se torna desprezível.\n\nPontos separados por distâncias \\(\\ge a\\) são estatisticamente independentes.\nDefine a malha de amostragem necessária.\n\nEfeito Pepita (Nugget, \\(C_0\\)): Descontinuidade na origem (\\(\\gamma(\\mathbf{0}) \\to C_0\\)).\n\nSoma da variabilidade de microescala (\\(\\eta\\)) e erro de medição (\\(\\epsilon\\)): \\(C_0 = \\text{Var}(\\eta(\\mathbf{s})) + \\text{Var}(\\epsilon(\\mathbf{s}))\\)."
+  },
+  {
+    "objectID": "Slides/Aula03.html#estimador-clássico-matheron",
+    "href": "Slides/Aula03.html#estimador-clássico-matheron",
+    "title": "Geoestatística",
+    "section": "Estimador clássico (Matheron)",
+    "text": "Estimador clássico (Matheron)\n\n\nProposto por Matheron (1963), baseia-se no método dos momentos (média dos quadrados das diferenças):\n\n\n\n\\[\\hat{\\gamma}_{M}(\\mathbf{h}) = \\frac{1}{2|N(\\mathbf{h})|} \\sum_{(\\mathbf{s}_i, \\mathbf{s}_j) \\in N(\\mathbf{h})} (y(\\mathbf{s}_i) - y(\\mathbf{s}_j))^2\\]\n\n\n\\(N(\\mathbf{h})\\): Conjunto de pares separados pelo vetor \\(\\mathbf{h}\\).\n\\(|N(\\mathbf{h})|\\): Número de pares.\nÉ sensível a outliers. Como as diferenças são elevadas ao quadrado, um único erro grosseiro pode inflar a variância estimada."
+  },
+  {
+    "objectID": "Slides/Aula03.html#estimador-robusto-cressie-hawkins",
+    "href": "Slides/Aula03.html#estimador-robusto-cressie-hawkins",
+    "title": "Geoestatística",
+    "section": "Estimador Robusto (Cressie-Hawkins)",
+    "text": "Estimador Robusto (Cressie-Hawkins)\n\nDesenvolvido por Cressie; Hawkins (1980) para mitigar o impacto de contaminação nos dados e distribuições de cauda longa.\n\n\n\\[\\hat{\\gamma}_{CH}(\\mathbf{h}) = \\frac{\\left( \\frac{1}{|N(\\mathbf{h})|} \\sum_{(\\mathbf{s}_i, \\mathbf{s}_j) \\in N(\\mathbf{h})} |y(\\mathbf{s}_i) - y(\\mathbf{s}_j)|^{1/2} \\right)^4}{0.457 + \\frac{0.494}{|N(\\mathbf{h})|}}\\]\n\n\nUtiliza a raiz quadrada das diferenças para suavizar extremos.\nO denominador atua como fator de correção de viés para amostras finitas.\nRecomendado quando há suspeita de não-normalidade severa ou erros de medição."
+  },
+  {
+    "objectID": "Slides/Aula03.html#métodos-de-ajuste",
+    "href": "Slides/Aula03.html#métodos-de-ajuste",
+    "title": "Geoestatística",
+    "section": "Métodos de ajuste",
+    "text": "Métodos de ajuste\n\n\\(\\Longrightarrow\\) Métodos baseados no variograma experimental\n\n\nMínimos Quadrados Ponderados (WLS): Os estimadores do variograma têm variância heterocedástica. A variância do estimador cresce com o valor do próprio variograma.\nMínimos Quadrados Generalizados (GLSE): WLS assume que as estimativas em diferentes lags são independentes. Na realidade, \\(\\text{Cov}(\\hat{\\gamma}(\\mathbf{h}_i), \\hat{\\gamma}(\\mathbf{h}_j)) \\neq 0\\).\n\n\n\\(\\Longrightarrow\\) Métodos baseados nos Dados:\n\n\nMáxima Verossimilhança (ML): Ajusta o modelo diretamente aos dados brutos \\(\\mathbf{y}\\).\nMáxima Verossimilhança Restrita (REML): ML subestima variância (viés) por assumir que \\(\\boldsymbol{\\beta}\\) é conhecida, ignorando os g.l perdidos na sua estimação. REML corrige o viés.\nREML Robusto: Mitiga a influência de outliers na estimação (ver notas de aula)."
+  },
+  {
+    "objectID": "Slides/Aula03.html#mínimos-quadrados-ponderados-wls",
+    "href": "Slides/Aula03.html#mínimos-quadrados-ponderados-wls",
+    "title": "Geoestatística",
+    "section": "Mínimos Quadrados Ponderados (WLS)",
+    "text": "Mínimos Quadrados Ponderados (WLS)"
+  },
+  {
+    "objectID": "Slides/Aula03.html#mínimos-quadrados-generalizados-glse",
+    "href": "Slides/Aula03.html#mínimos-quadrados-generalizados-glse",
+    "title": "Geoestatística",
+    "section": "Mínimos Quadrados Generalizados (GLSE)",
+    "text": "Mínimos Quadrados Generalizados (GLSE)"
+  },
+  {
+    "objectID": "Slides/Aula03.html#máxima-verossimilhança",
+    "href": "Slides/Aula03.html#máxima-verossimilhança",
+    "title": "Geoestatística",
+    "section": "Máxima verossimilhança",
+    "text": "Máxima verossimilhança"
+  },
+  {
+    "objectID": "Slides/Aula03.html#máxima-verossimilhança-restrita-reml",
+    "href": "Slides/Aula03.html#máxima-verossimilhança-restrita-reml",
+    "title": "Geoestatística",
+    "section": "Máxima Verossimilhança Restrita (REML)",
+    "text": "Máxima Verossimilhança Restrita (REML)"
+  },
+  {
+    "objectID": "Slides/Aula03.html#krigagem-simples",
+    "href": "Slides/Aula03.html#krigagem-simples",
+    "title": "Geoestatística",
+    "section": "Krigagem Simples",
+    "text": "Krigagem Simples\n\nAssume que \\(E[Y(\\mathbf{s})] = \\mu\\) é conhecida e constante em todo o domínio (Journel; Huijbregts, 1976). O estimador baseia-se nos resíduos em relação à média:\n\n\\[\\begin{aligned}\n\\hat{Y}_{KS}(\\mathbf{s}_0) &= \\mu + \\sum_{i=1}^n \\lambda_i (Y(\\mathbf{s}_i) - \\mu) \\\\\nE[\\hat{Y}_{KS}(\\mathbf{s}_0) - Y(\\mathbf{s}_0)] &= \\mu + \\sum_{i=1}^n \\lambda_i E[Y(\\mathbf{s}_i) - \\mu] - E[Y(\\mathbf{s}_0)] = 0 \\\\\n\\sigma_E^2 &= \\text{Var}\\left( \\sum_{i=1}^n \\lambda_i Y(\\mathbf{s}_i) - Y(\\mathbf{s}_0) \\right) \\\\\n&= \\text{Var}\\left( \\sum_{i=1}^n \\lambda_i Y(\\mathbf{s}_i) \\right) + \\text{Var}(Y(\\mathbf{s}_0)) - 2\\text{Cov}\\left( \\sum_{i=1}^n \\lambda_i Y(\\mathbf{s}_i), Y(\\mathbf{s}_0) \\right) \\\\\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#krigagem-ordinária-ko",
+    "href": "Slides/Aula03.html#krigagem-ordinária-ko",
+    "title": "Geoestatística",
+    "section": "Krigagem Ordinária (KO)",
+    "text": "Krigagem Ordinária (KO)\n\nMédia \\(E[Y(\\mathbf{s})] = \\mu\\) é constante mas desconhecida.\nO estimador é uma combinação linear direta: \\(\\hat{Y}_{KO}(\\mathbf{s}_0) = \\sum_{i=1}^n \\lambda_i Y(\\mathbf{s}_i)\\)\n\n\\[\\begin{aligned}\nE[\\hat{Y}_{KO} - Y_0] &= \\sum \\lambda_i E[Y_i] - E[Y_0] = \\mu \\sum \\lambda_i - \\mu =\\mu \\left( \\sum_{i=1}^n \\lambda_i - 1 \\right) = 0 \\\\\n\\text{(Restrição)} & \\quad \\sum_{i=1}^n \\lambda_i = 1, \\: \\: \\text{M. Lagrange:} = L(\\boldsymbol{\\lambda}, \\nu) = \\sigma_E^2 + 2\\nu \\left( \\sum_{i=1}^n \\lambda_i - 1 \\right) \\\\\n&= \\sum_i \\sum_j \\lambda_i \\lambda_j C_{ij} + C(0) - 2 \\sum_i \\lambda_i C_{i0} + 2\\nu \\left( \\sum_i \\lambda_i - 1 \\right)\\\\\n\\frac{\\partial L}{\\partial \\lambda_k} &= 2 \\sum_{j=1}^n \\lambda_j C_{kj} - 2 C_{k0} + 2\\nu = 0 \\implies \\sum_{j=1}^n \\lambda_j C_{kj} + \\nu = C_{k0}\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#krigagem-universal-ku",
+    "href": "Slides/Aula03.html#krigagem-universal-ku",
+    "title": "Geoestatística",
+    "section": "Krigagem Universal (KU)",
+    "text": "Krigagem Universal (KU)\n\nA média não é constante, mas possui uma tendência (drift) determinística modelada usando coordenadas: \\(\\mu(\\mathbf{s}) = \\beta_0 + \\beta_1 x + \\beta_2 y\\)).\n\n\\[\\begin{aligned}\n\\small\n\\quad Y(\\mathbf{s}) = \\mu(\\mathbf{s}) + \\delta(\\mathbf{s}), \\: \\: \\mu(\\mathbf{s}) &= \\sum_{l=0}^{L} a_l f_l(\\mathbf{s}), \\: f_0(\\mathbf{s}) \\equiv 1 , \\:\\: E[\\delta(\\mathbf{s})] = 0\\\\ \\text{Cov}(\\delta(\\mathbf{s}_i), \\delta(\\mathbf{s}_j)) &= C_{ij}\\\\\nE[\\hat{Y} - Y_0] &= \\sum \\lambda_i \\mu(\\mathbf{s}_i) - \\mu(\\mathbf{s}_0)= \\sum_{l=0}^L a_l \\left[ \\sum_{i=1}^n \\lambda_i f_l(\\mathbf{s}_i) - f_l(\\mathbf{s}_0) \\right] = 0\\\\\n\\text{restrição}: \\sum_{i=1}^n \\lambda_i f_l(\\mathbf{s}_i) &= f_l(\\mathbf{s}_0)\\\\\nL(\\boldsymbol{\\lambda}, \\boldsymbol{\\nu}) &= \\sigma_E^2 - 2\\sum_{l=0}^L \\nu_l \\left(\\sum_{i=1}^n \\lambda_i f_l(\\mathbf{s}_i) - f_l(\\mathbf{s}_0)\\right)\\\\\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#krigagem-com-deriva-externa-ked",
+    "href": "Slides/Aula03.html#krigagem-com-deriva-externa-ked",
+    "title": "Geoestatística",
+    "section": "Krigagem com Deriva Externa (KED)",
+    "text": "Krigagem com Deriva Externa (KED)\n\nVariante da KU onde a tendência \\(\\mu(\\mathbf{s})\\) é modelada usando covariáveis \\(x_i(\\mathbf{s})\\) conhecidas em todo o domínio (ex: Elevação), e não por coordenadas.\n\n\\[\\begin{aligned}\n\\quad Y(\\mathbf{s}) &= \\mu(\\mathbf{s}) + \\delta(\\mathbf{s}), \\: \\mu(\\mathbf{s}) = a_0 + a_1 x(\\mathbf{s}), \\: E[\\delta(\\mathbf{s})] = 0, \\: \\text{Cov}(\\delta(\\mathbf{s}_i), \\delta(\\mathbf{s}_j)) = C_{ij} \\\\\nE[\\hat{Y} - Y_0] &= \\sum \\lambda_i (a_0 + a_1 x_i) - (a_0 + a_1 x_0)= a_0\\left(\\sum_{i=1}^n \\lambda_i - 1\\right) + a_1\\left(\\sum_{i=1}^n \\lambda_i x_i - x_0\\right) = 0\\\\\n\\sum_{i=1}^n \\lambda_i = 1 \\: \\text{e} \\: &\\sum_{i=1}^n \\lambda_i x(\\mathbf{s}_i) = x(\\mathbf{s}_0)\\\\\nL(\\boldsymbol{\\lambda}, \\nu_0, \\nu_1) &= \\sigma_E^2 - 2\\nu_0\\left(\\sum_{i=1}^n \\lambda_i - 1\\right) - 2\\nu_1\\left(\\sum_{i=1}^n \\lambda_i x(\\mathbf{s}_i) - x(\\mathbf{s}_0)\\right)\\\\\n&= \\sum_{i=1}^n\\sum_{j=1}^n \\lambda_i\\lambda_j C_{ij} - 2\\sum_{i=1}^n \\lambda_i C_{i0} + C_{00} - 2\\nu_0\\left(\\sum_{i=1}^n \\lambda_i - 1\\right) - 2\\nu_1\\left(\\sum_{i=1}^n \\lambda_i x_i - x_0\\right)\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#co-krigagem-ck",
+    "href": "Slides/Aula03.html#co-krigagem-ck",
+    "title": "Geoestatística",
+    "section": "Co-Krigagem (CK)",
+    "text": "Co-Krigagem (CK)\nUsada para estimação de uma variável primária \\(Y_1\\) usando sua própria autocorrelação e a correlação cruzada com variáveis secundárias \\(Y_2 \\dots Y_k\\) (Co-regionalização).\n\\[\\begin{aligned}\n\\quad Y_1(\\mathbf{s}) &= \\mu_1 + \\delta_1(\\mathbf{s}), \\:Y_2(\\mathbf{s}) = \\mu_2 + \\delta_2(\\mathbf{s}), \\: \\: \\text{Cov}(\\delta_a(\\mathbf{s}_i), \\delta_b(\\mathbf{s}_j)) = C_{ab}(\\mathbf{s}_i, \\mathbf{s}_j) \\\\\n\\quad \\hat{Y}_1(\\mathbf{s}_0) &= \\sum_{i=1}^{n_1} \\lambda_{1i} Y_1(\\mathbf{s}_{1i}) + \\sum_{j=1}^{n_2} \\lambda_{2j} Y_2(\\mathbf{s}_{2j})\\\\\nE[\\hat{Y}_1 - Y_1] &= \\mu_1\\left(\\sum \\lambda_{1i} - 1\\right) + \\mu_2 \\sum \\lambda_{2j} = 0, \\: \\:\n\\text{Restrições:}  \\:\\sum_{i=1}^{n_1} \\lambda_{1i} = 1 \\: \\text{e} \\: \\sum_{j=1}^{n_2} \\lambda_{2j} = 0\\\\\n\\sigma_E^2 &= \\sum_{i}\\sum_{k} \\lambda_{1i}\\lambda_{1k} C_{11}(\\mathbf{s}_{1i}, \\mathbf{s}_{1k}) + \\sum_{j}\\sum_{l} \\lambda_{2j}\\lambda_{2l} C_{22}(\\mathbf{s}_{2j}, \\mathbf{s}_{2l}) +\\\\ &\\quad +2\\sum_{i}\\sum_{j} \\lambda_{1i}\\lambda_{2j} C_{12}(\\mathbf{s}_{1i}, \\mathbf{s}_{2j}) \\\\\n&\\quad - 2\\sum_{i} \\lambda_{1i} C_{11}(\\mathbf{s}_{1i}, \\mathbf{s}_0) - 2\\sum_{j} \\lambda_{2j} C_{12}(\\mathbf{s}_{2j}, \\mathbf{s}_0) + C_{11}(0)\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#outros-tipos-de-krigagem",
+    "href": "Slides/Aula03.html#outros-tipos-de-krigagem",
+    "title": "Geoestatística",
+    "section": "Outros tipos de Krigagem",
+    "text": "Outros tipos de Krigagem\n\\(\\Longrightarrow\\) Ver no material de apoio"
+  },
+  {
+    "objectID": "Slides/Aula03.html#métodos-comuns",
+    "href": "Slides/Aula03.html#métodos-comuns",
+    "title": "Geoestatística",
+    "section": "Métodos comuns",
+    "text": "Métodos comuns\n\\(\\Longrightarrow\\) Validação Cruzada (Leave-One-Out)\n\nRemove-se o ponto observado \\(Y(\\mathbf{s}_i)\\).\nEstima-se \\(\\hat{Y}_{-i}(\\mathbf{s}_i)\\) usando os \\(n-1\\) vizinhos.\nCalcula-se o erro e a variância \\(\\sigma_E^2(\\mathbf{s}_i)\\).\n\n\n\\[\\begin{aligned}\n\\varepsilon_i &= Y(\\mathbf{s}_i) - \\hat{Y}_{-i}(\\mathbf{s}_i) \\\\\n\\varepsilon_i &\\sim \\mathcal{N}(0, \\sigma_E^2(\\mathbf{s}_i))\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "Slides/Aula03.html#próximos-passos",
+    "href": "Slides/Aula03.html#próximos-passos",
+    "title": "Geoestatística",
+    "section": "Próximos Passos",
+    "text": "Próximos Passos\nNa Aula 04, veremos a parte prática deste conteúdo. Por favor, leia todo o Capítulo 3, com foco no pacote gstat e na implementação dos diferentes tipos de krigagem no material de apoio.\n\n\n  Baixar Script da Aula 04 (.R)"
+  },
+  {
+    "objectID": "Slides/Aula03.html#references",
+    "href": "Slides/Aula03.html#references",
+    "title": "Geoestatística",
+    "section": "",
+    "text": "CRESSIE, Noel. The origins of kriging. Mathematical geology, v. 22, n. 3, p. 239–252, 1990.\n\n\nCRESSIE, Noel. Geostatistical analysis of spatial data. Spatial statistics and digital image analysis, v. 1991, p. 87–108, 1991.\n\n\nCRESSIE, Noel. Statistics for spatial data. [S.l.]: John Wiley & Sons, 1993.\n\n\nCRESSIE, Noel; HAWKINS, Douglas M. Robust estimation of the variogram: I. Journal of the international Association for Mathematical Geology, v. 12, n. 2, p. 115–125, 1980.\n\n\nCRESSIE, Noel; MOORES, Matthew T. Spatial statistics. In: Encyclopedia of mathematical geosciences. [S.l.]: Springer, 2022. p. 1–11.\n\n\nDIGGLE, Peter J.; TAWN, Jonathan A.; MOYEED, Rana A. Model-based geostatistics. Journal of the Royal Statistical Society Series C: Applied Statistics, v. 47, n. 3, p. 299–350, 1998.\n\n\nECKER, Mark D. Geostatistics: past, present and future. Encyclopedia of Life Support Systems (EOLSS), p. 50614–0506, 2003.\n\n\nGUTTORP, Peter; GNEITING, Tilmann. Studies in the history of probability and statistics XLIX on the Matérn correlation family. Biometrika, v. 93, n. 4, p. 989–995, 2006.\n\n\nJOURNEL, Andre G.; HUIJBREGTS, Charles J. Mining geostatistics. 1976.\n\n\nKRIGE, Danie; KLEINGELD, Wynand. The genesis of geostatistics in gold and diamond industries. In: Space, Structure and Randomness: Contributions in Honor of Georges Matheron in the Field of Geostatistics, Random Sets and Mathematical Morphology. [S.l.]: Springer, 2005. p. 5–16.\n\n\nMATHERON, G. \" Principles of geostatistics\", Economic Geology, 58, pp 1246-1266. 1963.\n\n\nMATHERON, George. The theory of regionalised variables and its applications. Les Cahiers du Centre de Morphologie Mathématique, v. 5, p. 212, 1971.\n\n\nMYERS, Donald E. Spatial interpolation: an overview. Geoderma, v. 62, n. 1-3, p. 17–28, 1994.\n\n\nNHANCOLOLO, A. M. et al. Comparison between the laboratory method and the Stolf penetrometer in soil density analysis: a study using geostatistical approaches. Sigmae, v. 13, n. 1, p. 63–78, 2024.\n\n\nOLIVER, MA; WEBSTER, R. A tutorial guide to geostatistics: Computing and modelling variograms and kriging. Catena, v. 113, p. 56–69, 2014.\n\n\nSAHU, Sujit. Bayesian modeling of spatio-temporal data with R. [S.l.]: Chapman; Hall/CRC, 2022.\n\n\nSCALON, João Domingos. Análise de Dados Espaciais com Aplicações em R. Lavras: Ed. UFLA, 2024. p. 275\n\n\nWACKERNAGEL, Hans. Multivariate geostatistics: an introduction with applications. [S.l.]: Springer Science & Business Media, 2003.\n\n\nYAMAMOTO, Jorge Kazuo; LANDIM, Paulo M. Barbosa. Geoestatística: conceitos e aplicações. São Paulo: Oficina de Textos, 2013."
   }
 ]

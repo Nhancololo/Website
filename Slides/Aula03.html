@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Alex Monito Nhancololo">
+  <title>Geoestatística</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 1em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="Figures/Horizontal_azul.png" data-background-opacity="1" data-background-position="top 5% center" data-background-size="75%" class="quarto-title-block center">
+  <h1 class="title">Geoestatística</h1>
+  <p class="subtitle">Aula 03: Teoria e Prática em R</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Alex Monito Nhancololo 
+</div>
+        <p class="quarto-title-affiliation">
+            Instituto de Matemática, Estatística e Ciência da Computação (IME‑USP)
+          </p>
+    </div>
+</div>
+
+  <p class="date">19/01/2026</p>
+</section>
+<section>
+<section id="origem-intuições-e-conceitos-essenciais" class="title-slide slide level1 center">
+<h1>Origem, intuições e conceitos essenciais</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Origem da geoestatística</a></li><li><a href="#tabset-1-2">Furos de sondagem</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> O problema das minas de ouro (década de 1950)</p>
+</div>
+<ul>
+<li class="fragment"><p>Danie Gerhardus Krige (D. G. Krige), engenheiro de minas sul-africano (<a href="https://pt.wikipedia.org/wiki/%C3%81frica_do_Sul">África do Sul</a>) estimava o teor de ouro em blocos de rocha não escavados a partir de amostras obtidas por furos de sondagem <span class="citation" data-cites="ecker2003geostatistics">(<a href="#/references" role="doc-biblioref" onclick="">Ecker, 2003</a>)</span></p></li>
+<li class="fragment"><p>O método utilizado gerava erros sistemáticos na estimativa do teor de ouro, levando à superestimação das zonas ricas e à subestimação das zonas pobres.</p></li>
+<li class="fragment"><p><strong>Causa:</strong> não era a precisão dos instrumentos utilizados e sim, o uso da estatística clássica (i.i.d.), que ignora a dependência espacial entre as amostras.</p></li>
+<li class="fragment"><p><strong>Consequência:</strong> Prejuízos financeiros devido à discrepância entre a estimativa e o recuperado <span class="citation" data-cites="krige2005genesis">(<a href="#/references" role="doc-biblioref" onclick="">Krige; Kleingeld, 2005</a>)</span>.</p></li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<div class="fragment">
+<p>Assista ao vídeo produzido pela Federação Brasileira de Geólogos (FEBRAGEO) sobre furos de sondagem clicando <a href="https://www.youtube.com/watch?v=qikZsCRkHMU&amp;t=164s">aqui</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> A Intuição de D.G. Krige</p>
+</div>
+<ul>
+<li class="fragment"><p>Uma amostra não é um valor isolado <span class="citation" data-cites="scalon2024analise">(<a href="#/references" role="doc-biblioref" onclick="">Scalon, 2024</a>)</span>: valores elevados indicam maior probabilidade de teores elevados nas regiões adjacentes.</p></li>
+<li class="fragment"><p>Ignorar essa dependência espacial implica perder a continuidade espacial <span class="citation" data-cites="oliver2014tutorial nhancololo2024comparison">(<a href="#/references" role="doc-biblioref" onclick="">Nhancololo et al., 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Oliver; Webster, 2014</a>)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> A Formalização de G. Matheron (Década de 1960):</p>
+</div>
+<ul>
+<li class="fragment"><p><a href="https://en.wikipedia.org/wiki/Georges_Matheron">Georges Matheron</a> (1960s) sistematizou as ideias de D.G. Krige na <strong>Teoria das Variáveis Regionalizadas</strong>.</p></li>
+<li class="fragment"><p>G. Matheron mostrou que fenômenos naturais combinam dependência espacial e aleatoriedade local, formalizando assim Geoestatística <span class="citation" data-cites="matheron1963principles cressie1990origins">(<a href="#/references" role="doc-biblioref" onclick="">Cressie, 1990</a>; <a href="#/references" role="doc-biblioref" onclick="">Matheron, 1963</a>)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p><strong>Definição:</strong> A Geoestatística modela e prediz fenômenos contínuos, onde a variável <span class="math inline">\(Y(\mathbf{s})\)</span> é observada apenas num conjunto finito de locais <span class="math inline">\(\{\mathbf{s}_1, \dots, \mathbf{s}_n\}\)</span> <span class="citation" data-cites="myers1994spatial cressie2022spatial">(<a href="#/references" role="doc-biblioref" onclick="">Cressie; Moores, 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Myers, 1994</a>)</span>.</p></li>
+<li class="fragment"><p><strong>Objetivo:</strong> Utilizar a estrutura de dependência espacial para inferir o comportamento da variável em locais não medidos.</p></li>
+<li class="fragment"><p><strong>Expansão:</strong> A robustez preditiva consolidou a disciplina além da mineração, abrangendo hidrologia, meteorologia e epidemiologia <span class="citation" data-cites="yamamoto2013geoestatistica">(<a href="#/references" role="doc-biblioref" onclick="">Yamamoto; Landim, 2013</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="intuição-visual-ruído-vs.-estrutura" class="slide level2">
+<h2>Intuição Visual: Ruído vs.&nbsp;Estrutura</h2>
+<div id="fig-krige-intro-slide" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krige-intro-slide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krige-intro-slide" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krige-intro-slide-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krige-intro-slide-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krige-intro-slide-1.png" data-ref-parent="fig-krige-intro-slide" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krige-intro-slide-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Estatística Clássica
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krige-intro-slide" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krige-intro-slide-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krige-intro-slide-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krige-intro-slide-2.png" data-ref-parent="fig-krige-intro-slide" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krige-intro-slide-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Geoestatística
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krige-intro-slide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Comparação: Ruído Branco (Independente) vs.&nbsp;Continuidade Espacial.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="fundamentos-teóricos" class="title-slide slide level1 center">
+<h1>Fundamentos teóricos</h1>
+
+</section>
+<section class="slide level2">
+
+<ul>
+<li><strong>Notação usada:</strong> <span class="math inline">\(y(\mathbf{s})\)</span> representa o valor observado (realização física), enquanto <span class="math inline">\(Y(\mathbf{s})\)</span> denota a variável aleatória (processo estocástico modelado).</li>
+</ul>
+</section>
+<section id="variável-regionalizada" class="slide level2">
+<h2>Variável regionalizada</h2>
+<ul>
+<li class="fragment"><p>Função numérica <span class="math inline">\(f(\mathbf{s})\)</span> que descreve a distribuição espacial de uma grandeza física (ex: teor de ouro, pH do solo) num domínio <span class="math inline">\(D^{G}\)</span>.</p></li>
+<li class="fragment"><p>Possui um aspecto estruturado (tendência) e um aspecto aleatório (irregularidade local) <span class="citation" data-cites="matheron1971theory">(<a href="#/references" role="doc-biblioref" onclick="">Matheron, 1971</a>)</span>.</p></li>
+<li class="fragment"><p>As variáveis regionalizadas são tratadas como realizações de um campo aleatório <span class="math inline">\(\{Y(s) : s \in D^{G}\}\)</span>, onde <span class="math inline">\(s\)</span> é um vetor de coordenadas em <span class="math inline">\(\mathbb{R}^d\)</span> <span class="citation" data-cites="cressie1991geostatistical">(<a href="#/references" role="doc-biblioref" onclick="">Cressie, 1991</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="processo-estocástico-espacial" class="slide level2">
+<h2>Processo estocástico espacial</h2>
+<ul>
+<li class="fragment"><p>Coleção de variáveis aleatórias <span class="math inline">\(\{Y(\mathbf{s}) : \mathbf{s} \in D^{G}\}\)</span> num domínio contínuo. O objetivo é reconstruir a lei de probabilidade a partir de observações finitas <span class="citation" data-cites="cressie1993statistics">(<a href="#/references" role="doc-biblioref" onclick="">Cressie, 1993</a>)</span>.</p></li>
+<li class="fragment"><p>Diferente de séries temporais (passado <span class="math inline">\(\to\)</span> futuro), o índice espacial <span class="math inline">\(\mathbf{s}\)</span> não possui ordenação natural em <span class="math inline">\(d \ge 2\)</span>, complexificando a modelagem da dependência <span class="citation" data-cites="cressie2022spatial">(<a href="#/references" role="doc-biblioref" onclick="">Cressie; Moores, 2022</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="decomposição-da-variável-ymathbfs" class="slide level2">
+<h2>Decomposição da variável <span class="math inline">\(Y(\mathbf{s})\)</span></h2>
+<div class="fragment">
+<p>Para tornar o processo estocástico tratável, decompomos a variável aleatória <span class="math inline">\(Y(\mathbf{s})\)</span> em componentes que explicam diferentes escalas de variação.</p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Decomposição simples:</p>
+<p><span class="math display">\[Y(\mathbf{s}) = \mu(\mathbf{s}) + \delta(\mathbf{s})\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\mu(\mathbf{s})\)</span>: Tendência (Trend/Drift). Variação sistemática de larga escala (função das coordenadas ou covariáveis).</p></li>
+<li class="fragment"><p><span class="math inline">\(\delta(\mathbf{s})\)</span>: Erro Estocástico. Captura a dependência espacial (correlação) com média zero.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Decomposição Estrutural Completa:</p>
+<p>Expande o termo de erro para distinguir variabilidade natural de erro humano <span class="citation" data-cites="cressie1991geostatistical diggle1998model">(<a href="#/references" role="doc-biblioref" onclick="">Cressie, 1991</a>; <a href="#/references" role="doc-biblioref" onclick="">Diggle; Tawn; Moyeed, 1998</a>)</span>:</p>
+<p><span class="math display">\[Y(\mathbf{s}) = \mu(\mathbf{s}) + W(\mathbf{s}) + \eta(\mathbf{s}) + \epsilon(\mathbf{s})\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\mu(\mathbf{s})\)</span>: Componente determinística (ex: gradiente de temperatura/latitude). Pode ser modelada via Krigagem (simples, ordinária, universal ou com deriva Externa).</p></li>
+<li class="fragment"><p><span class="math inline">\(W(\mathbf{s})\)</span>: Sinal espacial (<span class="math inline">\(L_2\)</span>-contínuo). A estrutura de dependência observável na escala da amostragem.</p></li>
+<li class="fragment"><p><span class="math inline">\(\eta(\mathbf{s})\)</span>: Variação de microescala. Variabilidade intrínseca do fenômeno em distâncias menores que a amostragem (ex: variação dentro de uma pepita).</p></li>
+<li class="fragment"><p><span class="math inline">\(\epsilon(\mathbf{s})\)</span>: Ruído branco puro. Erro de medição ou laboratorial, sem realidade no fenômeno natural.</p></li>
+<li class="fragment"><p>A soma das variâncias de microescala e erro (<span class="math inline">\(\eta(\mathbf{s}) + \eta(\mathbf{s})\)</span>) constitui a descontinuidade na origem do variograma ( efeito Pepita <span class="math inline">\(c_0\)</span>).</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div id="fig-decomposicao" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-decomposicao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display column-page quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-decomposicao" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-decomposicao-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-decomposicao-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-decomposicao-1.png" data-ref-parent="fig-decomposicao" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-decomposicao-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Fenômeno observado: <span class="math inline">\(Y(s)\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-page quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-decomposicao" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-decomposicao-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-decomposicao-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-decomposicao-2.png" data-ref-parent="fig-decomposicao" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-decomposicao-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Tendência global: <span class="math inline">\(\mu(s)\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display column-page quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-decomposicao" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-decomposicao-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-decomposicao-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-decomposicao-3.png" data-ref-parent="fig-decomposicao" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-decomposicao-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Resíduo estocástico: <span class="math inline">\(\delta(s)\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decomposicao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Decomposição de uma variável regionalizada: Tendência global + resíduo estocástico.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="estacionariedade-e-inferência-estatística" class="slide level2">
+<h2>Estacionariedade e inferência estatística</h2>
+<ul>
+<li class="fragment">A unicidade da realização <span class="math inline">\(\{y(\mathbf{s})\}\)</span> (impossibilidade de repetição do processo natural) impede o cálculo direto da média</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\mu(\mathbf{s})=E[Y(\mathbf{s})] = \int_{-\infty}^{+\infty} y \cdot f(y; \mathbf{s}) \, dy\:, \]</span></p>
+</div>
+<div class="fragment">
+<p>e variância</p>
+<p><span class="math display">\[\sigma^2(\mathbf{s}) = \text{Var}(Y(\mathbf{s})) = E\left[(Y(\mathbf{s}) - \mu(\mathbf{s}))^2\right], \]</span></p>
+<p>em cada local <span class="math inline">\(\mathbf{s}\)</span> <span class="citation" data-cites="cressie1993statistics">(<a href="#/references" role="doc-biblioref" onclick="">Cressie, 1993</a>)</span>.</p>
+</div>
+<div class="fragment">
+<ul>
+<li>Para viabilizar a inferência estatística (i.e., estimar os parâmetros do processo a partir de uma única realização), é imperativo invocar a hipótese de estacionariedade (<strong>Ver <a href="Aula01.html">aula 01</a></strong> ).</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Existem dois níveis principais de estacionariedade utilizados na modelação geoestatística <a href="Aula01.html">aula 01</a>:</p>
+<ul>
+<li class="fragment"><p><strong>Estacionaridade de <span class="math inline">\(2^a\)</span> ordem</strong>:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(E[Y(\mathbf{s})] = \mu, \forall \mathbf{s} \in D^G\)</span>.</p></li>
+<li class="fragment"><p><span class="math inline">\(Cov(Y(\mathbf{s}), Y(\mathbf{s}+\mathbf{h})) = E[(Y(\mathbf{s}) - \mu)(Y(\mathbf{s}+\mathbf{h}) - \mu)] = C(\mathbf{h})\)</span></p></li>
+<li class="fragment"><p>Se o vetor de separação é nulo (<span class="math inline">\(\mathbf{h} = \mathbf{0}\)</span>), temos: <span class="math inline">\(Cov(Y(\mathbf{s}), Y(\mathbf{s+0}))=Var(Y(\mathbf{s})) = C(\mathbf{0}) = \sigma^2\)</span></p></li>
+<li class="fragment"><p>Esta relação (<span class="math inline">\(C(\mathbf{0}) = \sigma^2\)</span>) estabelece que o “patamar” máximo de variabilidade do processo é fixo e conhecido a priori.</p></li>
+<li class="fragment"><p>Se <span class="math inline">\(\sigma^2 \uparrow\)</span> indefinidamente com a área, a condição <span class="math inline">\(C(\mathbf{0}) &lt; \infty\)</span> é violada, e a estacionariedade de segunda ordem não pode ser assumida, exigindo a adoção da hipótese intrínseca.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="estacionariedade-intrínseca" class="slide level2">
+<h2>Estacionariedade intrínseca</h2>
+<p><span class="math display">\[
+\begin{aligned}
+E[Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})] &amp;= 0 \\
+Var(Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})) &amp;= 2\gamma(\mathbf{h})
+\end{aligned}
+\]</span></p>
+<ul>
+<li class="fragment">A função <span class="math inline">\(2\gamma(\mathbf{h})\)</span> é denominada variograma, e <span class="math inline">\(\gamma(\mathbf{h})\)</span> semivariograma.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="relação-variograma-e-covariograma" class="title-slide slide level1 center">
+<h1>Relação variograma e covariograma</h1>
+
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{alignedat}{2}
+\begin{aligned}
+&amp;Var(Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})) = 2\gamma(\mathbf{h})\\
+2\gamma(\mathbf{h}) &amp;= Var(Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})) \\
+&amp;= E\left[ \left( \{Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})\} - E[Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s})] \right)^2 \right] \\
+&amp;= E\left[ \left( Y(\mathbf{s}+\mathbf{h}) - Y(\mathbf{s}) \right)^2 \right]\\
+&amp;= E\left[ \left( \{Y(\mathbf{s}+\mathbf{h}) - \mu\} - \{Y(\mathbf{s}) - \mu\} \right)^2 \right]\\
+&amp;= E\left[ (Y(\mathbf{s}+\mathbf{h}) - \mu)^2 - 2(Y(\mathbf{s}+\mathbf{h}) - \mu)(Y(\mathbf{s}) - \mu) + (Y(\mathbf{s}) - \mu)^2 \right] \\
+&amp;= E[(Y(\mathbf{s}+\mathbf{h}) - \mu)^2] - 2E[(Y(\mathbf{s}+\mathbf{h}) - \mu)(Y(\mathbf{s}) - \mu)] + E[(Y(\mathbf{s}) - \mu)^2]  \\
+&amp;= Var(Y(\mathbf{s}+\mathbf{h})) - 2Cov(Y(\mathbf{s}+\mathbf{h}), Y(\mathbf{s})) + Var(Y(\mathbf{s})) \\
+&amp;= C(0) - 2C(\mathbf{h}) + C(0) \\
+&amp;= 2(C(0) - C(\mathbf{h}))\\
+\Downarrow\\
+\gamma(\mathbf{h})&amp;= C(0) - C(\mathbf{h})
+\end{aligned}
+\end{alignedat}\]</span>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(C(\mathbf{h})\)</span> <span class="math inline">\(\downarrow\)</span> com <span class="math inline">\(\mathbf{h}\)</span>, enquanto <span class="math inline">\(\gamma(\mathbf{h})\)</span> <span class="math inline">\(\uparrow\)</span> com <span class="math inline">\(\mathbf{h}\)</span>.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-cov-vs-vario-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-cov-vs-vario"><p class="caption">
+Figura&nbsp;3: Covariância vs.&nbsp;Semivariograma em Processo Estacionário.
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="sec-variograma" class="title-slide slide level1 center">
+<h1>Variograma e funções de covariância</h1>
+
+</section>
+<section id="função-de-covariância-cmathbfh" class="slide level2">
+<h2>Função de Covariância <span class="math inline">\(C(\mathbf{h})\)</span></h2>
+<div class="fragment">
+<ul>
+<li><p>Quantifica a covariância linear entre <span class="math inline">\(Y(\mathbf{s})\)</span> e <span class="math inline">\(Y(\mathbf{s} + \mathbf{h})\)</span>. Sob estacionariedade de segunda ordem: <span class="math inline">\(C(\mathbf{h}) = E[(Y(\mathbf{s}) - \mu)(Y(\mathbf{s} + \mathbf{h}) - \mu)]\)</span></p>
+<ul>
+<li><p><span class="math inline">\(C(\mathbf{h}) = C(-\mathbf{h})\)</span>.</p></li>
+<li><p><span class="math inline">\(C(\mathbf{0}) = \sigma^2\)</span> (Variância a priori).</p></li>
+<li><p>Assume que a variância global é finita e constante.</p></li>
+<li><p>Não pode ser definida para processos com variância infinita (ex: movimento Browniano, onde a dispersão cresce com o domínio <span class="math inline">\(|D| \to \infty\)</span>).</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="o-variograma-2gammamathbfh" class="slide level2">
+<h2>O Variograma <span class="math inline">\(2\gamma(\mathbf{h})\)</span></h2>
+<div class="fragment">
+<p>Para lidar com fenômenos onde a variância pode não ser finita, Matheron introduziu a Hipótese Intrínseca, focada na estacionariedade dos incrementos.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[2\gamma(\mathbf{h}) = Var(Y(\mathbf{s} + \mathbf{h}) - Y(\mathbf{s})) = E[(Y(\mathbf{s} + \mathbf{h}) - Y(\mathbf{s}))^2]\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p>O Semivariograma é definido como <span class="math inline">\(\gamma(\mathbf{h})\)</span> (metade do variograma).</p></li>
+<li class="fragment"><p>É mais robusto que a covariância, pois os incrementos permanecem finitos mesmo se a variância global divergir.</p></li>
+<li class="fragment"><p>Se a variância for finita (2ª ordem), existe a relação: <span class="math inline">\(\gamma(\mathbf{h}) = C(0) - C(\mathbf{h})\)</span>.</p></li>
+</ul>
+</section>
+<section id="elementos-do-semivariograma" class="slide level2">
+<h2>Elementos do semivariograma</h2>
+<p>Para a modelagem teórica, é crucial identificar os parâmetros que condicionam a predição espacial:</p>
+<ul>
+<li class="fragment"><p><strong>Alcance (Range, <span class="math inline">\(a\)</span>)</strong>: Distância <span class="math inline">\(\|\mathbf{h}\|\)</span> onde a correlação espacial se torna desprezível.</p>
+<ul>
+<li class="fragment"><p>Pontos separados por distâncias <span class="math inline">\(\ge a\)</span> são estatisticamente independentes.</p></li>
+<li class="fragment"><p>Define a malha de amostragem necessária.</p></li>
+</ul></li>
+<li class="fragment"><p>Efeito Pepita (Nugget, <span class="math inline">\(C_0\)</span>): Descontinuidade na origem (<span class="math inline">\(\gamma(\mathbf{0}) \to C_0\)</span>).</p>
+<ul>
+<li class="fragment">Soma da variabilidade de microescala (<span class="math inline">\(\eta\)</span>) e erro de medição (<span class="math inline">\(\epsilon\)</span>): <span class="math inline">\(C_0 = \text{Var}(\eta(\mathbf{s})) + \text{Var}(\epsilon(\mathbf{s}))\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p><strong>Contribuição (Partial Sill, <span class="math inline">\(C\)</span>)</strong>: Variância explicada pela estrutura espacial.</p>
+<ul>
+<li class="fragment"><p>Diferença entre o Patamar e o Efeito Pepita.</p></li>
+<li class="fragment"><p>Quanto maior <span class="math inline">\(C\)</span> em relação a <span class="math inline">\(C_0\)</span>, mais forte é a continuidade espacial.</p></li>
+</ul></li>
+<li class="fragment"><p><strong>Patamar (Sill, <span class="math inline">\(C_0 + C\)</span>):</strong> Valor assintótico onde a função estabiliza.</p>
+<ul>
+<li class="fragment"><p>Teoricamente igual à variância total do processo (<span class="math inline">\(\sigma^2 = C(\mathbf{0})\)</span>).</p></li>
+<li class="fragment"><p><span class="math inline">\(\text{Patamar} = \text{Pepita} + \text{Contribuição}\)</span>.</p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>Se o variograma não estabilizar, o processo pode não ter variância finita ou conter uma tendência (drift) não removida.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-variograma-teorico-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-variograma-teorico"><p class="caption">
+Figura&nbsp;4: Elementos do Semivariograma: Alcance, patamar, efeito pepita e contribuição.
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="estimadores-do-variograma" class="title-slide slide level1 center">
+<h1>Estimadores do variograma</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p>A definição teórica <span class="math inline">\(2\gamma(\mathbf{h})\)</span> pressupõe o conhecimento da distribuição conjunta do processo.</p>
+</div>
+<div class="fragment">
+<p>Dispomos apenas de uma única realização finita <span class="math inline">\(\mathbf{y} = \{y(\mathbf{s}_1), \dots, y(\mathbf{s}_n)\}\)</span>.</p>
+</div>
+<ul>
+<li class="fragment"><p>A função teórica é desconhecida e deve ser estimada empiricamente.</p></li>
+<li class="fragment"><p>A qualidade do variograma experimental é crítica, pois alimenta o modelo de ajuste para a Krigagem.</p></li>
+<li class="fragment"><p>Existem diferentes estimadores para lidar com a qualidade dos dados (com e sem outliers).</p></li>
+</ul>
+</section>
+<section id="estimador-clássico-matheron" class="slide level2">
+<h2>Estimador clássico (Matheron)</h2>
+<div class="fragment">
+<ul>
+<li>Proposto por <span class="citation" data-cites="matheron1963principles">Matheron (<a href="#/references" role="doc-biblioref" onclick="">1963</a>)</span>, baseia-se no método dos momentos (média dos quadrados das diferenças):</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\hat{\gamma}_{M}(\mathbf{h}) = \frac{1}{2|N(\mathbf{h})|} \sum_{(\mathbf{s}_i, \mathbf{s}_j) \in N(\mathbf{h})} (y(\mathbf{s}_i) - y(\mathbf{s}_j))^2\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(N(\mathbf{h})\)</span>: Conjunto de pares separados pelo vetor <span class="math inline">\(\mathbf{h}\)</span>.</p></li>
+<li class="fragment"><p><span class="math inline">\(|N(\mathbf{h})|\)</span>: Número de pares.</p></li>
+<li class="fragment"><p>É sensível a outliers. Como as diferenças são elevadas ao quadrado, um único erro grosseiro pode inflar a variância estimada.</p></li>
+</ul>
+</section>
+<section id="estimador-robusto-cressie-hawkins" class="slide level2">
+<h2>Estimador Robusto (Cressie-Hawkins)</h2>
+<div class="fragment">
+<p>Desenvolvido por <span class="citation" data-cites="cressie1980robust">Cressie; Hawkins (<a href="#/references" role="doc-biblioref" onclick="">1980</a>)</span> para mitigar o impacto de contaminação nos dados e distribuições de cauda longa.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\hat{\gamma}_{CH}(\mathbf{h}) = \frac{\left( \frac{1}{|N(\mathbf{h})|} \sum_{(\mathbf{s}_i, \mathbf{s}_j) \in N(\mathbf{h})} |y(\mathbf{s}_i) - y(\mathbf{s}_j)|^{1/2} \right)^4}{0.457 + \frac{0.494}{|N(\mathbf{h})|}}\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p>Utiliza a raiz quadrada das diferenças para suavizar extremos.</p></li>
+<li class="fragment"><p>O denominador atua como fator de correção de viés para amostras finitas.</p></li>
+<li class="fragment"><p>Recomendado quando há suspeita de não-normalidade severa ou erros de medição.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Estimadores do variograma</a></li><li><a href="#tabset-2-2">Cálculo do variograma</a></li><li><a href="#tabset-2-3">Tipos de variograma</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[using unconditional Gaussian simulation]</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-estimadores-comparacao" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-estimadores-comparacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-estimadores-comparacao-1.png" width="643">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-estimadores-comparacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Comparação de Robustez: O estimador de Matheron (laranja) é sensível aos outliers, superestimando a variância. O estimador de Cressie (azul) ignora a contaminação e ajusta-se quase perfeitamente ao Modelo Verdadeiro (tracejado).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-lags-concept" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-lags-concept-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-lags-concept-1.png" width="643">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lags-concept-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Esquematização do cálculo do Variograma Experimental: Os pontos observados (y) não estão a distâncias exatas, pelo que são agrupados em anéis concêntricos (Lags). Todos os pontos na área azul contribuem para o cálculo da variância média daquele Lag específico.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div id="fig-variograma-experimental" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-variograma-experimental-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-variograma-experimental" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-variograma-experimental-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-variograma-experimental-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-variograma-experimental-1.png" data-ref-parent="fig-variograma-experimental" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-variograma-experimental-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variograma Cloud (Bruto)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-variograma-experimental" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-variograma-experimental-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-variograma-experimental-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-variograma-experimental-2.png" data-ref-parent="fig-variograma-experimental" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-variograma-experimental-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variograma Experimental (Médias)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variograma-experimental-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Cálculo do Variograma Experimental: Nuvem (Cloud) vs.&nbsp;Experimental (Binned)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modelagem-do-variograma" class="title-slide slide level1 center">
+<h1>Modelagem do variograma</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p>O variograma experimental fornece apenas estimativas pontuais discretas <span class="math inline">\(\hat{\gamma}(\mathbf{h}_k)\)</span>.</p>
+</div>
+<div class="fragment">
+<p>A Krigagem exige o valor de <span class="math inline">\(\gamma(\mathbf{h})\)</span> para qualquer distância <span class="math inline">\(\mathbf{h}\)</span> no domínio.</p>
+</div>
+<ul>
+<li class="fragment"><p>Por que não interpolar? Uma simples ligação de pontos (splines/linear) não garante que a variância de estimativa seja não-negativa (<span class="math inline">\(\sigma_E^2 \ge 0\)</span>).</p></li>
+<li class="fragment"><p>A função deve ser condicionalmente negativa definida (para o variograma) ou positiva definida (para covariância) <span class="citation" data-cites="matheron1971theory">(<a href="#/references" role="doc-biblioref" onclick="">Matheron, 1971</a>)</span>.</p></li>
+<li class="fragment"><p><strong>A Solução:</strong> Ajustar um modelo teórico paramétrico <span class="math inline">\(\gamma(\mathbf{h}; \boldsymbol{\theta})\)</span> onde estimamos <span class="math inline">\(\boldsymbol{\theta} = (C_0, C, a)\)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Modelo esférico</a></li><li><a href="#tabset-3-2">Modelo exponencial</a></li><li><a href="#tabset-3-3">Modelo gaussiano</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="fragment">
+<p>É o modelo mais intuitivo. Descreve fenômenos com uma transição clara entre dependência e independência.</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Comportamento:</strong> Crescimento quase linear na origem.</p></li>
+<li class="fragment"><p><strong>Alcance:</strong> Atinge o patamar exatamente na distância <span class="math inline">\(a\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\gamma(h) = \begin{cases} C_0 + C \left( \frac{3h}{2a} - \frac{1}{2}\left(\frac{h}{a}\right)^3 \right) &amp; \text{se } 0 &lt; h \le a \\ C_0 + C &amp; \text{se } h &gt; a \end{cases}\]</span></p>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="fragment">
+<p>Descreve continuidade mais suave, comum em fenômenos ambientais (ex: dispersão de poluentes).</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Comportamento:</strong> Crescimento rápido na origem, mas assintótico.</p></li>
+<li class="fragment"><p><strong>Alcance Prático (<span class="math inline">\(a'\)</span>):</strong> Nunca atinge o patamar matematicamente. O parâmetro <span class="math inline">\(a\)</span> é apenas uma escala.</p></li>
+<li class="fragment"><p>Define-se o alcance prático como a distância onde atinge 95% do patamar: <span class="math inline">\(a' \approx 3a\)</span></p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\gamma(h) = C_0 + C(1 - \exp(-h/a))\]</span></p>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="fragment">
+<p>Representa fenômenos extremamente regulares e infinitamente diferenciáveis.</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Comportamento:</strong> Parabólico na origem (<span class="math inline">\(h^2\)</span>). Variação muito suave a curtas distâncias.</p></li>
+<li class="fragment"><p><strong>Alcance prático:</strong> Assintótico. <span class="math inline">\(a' \approx \sqrt{3}a\)</span>.</p></li>
+<li class="fragment"><p><strong>Alerta crítico:</strong> Usar este modelo sem efeito pepita (<span class="math inline">\(C_0 = 0\)</span>) causa instabilidade numérica (matriz singular) e artefatos na predição <span class="citation" data-cites="wackernagel2003multivariate">(<a href="#/references" role="doc-biblioref" onclick="">Wackernagel, 2003</a>)</span>.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\gamma(h) = C_0 + C(1 - \exp(-h^2/a^2))\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-modelos-teoricos-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-modelos-teoricos"><p class="caption">
+Figura&nbsp;8: Comparação dos Modelos Teóricos: O Esférico (linear na origem) atinge o patamar abruptamente. O Exponencial sobe rápido mas estabiliza lentamente (assintótico). O Gaussiano (parabólico na origem) representa fenômenos muito suaves.
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="outros-modelos-a-família-matérn" class="title-slide slide level1 center">
+<h1>Outros modelos: a família Matérn</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p>Por que escolher a família Matérn?</p>
+<p><span class="citation" data-cites="guttorp2006studies">Guttorp; Gneiting (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span> argumentam que esta família deve ser preferida por unificar as abordagens anteriores.</p>
+</div>
+<ul>
+<li class="fragment"><p>Modelos clássicos impõem uma suavidade fixa (Exponencial é rugoso, Gaussiano é muito suave).</p></li>
+<li class="fragment"><p>Introdução de um parâmetro de forma <span class="math inline">\(\nu\)</span> (suavidade).</p></li>
+<li class="fragment"><p>O modelo permite que os próprios dados ditem o grau de diferenciabilidade do campo aleatório <span class="math inline">\(Y(\mathbf{s})\)</span> <span class="citation" data-cites="sahu2022bayesian">(<a href="#/references" role="doc-biblioref" onclick="">Sahu, 2022</a>)</span>.</p></li>
+<li class="fragment"><p>A função transita entre as formas exponencial e gaussiana de acordo com <span class="math inline">\(\nu\)</span>:</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><span class="math display">\[\gamma(h) = C_0 + C \left[ 1 - \frac{1}{2^{\nu-1}\Gamma(\nu)} \left(\frac{2\sqrt{\nu} \cdot h}{a}\right)^\nu K_\nu\left(\frac{2\sqrt{\nu} \cdot h}{a}\right) \right]\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(C\)</span> (Contribuição): Variância estrutural.</p></li>
+<li class="fragment"><p><span class="math inline">\(a\)</span> (Alcance): Parâmetro de escala da distância.</p></li>
+<li class="fragment"><p><span class="math inline">\(\nu\)</span> (Suavidade): Parâmetro crítico.</p>
+<ul>
+<li class="fragment"><p>Se <span class="math inline">\(\nu = 0.5 \to\)</span> Modelo Exponencial.</p></li>
+<li class="fragment"><p>Se <span class="math inline">\(\nu \to \infty \to\)</span> Modelo Gaussiano.</p></li>
+</ul></li>
+<li class="fragment"><p><span class="math inline">\(K_\nu(\cdot)\)</span>: Função de Bessel modificada de 2ª espécie (garante validade multidimensional).</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-matern-comparacao-1.png" width="1344" class="r-stretch quarto-figure-center" id="fig-matern-comparacao"><p class="caption">
+Figura&nbsp;9: A Família Matérn e a Flexibilidade de Suavidade (nu). O parâmetro nu controla o comportamento na origem: nu=0.5 recupera o modelo Exponencial, enquanto nu elevados aproximam-se do Gaussiano.
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="anisotropia" class="title-slide slide level1 center">
+<h1>Anisotropia</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<p><strong>Hipótese de Isotropia (Ideal):</strong> A dependência espacial depende apenas da distância <span class="math inline">\(\|\mathbf{h}\|\)</span>. As isolinhas do variograma formam círculos.</p>
+</div>
+<div class="fragment">
+<p><strong>Realidade (Anisotropia):</strong> Processos geológicos (sedimentação, fluxo de água, vento) criam direções preferenciais de continuidade.</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Processo anisotropico</strong></p>
+<ul>
+<li class="fragment"><p><strong>Def:</strong> A variabilidade espacial muda com a direção.</p></li>
+<li class="fragment"><p><strong>Modelagem:</strong> Não requer novas funções, mas sim transformações lineares do sistema de coordenadas (Mapeamento Anisotrópico <span class="math inline">\(\to\)</span> Isotrópico).</p></li>
+<li class="fragment"><p><strong>Tipos:</strong> Geométrica, Zonal e Mista <span class="citation" data-cites="yamamoto2013geoestatistica">(<a href="#/references" role="doc-biblioref" onclick="">Yamamoto; Landim, 2013</a>)</span>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Anisotropia Geométrica</a></li><li><a href="#tabset-4-2">Anisotropia Zonal</a></li><li><a href="#tabset-4-3">Anisotropia mista</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="fragment">
+<p>Ocorre quando o Alcance (<span class="math inline">\(a\)</span>) varia com a direção, mas o Patamar é constante.</p>
+</div>
+<ul>
+<li class="fragment"><p>Isolinhas: Formam elipses.</p></li>
+<li class="fragment"><p>Parâmetros:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(a_{max}\)</span>: Alcance na direção de maior continuidade.</p></li>
+<li class="fragment"><p><span class="math inline">\(a_{min}\)</span>: Alcance na direção de menor continuidade.</p></li>
+<li class="fragment"><p><span class="math inline">\(\phi\)</span>: Ângulo (azimute) do eixo maior.</p></li>
+<li class="fragment"><p><span class="math inline">\(\lambda = a_{max} / a_{min}\)</span>: Razão de anisotropia.</p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>A transformação (<span class="math inline">\(\mathbf{h}' = \mathbf{A}\mathbf{h}\)</span>):</p></li>
+<li><p>Rotação (<span class="math inline">\(\mathbf{R}\)</span>): Alinha os eixos com a direção <span class="math inline">\(\phi\)</span>.</p></li>
+<li><p>Escalonamento (<span class="math inline">\(\mathbf{S}\)</span>): Comprime o eixo maior (<span class="math inline">\(1/\lambda\)</span>).</p></li>
+</ul>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="fragment">
+<p>Ocorre quando o Patamar (variância total) varia consoante a direção.</p>
+</div>
+<ul>
+<li class="fragment"><p>Desafia a hipótese de estacionariedade (covariância na origem não única).</p></li>
+<li class="fragment"><p>Variabilidade vertical muito superior à horizontal (ex: estratificação de solos).</p></li>
+<li class="fragment"><p>Estruturas Aninhadas <span class="citation" data-cites="journel1976mining">(<a href="#/references" role="doc-biblioref" onclick="">Journel; Huijbregts, 1976</a>)</span>.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\gamma(\mathbf{h}) = \gamma_{iso}(\|\mathbf{h}\|) + \gamma_{zonal}(|h_z|)\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\gamma_{zonal}\)</span> depende apenas da distância vertical.</p>
+<p>Na horizontal (<span class="math inline">\(h_z=0\)</span>), o patamar é menor.</p>
+<p>Reflete camadas onde propriedades persistem lateralmente por longas distâncias (alcance horizontal <span class="math inline">\(\to \infty\)</span>).</p>
+</div>
+</div>
+<div id="tabset-4-3">
+<div class="fragment">
+<p>Generalização para sistemas complexos com múltiplas escalas de variação.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-anisotropia-simulada-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-anisotropia-simulada"><p class="caption">
+Figura&nbsp;10: Tipos de Anisotropia. (A) Geométrica: mesmo patamar, alcances diferentes. (B) Zonal: alcances similares, patamares diferentes.
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="diagnóstico-da-anisotropia" class="title-slide slide level1 center">
+<h1>Diagnóstico da Anisotropia</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Para garantir a precisão da Krigagem, devemos diagnosticar a dependência direcional.</p>
+
+<img data-src="Aula03_files/figure-revealjs/unnamed-chunk-1-1.png" width="1920" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="ajuste-de-modelos-de-semivariograma" class="title-slide slide level1 center">
+<h1>Ajuste de modelos de semivariograma</h1>
+
+</section>
+<section class="slide level2">
+
+<p><strong>O Objetivo:</strong> estimar o vetor de parâmetros (<span class="math inline">\(\boldsymbol{\theta}=(c_0, C_0 + C, a, \nu)\)</span> do variograma teórico <span class="math inline">\((2\gamma(\mathbf{h};\boldsymbol{\theta}))\)</span>.</p>
+</section>
+<section id="métodos-de-ajuste" class="slide level2">
+<h2>Métodos de ajuste</h2>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Métodos baseados no variograma experimental</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Mínimos Quadrados Ponderados (WLS):</strong> Os estimadores do variograma têm variância heterocedástica. A variância do estimador cresce com o valor do próprio variograma.</p></li>
+<li class="fragment"><p><strong>Mínimos Quadrados Generalizados (GLSE):</strong> WLS assume que as estimativas em diferentes lags são independentes. Na realidade, <span class="math inline">\(\text{Cov}(\hat{\gamma}(\mathbf{h}_i), \hat{\gamma}(\mathbf{h}_j)) \neq 0\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Métodos baseados nos Dados:</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Máxima Verossimilhança (ML):</strong> Ajusta o modelo diretamente aos dados brutos <span class="math inline">\(\mathbf{y}\)</span>.</p></li>
+<li class="fragment"><p><strong>Máxima Verossimilhança Restrita (REML):</strong> ML subestima variância (viés) por assumir que <span class="math inline">\(\boldsymbol{\beta}\)</span> é conhecida, ignorando os g.l perdidos na sua estimação. REML corrige o viés.</p></li>
+<li class="fragment"><p>REML Robusto: Mitiga a influência de outliers na estimação (<strong>ver notas de aula</strong>).</p></li>
+</ul>
+</section>
+<section id="mínimos-quadrados-ponderados-wls" class="slide level2">
+<h2>Mínimos Quadrados Ponderados (WLS)</h2>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\hat{\gamma}_{M}(\mathbf{h}) &amp;= \frac{1}{2|N(\mathbf{h})|} \sum_{(\mathbf{s}_i, \mathbf{s}_j) \in N(\mathbf{h})} (y(\mathbf{s}_i) - y(\mathbf{s}_j))^2 \\
+D(\mathbf{h}) &amp;= Y(\mathbf{s} + \mathbf{h}) - Y(\mathbf{s}) \sim \mathcal{N}(0, 2\gamma(\mathbf{h})) \\
+\frac{D(\mathbf{h})}{\sqrt{2\gamma(\mathbf{h})}} &amp;\sim \mathcal{N}(0, 1) \implies \left( \frac{D(\mathbf{h})}{\sqrt{2\gamma(\mathbf{h})}} \right)^2 \sim \chi^2_1 \\
+[D(\mathbf{h})]^2 &amp;\sim 2\gamma(\mathbf{h}) \cdot \chi^2_1 \\
+\text{Sendo } \text{Var}(\chi^2_1) &amp;= 2: \\
+\text{Var}\left[ (Y(\mathbf{s}_i) - Y(\mathbf{s}_j))^2 \right] &amp;= \text{Var}\left[ 2\gamma(\mathbf{h}) \cdot \chi^2_1 \right] \\
+&amp;= [2\gamma(\mathbf{h})]^2 \cdot \text{Var}(\chi^2_1) = 4[\gamma(\mathbf{h})]^2 \cdot 2 = 8[\gamma(\mathbf{h})]^2
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p>Cont…</p>
+<span class="math display">\[\begin{aligned}
+\text{Var}[\hat{\gamma}(\mathbf{h})] &amp;= \text{Var}\left[ \frac{1}{2 N(\mathbf{h})} \sum_{i=1}^{N(\mathbf{h})} (Y(\mathbf{s}_i) - Y(\mathbf{s}_j))^2 \right] \\
+&amp;= \frac{1}{4 [N(\mathbf{h})]^2} \sum_{i=1}^{N(\mathbf{h})} \underbrace{\text{Var}\left[ (Y(\mathbf{s}_i) - Y(\mathbf{s}_j))^2 \right]}_{8[\gamma(\mathbf{h})]^2} \\
+&amp;= \frac{1}{4 [N(\mathbf{h})]^2} \cdot N(\mathbf{h}) \cdot 8[\gamma(\mathbf{h})]^2 = \frac{2[\gamma(\mathbf{h})]^2}{N(\mathbf{h})} \\
+w(\mathbf{h}) &amp;\propto \frac{1}{\text{Var}[\hat{\gamma}(\mathbf{h})]} = \frac{N(\mathbf{h})}{[\gamma(\mathbf{h}; \boldsymbol{\theta})]^2} \\
+\hat{\boldsymbol{\theta}}_{WLS} &amp;= \arg \min_{\boldsymbol{\theta}} \sum_{k=1}^{K} \frac{|N(\mathbf{h}_k)|}{[\gamma(\mathbf{h}_k; \boldsymbol{\theta})]^2} \left[ \hat{\gamma}(\mathbf{h}_k) - \gamma(\mathbf{h}_k; \boldsymbol{\theta}) \right]^2\\
+\hat{\boldsymbol{\theta}}_{WLS} &amp;= \arg \min_{\boldsymbol{\theta}} \sum_{k=1}^{K} w(\mathbf{h}_k) \left[ \hat{\gamma}(\mathbf{h}_k) - \gamma(\mathbf{h}_k; \boldsymbol{\theta}) \right]^2, \quad   w(\mathbf{h}_k) = \frac{|N(\mathbf{h}_k)|}{[\gamma(\mathbf{h}_k; \boldsymbol{\theta})]^2}
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p>Cont …</p>
+<ul>
+<li><p>Numerador <span class="math inline">\(|N(\mathbf{h})|\)</span>: Dá mais peso a lags com muitos pares (mais confiáveis).</p></li>
+<li><p>Denominador <span class="math inline">\([\gamma(\mathbf{h})]^2\)</span>: Penaliza fortemente erros em distâncias curtas (onde <span class="math inline">\(\gamma\)</span> é pequeno).</p></li>
+<li><p>Garante um ajuste preciso na origem, crucial para a estabilidade da Krigagem.</p></li>
+</ul>
+</section>
+<section id="mínimos-quadrados-generalizados-glse" class="slide level2">
+<h2>Mínimos Quadrados Generalizados (GLSE)</h2>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\hat{\gamma}_{M}(\mathbf{h}) &amp;= \frac{1}{2|N(\mathbf{h})|} \sum_{(\mathbf{s}_i, \mathbf{s}_j) \in N(\mathbf{h})} (y(\mathbf{s}_i) - y(\mathbf{s}_j))^2 \\
+\text{Seja } \mathbf{c}_{ij} &amp; \text{ tal que } \mathbf{c}_{ij}^\top \mathbf{y} = y(\mathbf{s}_i) - y(\mathbf{s}_j): \\
+(y(\mathbf{s}_i) - y(\mathbf{s}_j))^2 &amp;= (\mathbf{c}_{ij}^\top \mathbf{y})(\mathbf{c}_{ij}^\top \mathbf{y})^\top = \mathbf{y}^\top (\mathbf{c}_{ij} \mathbf{c}_{ij}^\top) \mathbf{y} \\
+\text{Defina } &amp; \mathbf{A}(\mathbf{h}) = \sum_{N(\mathbf{h})} \mathbf{c}_{ij} \mathbf{c}_{ij}^\top: \\
+2\hat{\gamma}(\mathbf{h}) &amp;= \frac{1}{|N(\mathbf{h})|} \mathbf{y}^\top \mathbf{A}(\mathbf{h}) \mathbf{y}\\
+\text{Seja } \mathbf{y} &amp;\sim \mathcal{N}(\mathbf{0}, \boldsymbol{\Sigma}_y). \text{ Pelo Teorema de Formas Quadráticas:} \\
+\text{Cov}(\mathbf{y}^\top \mathbf{A} \mathbf{y}, \mathbf{y}^\top \mathbf{B} \mathbf{y}) &amp;= 2 \text{tr}(\mathbf{A} \boldsymbol{\Sigma}_y \mathbf{B} \boldsymbol{\Sigma}_y) \\
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+{\boldsymbol{\Sigma}_{\hat{\gamma}}}_{uv} &amp;= \text{Cov}(2\hat{\gamma}(\mathbf{h}_u), 2\hat{\gamma}(\mathbf{h}_v)) \\
+&amp;= \text{Cov}\left( \frac{\mathbf{y}^\top \mathbf{A}(\mathbf{h}_u) \mathbf{y}}{|N(\mathbf{h}_u)|}, \frac{\mathbf{y}^\top \mathbf{A}(\mathbf{h}_v) \mathbf{y}}{|N(\mathbf{h}_v)|} \right) \\
+&amp;= \frac{1}{|N(\mathbf{h}_u)| |N(\mathbf{h}_v)|} \underbrace{\text{Cov}(\mathbf{y}^\top \mathbf{A}(\mathbf{h}_u) \mathbf{y}, \mathbf{y}^\top \mathbf{A}(\mathbf{h}_v) \mathbf{y})}_{2 \text{tr}\left( \mathbf{A}(\mathbf{h}_u) \boldsymbol{\Sigma}_y \mathbf{A}(\mathbf{h}_v) \boldsymbol{\Sigma}_y \right)} \\
+&amp;= \frac{2}{|N(\mathbf{h}_u)| |N(\mathbf{h}_v)|} \text{tr}\left( \mathbf{A}(\mathbf{h}_u) \boldsymbol{\Sigma}_y(\boldsymbol{\theta}) \mathbf{A}(\mathbf{h}_v) \boldsymbol{\Sigma}_y(\boldsymbol{\theta}) \right)\\
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p><strong>Construção do Sistema GLSE</strong></p>
+<ol type="1">
+<li><p>Monte a matriz de covariância <span class="math inline">\(\boldsymbol{\Sigma}_{\hat{\gamma}}(\boldsymbol{\theta}) \text{ de dimensão} K \times K \text{ usando os elementos } [\boldsymbol{\Sigma}_{\hat{\gamma}}]_{uv} \text{ calculados acima.}\)</span></p></li>
+<li><p>Defina <span class="math inline">\(\hat{\boldsymbol{\gamma}} = [\hat{\gamma}(\mathbf{h}_1) \dots \hat{\gamma}(\mathbf{h}_K)]^\top \quad \text{e} \quad \boldsymbol{\gamma}(\boldsymbol{\theta}) = [\gamma(\mathbf{h}_1; \boldsymbol{\theta}) \dots \gamma(\mathbf{h}_K; \boldsymbol{\theta})]^\top\)</span></p></li>
+<li><p><span class="math inline">\(\hat{\boldsymbol{\theta}}_{GLSE} = \arg \min_{\boldsymbol{\theta}} (\hat{\boldsymbol{\gamma}} - \boldsymbol{\gamma}(\boldsymbol{\theta}))^\top [\boldsymbol{\Sigma}_{\hat{\gamma}}(\boldsymbol{\theta})]^{-1} (\hat{\boldsymbol{\gamma}} - \boldsymbol{\gamma}(\boldsymbol{\theta}))\)</span></p></li>
+</ol>
+</section>
+<section id="máxima-verossimilhança" class="slide level2">
+<h2>Máxima verossimilhança</h2>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\mathbf{y} &amp;= \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\eta},\: \:\quad \boldsymbol{\eta} \sim \mathcal{N}(\mathbf{0}, \mathbf{V}(\boldsymbol{\theta})), \:  \mathbf{y} | \mathbf{X}\boldsymbol{\beta} \sim \mathcal{N}(\mathbf{X}\boldsymbol{\beta}, \mathbf{V}(\boldsymbol{\theta})) \\
+f(\mathbf{y} | \boldsymbol{\beta}, \boldsymbol{\theta}) &amp;= (2\pi)^{-n/2} |\mathbf{V}(\boldsymbol{\theta})|^{-1/2} \exp\left( -\frac{1}{2} (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\top \mathbf{V}(\boldsymbol{\theta})^{-1} (\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) \right) \\
+L(\boldsymbol{\beta}, \boldsymbol{\theta}) &amp;= \ln[f(\mathbf{y} | \boldsymbol{\beta}, \boldsymbol{\theta})] \\
+&amp;= -\frac{n}{2}\ln(2\pi) - \frac{1}{2}\ln|\mathbf{V}(\boldsymbol{\theta})| - \frac{1}{2}(\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^\top \mathbf{V}(\boldsymbol{\theta})^{-1} (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p>Cont …</p>
+<span class="math display">\[\begin{aligned}
+\text{Max. em relação a } \boldsymbol{\beta}: &amp; \quad \frac{\partial L}{\partial \boldsymbol{\beta}} = \mathbf{X}^\top \mathbf{V}^{-1} (\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = 0 \\
+\mathbf{X}^\top \mathbf{V}^{-1} \mathbf{y} &amp;= (\mathbf{X}^\top \mathbf{V}^{-1} \mathbf{X}) \boldsymbol{\beta} \\
+\hat{\boldsymbol{\beta}}_{GLS} &amp;= (\mathbf{X}^\top \mathbf{V}(\boldsymbol{\theta})^{-1} \mathbf{X})^{-1} \mathbf{X}^\top \mathbf{V}(\boldsymbol{\theta})^{-1} \mathbf{y} \\
+\mathbf{res} &amp;= \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS} \\
+L_{ML}(\boldsymbol{\theta}) &amp;= -\frac{n}{2}\ln(2\pi) - \frac{1}{2}\ln|\mathbf{V}(\boldsymbol{\theta})| - \frac{1}{2} \mathbf{res}^\top \mathbf{V}(\boldsymbol{\theta})^{-1} \mathbf{res} \\
+-2L_{ML}(\boldsymbol{\theta}) &amp;\propto \ln|\mathbf{V}(\boldsymbol{\theta})| + (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})^\top \mathbf{V}(\boldsymbol{\theta})^{-1} (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})
+\end{aligned}\]</span>
+</section>
+<section id="máxima-verossimilhança-restrita-reml" class="slide level2">
+<h2>Máxima Verossimilhança Restrita (REML)</h2>
+</section>
+<section class="slide level2">
+
+<p>Em <span class="math inline">\((\mathbf{y}\mid\mathbf{X}\boldsymbol{\beta}\sim\mathcal{N}(\mathbf{X}\boldsymbol{\beta},\mathbf{V}(\boldsymbol{\theta})))\)</span>, a tendência <span class="math inline">\((\mathbf{X}\boldsymbol{\beta})\)</span> introduz viés; elimina-se <span class="math inline">\((\boldsymbol{\beta})\)</span> usando contrastes (combinação linear das observações construída para eliminar certos efeitos) de erro <span class="math inline">\((\mathbf{w}=\mathbf{K}^\top\mathbf{y})\)</span>, com <span class="math inline">\((\mathbf{K}^\top\mathbf{X}=\mathbf{0})\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\small
+E[\mathbf{w}] &amp;= E[\mathbf{K}^\top (\mathbf{X}\boldsymbol{\beta} + \boldsymbol{\eta})] = \underbrace{\mathbf{K}^\top \mathbf{X}}_{\mathbf{0}} \boldsymbol{\beta} + \mathbf{K}^\top E[\boldsymbol{\eta}] = \mathbf{0} \\
+\text{Var}[\mathbf{w}] &amp;= \mathbf{K}^\top \text{Var}[\mathbf{y}] \mathbf{K} = \mathbf{K}^\top \mathbf{V}(\boldsymbol{\theta}) \mathbf{K}, \: \: \quad \mathbf{w} \sim \mathcal{N}(\mathbf{0}, \mathbf{K}^\top \mathbf{V}(\boldsymbol{\theta}) \mathbf{K}) \\
+L_{R}(\boldsymbol{\theta}) &amp;= -\frac{n-p}{2}\ln(2\pi) - \frac{1}{2}\ln|\mathbf{K}^\top \mathbf{V}\mathbf{K}| - \frac{1}{2}\mathbf{w}^\top (\mathbf{K}^\top \mathbf{V}\mathbf{K})^{-1} \mathbf{w} \\
+\text{Identidades:} &amp; \quad \ln|\mathbf{K}^\top \mathbf{V}\mathbf{K}| = \ln|\mathbf{V}| + \ln|\mathbf{X}^\top \mathbf{V}^{-1} \mathbf{X}| - \underbrace{\ln|\mathbf{X}^\top \mathbf{X}| - 2\ln|\mathbf{K}|}_{\text{Constante em relação a } \boldsymbol{\theta}} \\
+&amp; \quad \mathbf{w}^\top (\mathbf{K}^\top \mathbf{V}\mathbf{K})^{-1} \mathbf{w} = (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})^\top \mathbf{V}^{-1} (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS}) \\
+L_{REML}(\boldsymbol{\theta}) &amp;= \text{const} - \frac{1}{2} \left( \ln|\mathbf{V}| + \ln|\mathbf{X}^\top \mathbf{V}^{-1} \mathbf{X}| + (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})^\top \mathbf{V}^{-1} (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS}) \right) \\
+-2L_{REML}(\boldsymbol{\theta}) &amp;\propto \underbrace{\ln|\mathbf{V}(\boldsymbol{\theta})|}_{\text{Ajuste Covariância}} + \underbrace{(\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})^\top \mathbf{V}(\boldsymbol{\theta})^{-1} (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{GLS})}_{\text{Ajuste aos Resíduos}} + \underbrace{\ln|\mathbf{X}^\top \mathbf{V}(\boldsymbol{\theta})^{-1} \mathbf{X}|}_{\text{Penalidade de Complexidade}}
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Aula03_files/figure-revealjs/fig-ajuste-modelo-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-ajuste-modelo"><p class="caption">
+Figura&nbsp;11: Ajuste do modelo teórico sobre o experimental usando WLS
+</p></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="métodos-de-predição" class="title-slide slide level1 center">
+<h1>Métodos de Predição</h1>
+
+</section>
+<section class="slide level2">
+
+<p>A predição espacial visa estimar o valor da variável <span class="math inline">\(Y(\mathbf{s}_0)\)</span> num local não amostrado <span class="math inline">\(\mathbf{s}_0\)</span>, baseando-se nos vizinhos observados.</p>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Krigagem (BLUE): Melhor Estimador Linear Não Viciado.</p>
+</div>
+</section>
+<section id="krigagem-simples" class="slide level2">
+<h2>Krigagem Simples</h2>
+<ul>
+<li>Assume que <span class="math inline">\(E[Y(\mathbf{s})] = \mu\)</span> é conhecida e constante em todo o domínio <span class="citation" data-cites="journel1976mining">(<a href="#/references" role="doc-biblioref" onclick="">Journel; Huijbregts, 1976</a>)</span>. O estimador baseia-se nos resíduos em relação à média:</li>
+</ul>
+<span class="math display">\[\begin{aligned}
+\hat{Y}_{KS}(\mathbf{s}_0) &amp;= \mu + \sum_{i=1}^n \lambda_i (Y(\mathbf{s}_i) - \mu) \\
+E[\hat{Y}_{KS}(\mathbf{s}_0) - Y(\mathbf{s}_0)] &amp;= \mu + \sum_{i=1}^n \lambda_i E[Y(\mathbf{s}_i) - \mu] - E[Y(\mathbf{s}_0)] = 0 \\
+\sigma_E^2 &amp;= \text{Var}\left( \sum_{i=1}^n \lambda_i Y(\mathbf{s}_i) - Y(\mathbf{s}_0) \right) \\
+&amp;= \text{Var}\left( \sum_{i=1}^n \lambda_i Y(\mathbf{s}_i) \right) + \text{Var}(Y(\mathbf{s}_0)) - 2\text{Cov}\left( \sum_{i=1}^n \lambda_i Y(\mathbf{s}_i), Y(\mathbf{s}_0) \right) \\
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\sigma_E^2 &amp;= \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j C(\mathbf{s}_i, \mathbf{s}_j) + C(0) - 2 \sum_{i=1}^n \lambda_i C(\mathbf{s}_i, \mathbf{s}_0)\\
+\frac{\partial \sigma_E^2}{\partial \lambda_k} &amp;= \frac{\partial}{\partial \lambda_k} \left( \sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j C_{ij} - 2 \sum_{i=1}^n \lambda_i C_{i0} + C_{00} \right) \\
+&amp;= \left( \sum_{j=1}^n \lambda_j C_{kj} + \sum_{i=1}^n \lambda_i C_{ik} \right) - 2C_{k0} \\
+&amp;= 2 \sum_{j=1}^n \lambda_j C_{kj} - 2C_{k0} \\
+\text{Igualando a zero:} &amp; \\
+2 \sum_{j=1}^n \lambda_j C_{kj} - 2C_{k0} &amp;= 0 \implies \sum_{j=1}^n \lambda_j C_{kj} = C_{k0}, \quad \forall k=1,\dots,n \\
+\mathbf{\Sigma} \boldsymbol{\lambda} &amp;= \mathbf{c} \implies \boldsymbol{\lambda} = \mathbf{\Sigma}^{-1} \mathbf{c}
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<div id="fig-krigagem_simples" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krigagem_simples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_simples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem_simples-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_simples-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_simples-1.png" data-ref-parent="fig-krigagem_simples" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_simples-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Predição
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_simples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem_simples-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_simples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_simples-2.png" data-ref-parent="fig-krigagem_simples" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_simples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variância de krigagem
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krigagem_simples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;12: Krigagem simples
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="krigagem-ordinária-ko" class="slide level2">
+<h2>Krigagem Ordinária (KO)</h2>
+<ul>
+<li><p>Média <span class="math inline">\(E[Y(\mathbf{s})] = \mu\)</span> é constante mas desconhecida.</p></li>
+<li><p>O estimador é uma combinação linear direta: <span class="math inline">\(\hat{Y}_{KO}(\mathbf{s}_0) = \sum_{i=1}^n \lambda_i Y(\mathbf{s}_i)\)</span></p></li>
+</ul>
+<span class="math display">\[\begin{aligned}
+E[\hat{Y}_{KO} - Y_0] &amp;= \sum \lambda_i E[Y_i] - E[Y_0] = \mu \sum \lambda_i - \mu =\mu \left( \sum_{i=1}^n \lambda_i - 1 \right) = 0 \\
+\text{(Restrição)} &amp; \quad \sum_{i=1}^n \lambda_i = 1, \: \: \text{M. Lagrange:} = L(\boldsymbol{\lambda}, \nu) = \sigma_E^2 + 2\nu \left( \sum_{i=1}^n \lambda_i - 1 \right) \\
+&amp;= \sum_i \sum_j \lambda_i \lambda_j C_{ij} + C(0) - 2 \sum_i \lambda_i C_{i0} + 2\nu \left( \sum_i \lambda_i - 1 \right)\\
+\frac{\partial L}{\partial \lambda_k} &amp;= 2 \sum_{j=1}^n \lambda_j C_{kj} - 2 C_{k0} + 2\nu = 0 \implies \sum_{j=1}^n \lambda_j C_{kj} + \nu = C_{k0}
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p>Cont …</p>
+<span class="math display">\[\begin{aligned}
+\small
+\frac{\partial L}{\partial \nu} &amp;= 2 \left( \sum_{i=1}^n \lambda_i - 1 \right) = 0 \implies \sum_{i=1}^n \lambda_i = 1 \\
+\sigma_{KO}^2 &amp;= \sum_{i=1}^n \lambda_i \underbrace{\left( \sum_{j=1}^n \lambda_j C_{ij} \right)}_{C_{i0} - \nu} + C(0) - 2 \sum_{i=1}^n \lambda_i C_{i0} \\
+&amp;= \sum_{i=1}^n \lambda_i C_{i0} - \nu \underbrace{\sum_{i=1}^n \lambda_i}_{1} + C(0) - 2 \sum_{i=1}^n \lambda_i C_{i0} \\
+&amp;= C(0) - \sum_{i=1}^n \lambda_i C_{i0} - \nu \\
+&amp; \text{ ou } \sigma_{KO}^2  = \sum_{i=1}^n \lambda_i \gamma(\mathbf{s}_i - \mathbf{s}_0) + \nu
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<div id="fig-krigagem" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krigagem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem-1.png" data-ref-parent="fig-krigagem" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Predição
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem-2.png" data-ref-parent="fig-krigagem" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variância de krigagem
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krigagem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;13: Krigagem Ordinária
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="krigagem-universal-ku" class="slide level2">
+<h2>Krigagem Universal (KU)</h2>
+<ul>
+<li>A média não é constante, mas possui uma tendência (drift) determinística modelada usando coordenadas: <span class="math inline">\(\mu(\mathbf{s}) = \beta_0 + \beta_1 x + \beta_2 y\)</span>).</li>
+</ul>
+<span class="math display">\[\begin{aligned}
+\small
+\quad Y(\mathbf{s}) = \mu(\mathbf{s}) + \delta(\mathbf{s}), \: \: \mu(\mathbf{s}) &amp;= \sum_{l=0}^{L} a_l f_l(\mathbf{s}), \: f_0(\mathbf{s}) \equiv 1 , \:\: E[\delta(\mathbf{s})] = 0\\ \text{Cov}(\delta(\mathbf{s}_i), \delta(\mathbf{s}_j)) &amp;= C_{ij}\\
+E[\hat{Y} - Y_0] &amp;= \sum \lambda_i \mu(\mathbf{s}_i) - \mu(\mathbf{s}_0)= \sum_{l=0}^L a_l \left[ \sum_{i=1}^n \lambda_i f_l(\mathbf{s}_i) - f_l(\mathbf{s}_0) \right] = 0\\
+\text{restrição}: \sum_{i=1}^n \lambda_i f_l(\mathbf{s}_i) &amp;= f_l(\mathbf{s}_0)\\
+L(\boldsymbol{\lambda}, \boldsymbol{\nu}) &amp;= \sigma_E^2 - 2\sum_{l=0}^L \nu_l \left(\sum_{i=1}^n \lambda_i f_l(\mathbf{s}_i) - f_l(\mathbf{s}_0)\right)\\
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p>Cont …</p>
+<span class="math display">\[\begin{aligned}
+
+L(\boldsymbol{\lambda}, \boldsymbol{\nu})&amp;= \sum_{i=1}^n\sum_{j=1}^n \lambda_i\lambda_j C_{ij} - 2\sum_{i=1}^n \lambda_i C_{i0} + C_{00} - 2\sum_{l=0}^L \nu_l\left(\sum_{i=1}^n \lambda_i f_{il} - f_{0l}\right)\\
+\frac{\partial L}{\partial \lambda_k} &amp;= 2\sum_{j=1}^n \lambda_j C_{kj} - 2C_{k0} - 2\sum_{l=0}^L \nu_l f_{kl} = 0, \:\implies \sum_{j=1}^n \lambda_j C_{kj} - \sum_{l=0}^L \nu_l f_l(\mathbf{s}_k) = C_{k0} \\
+\frac{\partial L}{\partial \nu_l} &amp;= -2\left(\sum_{i=1}^n \lambda_i f_l(\mathbf{s}_i) - f_l(\mathbf{s}_0)\right) = 0, \: \implies \sum_{i=1}^n \lambda_i f_l(\mathbf{s}_i) = f_l(\mathbf{s}_0)\\
+\sigma_{KU}^2 &amp;= C_{00} - \sum_{i=1}^n \lambda_i C_{i0} + \sum_{l=0}^L \nu_l f_l(\mathbf{s}_0)
+\end{aligned}\]</span>
+<div class="fragment">
+<p>Se <span class="math inline">\(L=0\)</span> (apenas <span class="math inline">\(f_0(\mathbf{s})=1\)</span>) temos Krigagem Ordinária.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="fig-krigagem_Universal" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krigagem_Universal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_Universal" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem_Universal-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_Universal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_Universal-1.png" data-ref-parent="fig-krigagem_Universal" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_Universal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Predição
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_Universal" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-krigagem_Universal-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_Universal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_Universal-2.png" data-ref-parent="fig-krigagem_Universal" width="1344">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_Universal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variância de krigagem
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krigagem_Universal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;14: Krigagem Universal
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="krigagem-com-deriva-externa-ked" class="slide level2">
+<h2>Krigagem com Deriva Externa (KED)</h2>
+<ul>
+<li>Variante da KU onde a tendência <span class="math inline">\(\mu(\mathbf{s})\)</span> é modelada usando covariáveis <span class="math inline">\(x_i(\mathbf{s})\)</span> conhecidas em todo o domínio (ex: Elevação), e não por coordenadas.</li>
+</ul>
+<span class="math display">\[\begin{aligned}
+\quad Y(\mathbf{s}) &amp;= \mu(\mathbf{s}) + \delta(\mathbf{s}), \: \mu(\mathbf{s}) = a_0 + a_1 x(\mathbf{s}), \: E[\delta(\mathbf{s})] = 0, \: \text{Cov}(\delta(\mathbf{s}_i), \delta(\mathbf{s}_j)) = C_{ij} \\
+E[\hat{Y} - Y_0] &amp;= \sum \lambda_i (a_0 + a_1 x_i) - (a_0 + a_1 x_0)= a_0\left(\sum_{i=1}^n \lambda_i - 1\right) + a_1\left(\sum_{i=1}^n \lambda_i x_i - x_0\right) = 0\\
+\sum_{i=1}^n \lambda_i = 1 \: \text{e} \: &amp;\sum_{i=1}^n \lambda_i x(\mathbf{s}_i) = x(\mathbf{s}_0)\\
+L(\boldsymbol{\lambda}, \nu_0, \nu_1) &amp;= \sigma_E^2 - 2\nu_0\left(\sum_{i=1}^n \lambda_i - 1\right) - 2\nu_1\left(\sum_{i=1}^n \lambda_i x(\mathbf{s}_i) - x(\mathbf{s}_0)\right)\\
+&amp;= \sum_{i=1}^n\sum_{j=1}^n \lambda_i\lambda_j C_{ij} - 2\sum_{i=1}^n \lambda_i C_{i0} + C_{00} - 2\nu_0\left(\sum_{i=1}^n \lambda_i - 1\right) - 2\nu_1\left(\sum_{i=1}^n \lambda_i x_i - x_0\right)
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+\frac{\partial L}{\partial \lambda_k} &amp;= 2\sum_{j=1}^n \lambda_j C_{kj} - 2C_{k0} - 2\nu_0 - 2\nu_1 x_k = 0 \\
+&amp;\implies \sum_{j=1}^n \lambda_j C_{kj} - \nu_0 - \nu_1 x_k = C_{k0}, \quad k=1,\dots,n \\
+\frac{\partial L}{\partial \nu_0} &amp;= -2\left(\sum \lambda_i - 1\right) = 0 \implies \sum \lambda_i = 1 \\
+\frac{\partial L}{\partial \nu_1} &amp;= -2\left(\sum \lambda_i x_i - x_0\right) = 0 \implies \sum \lambda_i x_i = x_0\\
+\sigma_{\text{KED}}^2 &amp;= C_{00} - \sum_{i=1}^n \lambda_i C_{i0} + \nu_0 + \nu_1 x(\mathbf{s}_0)
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<div id="fig-krigagem_KDE" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krigagem_KDE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_KDE" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-krigagem_KDE-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_KDE-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_KDE-1.png" data-ref-parent="fig-krigagem_KDE" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_KDE-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variograma
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_KDE" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-krigagem_KDE-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_KDE-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_KDE-2.png" data-ref-parent="fig-krigagem_KDE" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_KDE-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Predição
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_KDE" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-krigagem_KDE-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_KDE-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_KDE-3.png" data-ref-parent="fig-krigagem_KDE" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_KDE-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Variância de krigagem
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krigagem_KDE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;15: Krigagem com deriva externa
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="co-krigagem-ck" class="slide level2">
+<h2>Co-Krigagem (CK)</h2>
+<p>Usada para estimação de uma variável primária <span class="math inline">\(Y_1\)</span> usando sua própria autocorrelação e a correlação cruzada com variáveis secundárias <span class="math inline">\(Y_2 \dots Y_k\)</span> (Co-regionalização).</p>
+<span class="math display">\[\begin{aligned}
+\quad Y_1(\mathbf{s}) &amp;= \mu_1 + \delta_1(\mathbf{s}), \:Y_2(\mathbf{s}) = \mu_2 + \delta_2(\mathbf{s}), \: \: \text{Cov}(\delta_a(\mathbf{s}_i), \delta_b(\mathbf{s}_j)) = C_{ab}(\mathbf{s}_i, \mathbf{s}_j) \\
+\quad \hat{Y}_1(\mathbf{s}_0) &amp;= \sum_{i=1}^{n_1} \lambda_{1i} Y_1(\mathbf{s}_{1i}) + \sum_{j=1}^{n_2} \lambda_{2j} Y_2(\mathbf{s}_{2j})\\
+E[\hat{Y}_1 - Y_1] &amp;= \mu_1\left(\sum \lambda_{1i} - 1\right) + \mu_2 \sum \lambda_{2j} = 0, \: \:
+\text{Restrições:}  \:\sum_{i=1}^{n_1} \lambda_{1i} = 1 \: \text{e} \: \sum_{j=1}^{n_2} \lambda_{2j} = 0\\
+\sigma_E^2 &amp;= \sum_{i}\sum_{k} \lambda_{1i}\lambda_{1k} C_{11}(\mathbf{s}_{1i}, \mathbf{s}_{1k}) + \sum_{j}\sum_{l} \lambda_{2j}\lambda_{2l} C_{22}(\mathbf{s}_{2j}, \mathbf{s}_{2l}) +\\ &amp;\quad +2\sum_{i}\sum_{j} \lambda_{1i}\lambda_{2j} C_{12}(\mathbf{s}_{1i}, \mathbf{s}_{2j}) \\
+&amp;\quad - 2\sum_{i} \lambda_{1i} C_{11}(\mathbf{s}_{1i}, \mathbf{s}_0) - 2\sum_{j} \lambda_{2j} C_{12}(\mathbf{s}_{2j}, \mathbf{s}_0) + C_{11}(0)
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<span class="math display">\[\begin{aligned}
+L(\boldsymbol{\lambda}_1, \boldsymbol{\lambda}_2, \nu_1, \nu_2) &amp;= \sigma_E^2 - 2\nu_1\left(\sum_{i=1}^{n_1} \lambda_{1i} - 1\right) - 2\nu_2\sum_{j=1}^{n_2} \lambda_{2j}\\
+\frac{\partial L}{\partial \lambda_{1i}} &amp;= 0 \implies \sum_{k} \lambda_{1k} C_{11}^{ik} + \sum_{j} \lambda_{2j} C_{12}^{ij} - \nu_1 = C_{11}^{i0} \\
+\frac{\partial L}{\partial \lambda_{2j}} &amp;= 0 \implies \sum_{l} \lambda_{2l} C_{22}^{jl} + \sum_{i} \lambda_{1i} C_{12}^{ij} - \nu_2 = C_{12}^{j0} \\
+\frac{\partial L}{\partial \nu_1} &amp;= 0 \implies \sum \lambda_{1i} = 1 \\
+\frac{\partial L}{\partial \nu_2} &amp;= 0 \implies \sum \lambda_{2j} = 0\\
+\sigma_{\text{CK}}^2 &amp;= C_{11}(0) - \left(\sum \lambda_{1i} C_{11}^{i0} + \sum \lambda_{2j} C_{12}^{j0}\right) + \nu_1
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<div id="fig-krigagem_co" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-krigagem_co-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_co" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-krigagem_co-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_co-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_co-1.png" data-ref-parent="fig-krigagem_co" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_co-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variograma 1
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_co" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-krigagem_co-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_co-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_co-2.png" data-ref-parent="fig-krigagem_co" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_co-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Variograma 2
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_co" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-krigagem_co-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_co-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_co-3.png" data-ref-parent="fig-krigagem_co" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_co-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Predição
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-krigagem_co" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-krigagem_co-4" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-krigagem_co-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula03_files/figure-revealjs/fig-krigagem_co-4.png" data-ref-parent="fig-krigagem_co" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-krigagem_co-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Variância de krigagem
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-krigagem_co-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;16: Co-Krigagem
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="outros-tipos-de-krigagem" class="slide level2">
+<h2>Outros tipos de Krigagem</h2>
+<p><span class="math inline">\(\Longrightarrow\)</span> Ver no material de apoio</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="avaliação-da-performance-preditiva" class="title-slide slide level1 center">
+<h1>Avaliação da performance preditiva</h1>
+
+</section>
+<section class="slide level2">
+
+<p><strong>Objetivo:</strong> Verificar se as predições são precisas (acurácia) e se a incerteza (variância de krigagem) está bem calibrada.</p>
+</section>
+<section id="métodos-comuns" class="slide level2">
+<h2>Métodos comuns</h2>
+<p><span class="math inline">\(\Longrightarrow\)</span> Validação Cruzada (Leave-One-Out)</p>
+<ul>
+<li class="fragment"><p>Remove-se o ponto observado <span class="math inline">\(Y(\mathbf{s}_i)\)</span>.</p></li>
+<li class="fragment"><p>Estima-se <span class="math inline">\(\hat{Y}_{-i}(\mathbf{s}_i)\)</span> usando os <span class="math inline">\(n-1\)</span> vizinhos.</p></li>
+<li class="fragment"><p>Calcula-se o erro e a variância <span class="math inline">\(\sigma_E^2(\mathbf{s}_i)\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<span class="math display">\[\begin{aligned}
+\varepsilon_i &amp;= Y(\mathbf{s}_i) - \hat{Y}_{-i}(\mathbf{s}_i) \\
+\varepsilon_i &amp;\sim \mathcal{N}(0, \sigma_E^2(\mathbf{s}_i))
+\end{aligned}\]</span>
+</div>
+</section>
+<section class="slide level2">
+
+<p><span class="math inline">\(\Longrightarrow\)</span> Resíduos padronizados</p>
+<p>Padroniza-se o erro pelo desvio padrão estimado (variância de krigagem).</p>
+<span class="math display">\[\begin{aligned}
+\theta_i &amp;= \frac{Y(\mathbf{s}_i) - \hat{Y}_{-i}(\mathbf{s}_i)}{\sigma_k(\mathbf{s}_i)} \\
+\theta_i &amp;\sim \mathcal{N}(0, 1) \implies \theta_i^2 \sim \chi^2_{(1)} \\
+E[\theta_i^2] &amp;= \text{Var}(\theta_i) + (E[\theta_i])^2 = 1
+\end{aligned}\]</span>
+</section>
+<section class="slide level2">
+
+<p><span class="math inline">\(\Longrightarrow\)</span> Razão de Desvio Quadrático Médio (MSDR):</p>
+<p>A média dos quadrados dos resíduos padronizados sobre <span class="math inline">\(n\)</span> pontos:</p>
+<p><span class="math display">\[\text{MSDR} = \frac{1}{n} \sum_{i=1}^n \theta_i^2 = \frac{1}{n} \sum_{i=1}^n \frac{[Y(\mathbf{s}_i) - \hat{Y}_{-i}(\mathbf{s}_i)]^2}{\sigma_E^2(\mathbf{s}_i)}\]</span></p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\text{MSDR} \approx 1\)</span>: A variância dos erros reais é compatível com a variância predita.</p>
+<ul>
+<li class="fragment">O modelo descreve corretamente a variabilidade espacial.</li>
+</ul></li>
+<li class="fragment"><p><span class="math inline">\(\text{MSDR} &gt; 1\)</span>: <span class="math inline">\(\frac{1}{n}\sum \varepsilon_i^2 &gt; \frac{1}{n}\sum \sigma_E^2\)</span></p>
+<ul>
+<li class="fragment">O erro real é maior do que o modelo prevê.</li>
+<li class="fragment"><strong>Causas:</strong> Subestimação do efeito pepita ou do patamar; outliers não modelados.</li>
+</ul></li>
+<li class="fragment"><p><span class="math inline">\(\text{MSDR} &lt; 1\)</span>: <span class="math inline">\(\frac{1}{n}\sum \varepsilon_i^2 &lt; \frac{1}{n}\sum \sigma_E^2\)</span></p>
+<ul>
+<li class="fragment"><p>A variância de krigagem é pessimista (maior que o erro efetivo).</p></li>
+<li class="fragment"><p><strong>Causas:</strong> Modelo assume ruído (pepita) superior ao real.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="próximos-passos" class="slide level2">
+<h2>Próximos Passos</h2>
+<p>Na Aula 04, veremos a parte prática deste conteúdo. Por favor, leia todo o Capítulo 3, com foco no pacote gstat e na implementação dos diferentes tipos de krigagem no material de apoio.</p>
+<br>
+<p align="center">
+<a class="btn btn-primary" href="aula04_script.R" download="" role="button" style="color: white; background-color: #007bff; padding: 10px 20px; text-decoration: none; border-radius: 5px;"> <i class="fa fa-download"></i> Baixar Script da Aula 04 (.R) </a>
+</p>
+<p><br></p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="referências-bibliográficas" class="title-slide slide level1 center">
+<h1>Referências Bibliográficas</h1>
+
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
+<div id="ref-cressie1990origins" class="csl-entry" role="listitem">
+CRESSIE, Noel. The origins of kriging. <strong>Mathematical geology</strong>, v. 22, n. 3, p. 239–252, 1990.
+</div>
+<div id="ref-cressie1991geostatistical" class="csl-entry" role="listitem">
+CRESSIE, Noel. Geostatistical analysis of spatial data. <strong>Spatial statistics and digital image analysis</strong>, v. 1991, p. 87–108, 1991.
+</div>
+<div id="ref-cressie1993statistics" class="csl-entry" role="listitem">
+CRESSIE, Noel. <strong>Statistics for spatial data</strong>. <em>[S.l.]</em>: John Wiley &amp; Sons, 1993.
+</div>
+<div id="ref-cressie1980robust" class="csl-entry" role="listitem">
+CRESSIE, Noel; HAWKINS, Douglas M. Robust estimation of the variogram: I. <strong>Journal of the international Association for Mathematical Geology</strong>, v. 12, n. 2, p. 115–125, 1980.
+</div>
+<div id="ref-cressie2022spatial" class="csl-entry" role="listitem">
+CRESSIE, Noel; MOORES, Matthew T. Spatial statistics. <em>In</em>: <strong>Encyclopedia of mathematical geosciences</strong>. <em>[S.l.]</em>: Springer, 2022. p. 1–11.
+</div>
+<div id="ref-diggle1998model" class="csl-entry" role="listitem">
+DIGGLE, Peter J.; TAWN, Jonathan A.; MOYEED, Rana A. Model-based geostatistics. <strong>Journal of the Royal Statistical Society Series C: Applied Statistics</strong>, v. 47, n. 3, p. 299–350, 1998.
+</div>
+<div id="ref-ecker2003geostatistics" class="csl-entry" role="listitem">
+ECKER, Mark D. Geostatistics: past, present and future. <strong>Encyclopedia of Life Support Systems (EOLSS)</strong>, p. 50614–0506, 2003.
+</div>
+<div id="ref-guttorp2006studies" class="csl-entry" role="listitem">
+GUTTORP, Peter; GNEITING, Tilmann. Studies in the history of probability and statistics XLIX on the Mat<span>é</span>rn correlation family. <strong>Biometrika</strong>, v. 93, n. 4, p. 989–995, 2006.
+</div>
+<div id="ref-journel1976mining" class="csl-entry" role="listitem">
+JOURNEL, Andre G.; HUIJBREGTS, Charles J. Mining geostatistics. 1976.
+</div>
+<div id="ref-krige2005genesis" class="csl-entry" role="listitem">
+KRIGE, Danie; KLEINGELD, Wynand. The genesis of geostatistics in gold and diamond industries. <em>In</em>: <strong>Space, Structure and Randomness: Contributions in Honor of Georges Matheron in the Field of Geostatistics, Random Sets and Mathematical Morphology</strong>. <em>[S.l.]</em>: Springer, 2005. p. 5–16.
+</div>
+<div id="ref-matheron1963principles" class="csl-entry" role="listitem">
+MATHERON, G. " Principles of geostatistics", Economic Geology, 58, pp 1246-1266. 1963.
+</div>
+<div id="ref-matheron1971theory" class="csl-entry" role="listitem">
+MATHERON, George. The theory of regionalised variables and its applications. <strong>Les Cahiers du Centre de Morphologie Math<span>é</span>matique</strong>, v. 5, p. 212, 1971.
+</div>
+<div id="ref-myers1994spatial" class="csl-entry" role="listitem">
+MYERS, Donald E. Spatial interpolation: an overview. <strong>Geoderma</strong>, v. 62, n. 1-3, p. 17–28, 1994.
+</div>
+<div id="ref-nhancololo2024comparison" class="csl-entry" role="listitem">
+NHANCOLOLO, A. M. <em>et al.</em> <a href="https://doi.org/10.29327/2520355.13.1-7">Comparison between the laboratory method and the Stolf penetrometer in soil density analysis: a study using geostatistical approaches</a>. <strong>Sigmae</strong>, v. 13, n. 1, p. 63–78, 2024.
+</div>
+<div id="ref-oliver2014tutorial" class="csl-entry" role="listitem">
+OLIVER, MA; WEBSTER, R. A tutorial guide to geostatistics: Computing and modelling variograms and kriging. <strong>Catena</strong>, v. 113, p. 56–69, 2014.
+</div>
+<div id="ref-sahu2022bayesian" class="csl-entry" role="listitem">
+SAHU, Sujit. <strong>Bayesian modeling of spatio-temporal data with R</strong>. <em>[S.l.]</em>: Chapman; Hall/CRC, 2022.
+</div>
+<div id="ref-scalon2024analise" class="csl-entry" role="listitem">
+SCALON, João Domingos. <strong>Análise de Dados Espaciais com Aplicações em R</strong>. Lavras: Ed. UFLA, 2024. p. 275
+</div>
+<div id="ref-wackernagel2003multivariate" class="csl-entry" role="listitem">
+WACKERNAGEL, Hans. <strong>Multivariate geostatistics: an introduction with applications</strong>. <em>[S.l.]</em>: Springer Science &amp; Business Media, 2003.
+</div>
+<div id="ref-yamamoto2013geoestatistica" class="csl-entry" role="listitem">
+YAMAMOTO, Jorge Kazuo; LANDIM, Paulo M. Barbosa. <strong>Geoestatística: conceitos e aplicações</strong>. São Paulo: Oficina de Textos, 2013.
+</div>
+</div>
+<div class="center">
+
+
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': true,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiada");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiada");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/nhancololo\.github\.io");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
