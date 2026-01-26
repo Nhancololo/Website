@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Alex Monito Nhancololo">
+  <title>Dados de Área</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 1em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="Figures/Horizontal_azul.png" data-background-opacity="1" data-background-position="top 5% center" data-background-size="75%" class="quarto-title-block center">
+  <h1 class="title">Dados de Área</h1>
+  <p class="subtitle">Aula 04: Teoria e Prática em R</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Alex Monito Nhancololo 
+</div>
+        <p class="quarto-title-affiliation">
+            Instituto de Matemática, Estatística e Ciência da Computação (IME‑USP)
+          </p>
+    </div>
+</div>
+
+  <p class="date">27/01/2026</p>
+</section>
+<section>
+<section id="definição-e-conceitos-fundamentais" class="title-slide slide level1 center">
+<h1>Definição e Conceitos Fundamentais</h1>
+
+</section>
+<section id="o-que-são-dados-de-área" class="slide level2">
+<h2>O que são Dados de Área?</h2>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Domínio Discreto (<span class="math inline">\(D^L\)</span>) vs.&nbsp;Contínuo (<span class="math inline">\(D^G\)</span>)</p>
+</div>
+<ul>
+<li class="fragment"><p><strong>Def.:</strong> Processos estocásticos onde o domínio espacial é fixo, discreto e contável <span class="citation" data-cites="cressie2022spatial">(<a href="#/references" role="doc-biblioref" onclick="">Cressie; Moores, 2022</a>)</span>.</p></li>
+<li class="fragment"><p><strong>Unidades:</strong> Observações ancoradas em unidades espaciais predefinidas e não sobrepostas (ex: municípios, pixels, zonas censitárias).</p></li>
+<li class="fragment"><p><strong>Incerteza:</strong> Reside no atributo <span class="math inline">\(Y(\mathbf{s}_i)\)</span>, pois a localização <span class="math inline">\(\mathbf{s}_i\)</span> é fixa.</p></li>
+<li class="fragment"><p><strong>Vetor de observações:</strong> <span class="math inline">\(\mathbf{y} = (y_1, \dots, y_n)^\top\)</span>.</p></li>
+<li class="fragment"><p><strong>Dependência:</strong> Governada pela topologia/vizinhança, não necessariamente pela distância euclidiana contínua <span class="citation" data-cites="besag1974spatial">(<a href="#/references" role="doc-biblioref" onclick="">Besag, 1974</a>)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="estruturas-de-vizinhança-mathbfw" class="title-slide slide level1 center">
+<h1>Estruturas de Vizinhança (<span class="math inline">\(\mathbf{W}\)</span>)</h1>
+
+</section>
+<section id="matriz-mathbfw" class="slide level2">
+<h2>Matriz <span class="math inline">\(\mathbf{W}\)</span></h2>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Quantificando a conexão espacial</p>
+<p><span class="math display">\[
+\mathbf{W}_{n \times n} =
+\begin{bmatrix}
+w_{11} &amp; w_{12} &amp; \cdots &amp; w_{1n} \\
+w_{21} &amp; w_{22} &amp; \cdots &amp; w_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+w_{n1} &amp; w_{n2} &amp; \cdots &amp; w_{nn}
+\end{bmatrix}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(w_{ij}\)</span>: Conexão entre <span class="math inline">\(j\)</span> e <span class="math inline">\(i\)</span>.</p></li>
+<li class="fragment"><p>Convenção: <span class="math inline">\(w_{ii} = 0\)</span> (sem auto-conexão) <span class="citation" data-cites="anselin2001spatial">(<a href="#/references" role="doc-biblioref" onclick="">Anselin, 2001</a>)</span>.</p></li>
+<li class="fragment"><p><strong>Feedback Espacial:</strong> Diferente de séries temporais, a dependência é multidirecional (<span class="math inline">\(i \leftrightarrow j \leftrightarrow k\)</span>).</p></li>
+</ul>
+</section>
+<section id="critério-de-vizinhança" class="slide level2">
+<h2>Critério de vizinhança</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Contiguidade</a></li><li><a href="#tabset-1-2">Distância</a></li><li><a href="#tabset-1-3">Econômica e funcional</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="fig-vizinhanca-usa-fourcorners" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-vizinhanca-usa-fourcorners-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-vizinhanca-usa-fourcorners" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-vizinhanca-usa-fourcorners-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-vizinhanca-usa-fourcorners-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-vizinhanca-usa-fourcorners-1.png" data-ref-parent="fig-vizinhanca-usa-fourcorners" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-vizinhanca-usa-fourcorners-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Queen
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-vizinhanca-usa-fourcorners" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-vizinhanca-usa-fourcorners-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-vizinhanca-usa-fourcorners-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-vizinhanca-usa-fourcorners-2.png" data-ref-parent="fig-vizinhanca-usa-fourcorners" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-vizinhanca-usa-fourcorners-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Rook
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vizinhanca-usa-fourcorners-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Vizinhança por contiguidade
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2">
+<div id="fig-knn-mt" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-knn-mt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-knn-mt" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-knn-mt-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-knn-mt-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-knn-mt-1.png" data-ref-parent="fig-knn-mt" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-knn-mt-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) k-NN
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-knn-mt" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-knn-mt-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-knn-mt-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-knn-mt-2.png" data-ref-parent="fig-knn-mt" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-knn-mt-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Distância fixa (limia)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-knn-mt" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-knn-mt-3" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-knn-mt-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-knn-mt-3.png" data-ref-parent="fig-knn-mt" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-knn-mt-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Decaimento por distância
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-knn-mt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Vizinhança por distância de separação
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-vizinhanca-economica" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-vizinhanca-economica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-vizinhanca-economica-1.png" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vizinhanca-economica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Vizinhança Econômica/Funcional: O Agronegócio conectando Sorriso-MT aos Portos.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Nota:</strong> Relaia o conteúdo da <a href="Aula01.html">aula 01</a>, parte de vizinhança</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="matriz-de-pesos-e-normalização" class="title-slide slide level1 center">
+<h1>Matriz de Pesos e Normalização</h1>
+
+</section>
+<section class="slide level2">
+
+<p><span class="math inline">\(\Longrightarrow\)</span> Por que transformar a matriz binária?</p>
+<ul>
+<li class="fragment"><p>A matriz <span class="math inline">\(\mathbf{W}\)</span> binária (0 ou 1) reflete apenas a existência de conexão.</p></li>
+<li class="fragment"><p>A escolha dos pesos deve ser teórica e definida a priori <span class="citation" data-cites="kelejian2017spatial">(<a href="#/references" role="doc-biblioref" onclick="">Kelejian; Piras, 2017</a>)</span>.</p></li>
+<li class="fragment"><p>Em modelos espaciais, a matriz <span class="math inline">\(( \mathbf{I} - \rho \mathbf{W} )\)</span> precisa ser invertível.</p></li>
+<li class="fragment"><p>Sem normalização, autovalores (<span class="math inline">\(\lambda\)</span>) explodem, dificultando a estimação de <span class="math inline">\(\rho\)</span> e a interpretação numérica.</p></li>
+</ul>
+</section>
+<section id="tipos-de-normalização" class="slide level2">
+<h2>Tipos de Normalização</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Por Linha</a></li><li><a href="#tabset-2-2">Por Coluna</a></li><li><a href="#tabset-2-3">Espectral</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><span class="math display">\[w_{ij}^{r} = \frac{w_{ij}}{\sum_{j=1}^n w_{ij}}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\small
+\mathbf{W} =
+\begin{bmatrix}
+0 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}
+\rightarrow
+\mathbf{W}^{r} =
+\begin{bmatrix}
+0 &amp; 0.5 &amp; 0.5 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}
+\]</span></p>
+</div>
+</div>
+<div id="tabset-2-2">
+<p><span class="math display">\[w_{ij}^{c} = \frac{w_{ij}}{\sum_{i=1}^n w_{ij}}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\small
+\mathbf{W} =
+\begin{bmatrix}
+0 &amp; 1 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{bmatrix}
+\rightarrow
+\mathbf{W}^{c} =
+\begin{bmatrix}
+0 &amp; 1 &amp; 1 \\
+0.5 &amp; 0 &amp; 0 \\
+0.5 &amp; 0 &amp; 0
+\end{bmatrix}
+\]</span></p>
+</div>
+</div>
+<div id="tabset-2-3">
+<p><span class="math display">\[\mathbf{W}^{spectral} = \frac{\mathbf{W}^0}{\lambda_{max}}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="análise-exploratória-de-dados-espaciais-esda" class="title-slide slide level1 center">
+<h1>Análise Exploratória de Dados Espaciais (ESDA)</h1>
+
+</section>
+<section id="o-que-é-esda" class="slide level2">
+<h2>O que é ESDA?</h2>
+<p>Segundo <span class="citation" data-cites="anselin1995local">Anselin (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, é um conjunto de técnicas para:</p>
+<ul>
+<li class="fragment"><p>Descrever e visualizar distribuições espaciais.</p></li>
+<li class="fragment"><p>Identificar atípicos (spatial outliers).</p></li>
+<li class="fragment"><p>Detectar padrões de associação (clusters).</p></li>
+<li class="fragment"><p>Sugerir regimes de heterogeneidade espacial.</p></li>
+</ul>
+<div class="fragment">
+<p>O objetivo é quantificar a dependência definida por <span class="math inline">\(\mathbf{W}\)</span>.</p>
+</div>
+</section>
+<section id="estatísticas-globais-de-autocorrelação" class="slide level2">
+<h2>Estatísticas globais de autocorrelação</h2>
+<p><span class="math inline">\(\Longrightarrow\)</span> Da correlação à autocorrelação</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Correlação de pearson (<span class="math inline">\(r\)</span>)</a></li><li><a href="#tabset-3-2">Autocorrelação</a></li><li><a href="#tabset-3-3">O “Auto” em Autocorrelação</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Associação linear entre duas variáveis distintas (<span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>).</p>
+<p><span class="math display">\[
+r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}
+\]</span></p>
+<ul>
+<li class="fragment"><p>Como <span class="math inline">\(X\)</span> varia em relação a <span class="math inline">\(Y\)</span> na mesma unidade <span class="math inline">\(i\)</span>.</p></li>
+<li class="fragment"><p>Assume-se que os pares <span class="math inline">\((x_i, y_i)\)</span> são independentes entre si (i.i.d).</p></li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<p><span class="math inline">\(\Longrightarrow\)</span> Associação linear de uma variável (<span class="math inline">\(Y\)</span>) com ela mesma no espaço.</p>
+<ul>
+<li class="fragment"><p>Na estatística espacial, não temos um <span class="math inline">\(X\)</span> e um <span class="math inline">\(Y\)</span> distintos. Temos apenas <span class="math inline">\(Y\)</span> em locais diferentes.</p></li>
+<li class="fragment"><p>Para medir a correlação de <span class="math inline">\(Y\)</span> consigo mesma, substituímos a segunda variável (<span class="math inline">\(X\)</span>) pela média ponderada dos vizinhos (Defasagem Espacial ou Spatial Lag).</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Pearson: } \sum (x_i - \bar{x})(y_i - \bar{y}) \quad \xrightarrow{\text{Espacial}} \quad \text{Moran: } \sum_{i} \sum_{j} w_{ij} (y_i - \bar{y})(y_j - \bar{y})
+\]</span></p>
+</div>
+</div>
+<div id="tabset-3-3">
+<ul>
+<li><p>Significa “si mesmo”.</p></li>
+<li><p>É a correlação da variável <span class="math inline">\(Y_i\)</span> com a variável <span class="math inline">\(Y_j\)</span> (onde <span class="math inline">\(j\)</span> são os vizinhos de <span class="math inline">\(i\)</span> definidos pela matriz <span class="math inline">\(\mathbf{W}\)</span>).</p></li>
+<li><p>Se o valor em <span class="math inline">\(i\)</span> é alto e a média dos vizinhos <span class="math inline">\(j\)</span> também é alta, temos autocorrelação positiva.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="mensuração-da-dependência-espacial" class="title-slide slide level1 center">
+<h1>Mensuração da dependência espacial</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Índice I de Moran</a></li><li><a href="#tabset-4-2">Como sai no R?</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><span class="math display">\[
+I = \frac{n}{\sum_{i=1}^n \sum_{j=1}^n w_{ij}} \cdot \frac{\sum_{i=1}^n \sum_{j=1}^n w_{ij} (y_i - \bar{y})(y_j - \bar{y})}{\sum_{i=1}^n (y_i - \bar{y})^2}, \: \: \mathbf{W} = [w_{ij}]_{n\times n}
+\]</span></p>
+<p><strong>Interpretação</strong></p>
+<p><span class="math inline">\(I &gt; E[I],  E[I]=  -1/(n-1)\)</span>: Autocorrelação Positiva (agrupamento).</p>
+<p><span class="math inline">\(I &lt; E[I]\)</span>: Autocorrelação Negativa (dispersão/xadrez).</p>
+<p><span class="math inline">\(I \approx E[I]\)</span>: Aleatoriedade.</p>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Moran I test under randomisation
+
+data:  mg_sf$indicador  
+weights: lw    
+
+Moran I statistic standard deviate = 29.13, p-value &lt; 2.2e-16
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     0.6193722870     -0.0011737089      0.0004537973 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Monte-Carlo simulation of Moran I
+
+data:  mg_sf$indicador 
+weights: lw  
+number of simulations + 1: 1000 
+
+statistic = 0.61937, observed rank = 1000, p-value = 0.001
+alternative hypothesis: greater</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Índice C de Geary</a></li><li><a href="#tabset-5-2">Como sai no R?</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Foca na dissimilaridade quadrática entre vizinhos (similar ao variograma).</p>
+<p><span class="math display">\[
+c = \frac{(n-1)}{2 \sum_{i=1}^n \sum_{j=1}^n w_{ij}} \cdot \frac{\sum_{i=1}^n \sum_{j=1}^n w_{ij} (y_i - y_j)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}
+\]</span></p>
+<p><strong>Interpretação</strong></p>
+<p><span class="math inline">\(0 &lt; c &lt; 1\)</span>: Autocorrelação Positiva (vizinhos similares).</p>
+<p><span class="math inline">\(c &gt; 1\)</span>: Autocorrelação Negativa (vizinhos dissimilares).</p>
+<p><span class="math inline">\(c = 1\)</span>: Aleatoriedade.</p>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Geary C test under randomisation
+
+data:  mg_sf$indicador 
+weights: lw   
+
+Geary C statistic standard deviate = 26.149, p-value &lt; 2.2e-16
+alternative hypothesis: Expectation greater than statistic
+sample estimates:
+Geary C statistic       Expectation          Variance 
+      0.377124962       1.000000000       0.000567393 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Monte-Carlo simulation of Geary C
+
+data:  mg_sf$indicador 
+weights: lw  
+number of simulations + 1: 1000 
+
+statistic = 0.37712, observed rank = 1, p-value = 0.001
+alternative hypothesis: greater</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="fig-geary-global" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-geary-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-geary-global" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-geary-global-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-geary-global-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-geary-global-1.png" data-ref-parent="fig-geary-global" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-geary-global-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Variável Original
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-geary-global" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-geary-global-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-geary-global-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-geary-global-2.png" data-ref-parent="fig-geary-global" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-geary-global-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Dissimilaridade Local (Geary)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geary-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Índice C de Geary
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="estatísticas-locais" class="title-slide slide level1 center">
+<h1>Estatísticas Locais</h1>
+
+</section>
+<section id="decomposição-da-dependência" class="slide level2">
+<h2>Decomposição da Dependência</h2>
+<p><span class="math inline">\(\Longrightarrow\)</span> Local Indicators of Spatial Association (LISA)</p>
+<p>A dependência espacial raramente é estacionária (igual em todo o mapa). Segundo <span class="citation" data-cites="anselin1995local">Anselin (<a href="#/references" role="doc-biblioref" onclick="">1995</a>)</span>, os indicadores locais (<span class="math inline">\(I_i\)</span>) devem satisfazer duas propriedades:</p>
+<ol type="1">
+<li class="fragment"><p>Avaliar se o padrão em torno da unidade <span class="math inline">\(i\)</span> é aleatório ou estruturado.</p></li>
+<li class="fragment"><p>A soma dos indicadores locais é proporcional à estatística global (<span class="math inline">\(\sum_i I_i \propto I\)</span>).</p></li>
+</ol>
+</section>
+<section id="índice-de-moran-local-i_i" class="slide level2">
+<h2>Índice de Moran Local (<span class="math inline">\(I_i\)</span>)</h2>
+<p>Avalia a correlação entre o valor local (<span class="math inline">\(s_i\)</span>) e a média dos vizinhos (<span class="math inline">\(Ws_i\)</span>).</p>
+<p><span class="math display">\[
+I_i = \frac{(y_i - \bar{y})}{S^2} \cdot \sum_{j=1}^n w_{ij} (y_j - \bar{y})
+\]</span></p>
+<p>Onde <span class="math inline">\(S^2\)</span> é a variância amostral.</p>
+</section>
+<section class="slide level2">
+
+<p><span class="math inline">\(\Longrightarrow\)</span> O que o <span class="math inline">\(I_i\)</span> de Moran pode mostrar ?</p>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Associação Positiva (Agrupamentos)</a></li><li><a href="#tabset-6-2">Associação Negativa (Disparidade)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<ul>
+<li class="fragment"><p>Alto-Alto (High-High | HH):</p>
+<ul>
+<li class="fragment">Valor alto cercado por vizinhos altos.</li>
+<li class="fragment"><em>Hot spot</em> (contágio/transbordamento).</li>
+</ul></li>
+<li class="fragment"><p>Baixo-Baixo (Low-Low | LL)</p>
+<ul>
+<li class="fragment">Valor baixo cercado por vizinhos baixos.</li>
+<li class="fragment"><em>Cold spot</em> (depressão ou barreira geográfica).</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-6-2">
+<div class="fragment">
+<ul>
+<li><p>Alto-Baixo (High-Low | HL):</p>
+<ul>
+<li>“Ilha de riqueza”. Valor alto cercado por vizinhos baixos.</li>
+<li>Indica processos locais distintos do entorno.</li>
+</ul></li>
+<li><p>Baixo-Alto (Low-High | LH):</p>
+<ul>
+<li>“Buraco”. Valor baixo cercado por vizinhos altos.</li>
+<li>Pode indicar falha de medição ou resiliência local.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="fig-IndiceMoranLocal" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-IndiceMoranLocal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-IndiceMoranLocal" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-IndiceMoranLocal-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-IndiceMoranLocal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-IndiceMoranLocal-1.png" data-ref-parent="fig-IndiceMoranLocal" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-IndiceMoranLocal-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) LISA
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-IndiceMoranLocal" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-IndiceMoranLocal-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-IndiceMoranLocal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-IndiceMoranLocal-2.png" data-ref-parent="fig-IndiceMoranLocal" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-IndiceMoranLocal-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Diagrama de Dispersão
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-IndiceMoranLocal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Clusters Espaciais LISA (Local Moran) para Minas Gerais
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="estatísticas-getis-ord-g_i" class="slide level2">
+<h2>Estatísticas Getis-Ord (<span class="math inline">\(G_i^*\)</span>)</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Teoria</a></li><li><a href="#tabset-7-2">Interpretação</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>Foca na detecção de intensidade (valores altos ou baixos), sem a componente de covariância negativa do Moran.</li>
+</ul>
+<p><span class="math display">\[G_i^* = \frac{\sum_{j=1}^n w_{ij} y_j}{\sum_{j=1}^n y_j}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(G_i\)</span>: Exclui a unidade <span class="math inline">\(i\)</span>.</p></li>
+<li><p><span class="math inline">\(G_i^*\)</span>: Inclui a unidade <span class="math inline">\(i\)</span> (mais comum).</p></li>
+</ul>
+<p><strong>Diferença:</strong> Moran local distingue clusters de outliers. Getis-Ord identifica apenas Hot Spots e Cold Spots.</p>
+</div>
+<div id="tabset-7-2">
+<p>A estatística retorna um valor Z padronizado:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(Z(G_i^*) &gt; 1.96\)</span>: Hot Spot (Agrupamento significativo de valores altos).</p></li>
+<li class="fragment"><p><span class="math inline">\(Z(G_i^*) &lt; -1.96\)</span>: Cold Spot (Agrupamento significativo de valores baixos).</p></li>
+<li class="fragment"><p>Entre: Aleatoriedade espacial.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="riscos-e-suavização-de-taxas" class="title-slide slide level1 center">
+<h1>Riscos e suavização de taxas</h1>
+
+</section>
+<section id="o-problema-das-áreas-pequenas" class="slide level2">
+<h2>O Problema das Áreas Pequenas</h2>
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> O desafio dos dados brutos</p>
+</div>
+<p>Para dados de contagem <span class="math inline">\(O_i\)</span> com população em risco <span class="math inline">\(P_i\)</span>, a taxa bruta é <span class="math inline">\(r_i = O_i / P_i\)</span>.</p>
+<p>Em epidemiologia, usa-se a Razão de Mortalidade Padronizada (SMR):</p>
+<p><span class="math display">\[
+\text{SMR}_i = \frac{O_i}{E_i} \quad \text{onde} \quad E_i = P_i \cdot \bar{r}
+\]</span></p>
+<ul>
+<li class="fragment"><p>Em áreas com <span class="math inline">\(P_i\)</span> pequena, a variância é altíssima <span class="citation" data-cites="cressie1989spatial">(<a href="#/references" role="doc-biblioref" onclick="">Cressie; Chan, 1989</a>)</span>.</p></li>
+<li class="fragment"><p>Um único caso adicional em uma cidade pequena pode duplicar a taxa, criando <em>outliers</em> espúrios.</p></li>
+<li class="fragment"><p>O mapa é dominado por áreas despovoadas com taxas extremas (mas pouco confiáveis).</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div id="fig-suavizacao-eb-pratica" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-suavizacao-eb-pratica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-suavizacao-eb-pratica" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-suavizacao-eb-pratica-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-suavizacao-eb-pratica-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-suavizacao-eb-pratica-1.png" data-ref-parent="fig-suavizacao-eb-pratica" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-suavizacao-eb-pratica-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Taxa bruta instável
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-suavizacao-eb-pratica" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-suavizacao-eb-pratica-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-suavizacao-eb-pratica-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-suavizacao-eb-pratica-2.png" data-ref-parent="fig-suavizacao-eb-pratica" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-suavizacao-eb-pratica-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Taxa Suavizada (Empirical Bayes Local
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-suavizacao-eb-pratica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Suavização
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="diagnóstico-de-dependência-espacial" class="title-slide slide level1 center">
+<h1>Diagnóstico de Dependência Espacial</h1>
+
+</section>
+<section id="esda-em-resíduos-de-regressão" class="slide level2">
+<h2>ESDA em Resíduos de Regressão</h2>
+<p><span class="math inline">\(\Longrightarrow\)</span> Por que analisar os resíduos?</p>
+<ul>
+<li>Detectar autocorrelação em <span class="math inline">\(\mathbf{y}\)</span> (dados brutos) não prova um processo espacial intrínseco (contágio). Pode ser apenas heterogeneidade não observada ou variáveis omitidas espacialmente estruturadas <span class="citation" data-cites="cressie1989spatial">(<a href="#/references" role="doc-biblioref" onclick="">Cressie; Chan, 1989</a>)</span>.</li>
+</ul>
+<div class="fragment">
+<p><strong>Roteiro de Diagnóstico (<span class="citation" data-cites="anselin2001spatial">Anselin (<a href="#/references" role="doc-biblioref" onclick="">2001</a>)</span>)</strong></p>
+<ol type="1">
+<li>Estimar o modelo clássico (Mínimos Quadrados Ordinários).</li>
+</ol>
+<p><span class="math display">\[\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}, \quad \boldsymbol{\varepsilon} \sim N(\mathbf{0}, \sigma^2 \mathbf{I})\]</span> 2. Calcular os resíduos <span class="math inline">\(\hat{\boldsymbol{\varepsilon}} = \mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}\)</span>.</p>
+<ol start="3" type="1">
+<li>Aplicar o <span class="math inline">\(I\)</span> de Moran sobre <span class="math inline">\(\hat{\boldsymbol{\varepsilon}}\)</span> usando a matriz <span class="math inline">\(\mathbf{W}\)</span>.</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Nota:</strong> Se <span class="math inline">\(I(\hat{\boldsymbol{\varepsilon}})\)</span> for significativo, o pressuposto de independência é violado. Porém, a escolha incorreta de <span class="math inline">\(\mathbf{W}\)</span> pode levar a diagnósticos falsos <span class="citation" data-cites="zhang2018spatial">(<a href="#/references" role="doc-biblioref" onclick="">Zhang; Yu, 2018</a>)</span>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Diagnostico 1: output</a></li><li><a href="#tabset-8-2">Diagnóstico no grafico</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Global Moran I for regression residuals
+
+data:  
+model: lm(formula = taxa_bruta ~ variavel_x, data = mg_dados)
+weights: lw
+
+Moran I statistic standard deviate = 9.3389, p-value &lt; 2.2e-16
+alternative hypothesis: two.sided
+sample estimates:
+Observed Moran I      Expectation         Variance 
+    0.1977385849    -0.0011812437     0.0004536919 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div id="fig-diagnostico-residuos" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-diagnostico-residuos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagnostico-residuos" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-diagnostico-residuos-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-diagnostico-residuos-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-diagnostico-residuos-1.png" data-ref-parent="fig-diagnostico-residuos" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-diagnostico-residuos-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Mapa dos Resíduos
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-diagnostico-residuos" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-diagnostico-residuos-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-diagnostico-residuos-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Aula5_files/figure-revealjs/fig-diagnostico-residuos-2.png" data-ref-parent="fig-diagnostico-residuos" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-diagnostico-residuos-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Diagrama de Moran dos Resíduos
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diagnostico-residuos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Diagnóstico de resíduos
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modelos-mais-comuns-em-dados-de-área-car-icar-e-bym" class="title-slide slide level1 center">
+<h1>Modelos mais comuns em dados de área: CAR, ICAR, e BYM</h1>
+
+</section>
+<section id="modelagem-de-dependência-em-área" class="slide level2">
+<h2>Modelagem de dependência em área</h2>
+<p>Segundo <span class="citation" data-cites="cressie1993statistics">Cressie (<a href="#/references" role="doc-biblioref" onclick="">1993</a>)</span>, existem duas formas canônicas de especificar a dependência espacial em reticulados (<em>lattice data</em>):</p>
+<ol type="1">
+<li class="fragment"><p>Especificação Condicional (CAR):</p>
+<ul>
+<li class="fragment">Modela a distribuição de uma área dado os seus vizinhos.</li>
+</ul></li>
+<li class="fragment"><p>Especificação Simultânea (SAR)</p>
+<ul>
+<li class="fragment">Modela o sistema de equações de <em>feedback simultâneo</em> entre todas as áreas.</li>
+</ul></li>
+</ol>
+</section>
+<section id="modelo-condicional-autorregressivo-car" class="slide level2">
+<h2>Modelo Condicional Autorregressivo (CAR)</h2>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Intuição</a></li><li><a href="#tabset-9-2">Especificação</a></li><li><a href="#tabset-9-3">Distribuição conjunta</a></li><li><a href="#tabset-9-4">Simetria</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> “Diga-me quem são teus vizinhos, e eu te direi quem és.”</p>
+<div class="fragment">
+<ul>
+<li>Introduzido por <span class="citation" data-cites="besag1974spatial">Besag (<a href="#/references" role="doc-biblioref" onclick="">1974</a>)</span>, o CAR define o valor de uma unidade <span class="math inline">\(Y_i\)</span> não isoladamente, mas condicionado aos valores de todos os outros locais (<span class="math inline">\(\mathbf{Y}_{-i} = \{Y_j : j \neq i\}\)</span>).</li>
+</ul>
+<p><span class="math inline">\(Y_i = \mu_i  + \sum_{j \neq i} w_{ij}(Y_j - \mu_j) + \epsilon_i,\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\mathbb{E} [Y_i \mid \mathbf{Y}_{-i}] = \mu_i + \sum_{j \neq i} w_{ij}(Y_j - \mu_j)\)</span></p>
+<ul>
+<li>Se meus vizinhos estão acima da média, eu provavelmente também estarei.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-9-2">
+<p>Seja <span class="math inline">\(\mathbf{Y}_{-i} = \{Y_j : j \neq i\}\)</span>. O modelo é definido por uma família de distribuições condicionais Gaussianas:</p>
+<p><span class="math display">\[
+Y_i \mid \mathbf{Y}_{-i} \sim \mathcal{N}\left( \mu_i + \sum_{j \neq i} w_{ij}(Y_j - \mu_j),\, \sigma_i^2 \right)
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\mu_i = \mathbf{x}_i^\top \boldsymbol{\beta}\)</span>.</p></li>
+<li><p><span class="math inline">\(w_{ij} \in W\)</span>: Pesos espaciais (interação vizinha).</p></li>
+<li><p><span class="math inline">\(\sigma_i^2\)</span>: Variância condicional (incerteza local).</p></li>
+</ul>
+</div>
+<div id="tabset-9-3">
+<div class="fragment">
+<p><span class="math inline">\(\Longrightarrow\)</span> Teorema de Hammersley-Clifford</p>
+</div>
+<p>Para que as condicionais locais formem uma distribuição conjunta válida <span class="math inline">\(\mathbf{Y} \sim \mathcal{N}_n(\boldsymbol{\mu}, \mathbf{\Sigma})\)</span>, a matriz de precisão <span class="math inline">\(\mathbf{Q} = \mathbf{\Sigma}^{-1}\)</span> deve ser simétrica e positiva definida.</p>
+<p><span class="math inline">\(\mathbf{Y} \sim \mathcal{N}_n(\boldsymbol{\mu}, \mathbf{Q}_{CAR}^{-1}), \: \: \mathbf{Q}_{CAR} = \mathbf{M}^{-1} (\mathbf{I} - \rho \mathbf{W}), \: \: \mathbf{M} = \text{diag}(\sigma_1^2, \dots, \sigma_n^2)\)</span></p>
+<ul>
+<li><span class="math inline">\(\rho\)</span>: Parâmetro de dependência espacial.</li>
+<li><span class="math inline">\(\mathbf{I}\)</span>: Matriz identidade.</li>
+</ul>
+</div>
+<div id="tabset-9-4">
+<p>Para que a matriz <span class="math inline">\(\mathbf{Q}\)</span> seja simétrica, os pesos e as variâncias devem satisfazer:</p>
+<p><span class="math inline">\(\frac{w_{ij}}{\sigma_i^2} = \frac{w_{ji}}{\sigma_j^2}\)</span></p>
+<p><strong>Lembrando</strong></p>
+<blockquote>
+<p>Se <span class="math inline">\(w_{ij} \neq 0\)</span>, então <span class="math inline">\(i \sim j\)</span> (são vizinhos). Os elementos da diagonal da precisão são <span class="math inline">\(Q_{ii} = 1/\sigma_i^2\)</span>. Os elementos fora da diagonal são <span class="math inline">\(Q_{ij} = -\rho w_{ij}/\sigma_i^2\)</span>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-car-intrínseco-icar" class="slide level2">
+<h2>Modelo CAR Intrínseco (ICAR)</h2>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Definição</a></li><li><a href="#tabset-10-2">Condicional</a></li><li><a href="#tabset-10-3">Densidade Conjunta</a></li><li><a href="#tabset-10-4">Identificabilidade</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<p>O ICAR é um caso particular do modelo CAR onde a dependência espacial é máxima.</p>
+<ul>
+<li class="fragment"><p>Ocorre quando <span class="math inline">\(\rho \to 1\)</span>.</p></li>
+<li class="fragment"><p>Matriz de Precisão (<span class="math inline">\(\mathbf{Q}\)</span>): Torna-se singular (não invertível) e semidefinida positiva com posto <span class="math inline">\(n-1\)</span>.</p></li>
+<li class="fragment"><p>Atua como uma <em>prior</em> espacial que penaliza diferenças locais, suavizando o mapa sem definir um nível médio absoluto (o intercepto flutua livremente).</p></li>
+<li class="fragment"><p>Amplamente utilizado em estatística Bayesiana (INLA, WinBUGS) como efeito aleatório estruturado <span class="citation" data-cites="besag1991bayesian">(<a href="#/references" role="doc-biblioref" onclick="">Besag; York; Mollié, 1991</a>)</span>.</p></li>
+</ul>
+</div>
+<div id="tabset-10-2">
+<p>Como <span class="math inline">\(\rho \approx 1\)</span>, a média condicional depende apenas da média simples dos vizinhos.</p>
+<p><span class="math inline">\(Y_i \mid \mathbf{Y}_{-i} \sim \mathcal{N}\left( \bar{Y}_{\partial i},\, \frac{\sigma^2}{m_i} \right)\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math inline">\(\mathbb{E}[Y_i \mid \mathbf{Y}_{-i}] = \frac{1}{m_i}\sum_{j \in \partial i} Y_j\)</span></p>
+<ul>
+<li>A melhor estimativa para <span class="math inline">\(Y_i\)</span> é a média aritmética dos seus vizinhos.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="math inline">\(\text{Var}[Y_i \mid \mathbf{Y}_{-i}] = \frac{\sigma^2}{m_i}\)</span></p>
+<ul>
+<li>A incerteza é inversamente proporcional ao número de vizinhos (<span class="math inline">\(m_i\)</span>). Áreas com poucos vizinhos têm maior variância.</li>
+</ul>
+</div></div>
+</div>
+<div id="tabset-10-3">
+<ul>
+<li>A matriz de precisão é</li>
+</ul>
+<p><span class="math inline">\(\mathbf{Q} = \sigma^{-2}(\mathbf{D} - \mathbf{W})\)</span>.</p>
+<ul>
+<li><p>Como <span class="math inline">\(\mathbf{Q}\mathbf{1} = \mathbf{0}\)</span>, a distribuição é imprópria (não integra a 1).</p></li>
+<li><p>A densidade depende apenas das diferenças entre pares (<em>pairwise difference prior</em>):</p></li>
+</ul>
+<p><span class="math inline">\(p(\mathbf{Y}) \propto \exp\left( -\frac{1}{2\sigma^2} \sum_{i \sim j} (Y_i - Y_j)^2 \right)\)</span></p>
+</div>
+<div id="tabset-10-4">
+<p>Para tornar o modelo identificável (obter uma distribuição própria), impõe-se uma restrição matemática:</p>
+<p><span class="math inline">\(\sum_{i=1}^n Y_i = 0 \quad (\text{Restrição de soma-zero})\)</span></p>
+<ul>
+<li class="fragment"><p>Isso projeta os efeitos espaciais no subespaço ortogonal ao vetor constante <span class="math inline">\(\mathbf{1}\)</span>.</p></li>
+<li class="fragment"><p>Garante unicidade e propriedades matemáticas bem definidas <span class="citation" data-cites="KeefeFerreiraFranck2018">(<a href="#/references" role="doc-biblioref" onclick="">Keefe; Ferreira; Franck, 2018</a>)</span>.</p></li>
+<li class="fragment"><p>O ICAR é frequentemente combinado com um efeito aleatório independente (ruído) para formar o modelo Besag-York-Mollié, separando o que é estrutura espacial do que é ruído puro.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-sar" class="slide level2">
+<h2>Modelo SAR</h2>
+<blockquote>
+<p>Embore comum na estatística, vamos falar dele na seção de modelos econometricos.</p>
+</blockquote>
+</section>
+<section id="modelos-bym-e-bym2" class="slide level2">
+<h2>Modelos BYM e BYM2</h2>
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Intuição</a></li><li><a href="#tabset-11-2">Estrutura latente</a></li><li><a href="#tabset-11-3">Modelo BYM</a></li><li><a href="#tabset-11-4">Críticas</a></li><li><a href="#tabset-11-5">Modelo BYM2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Por que não usar (I)CAR/SAR direto em <span class="math inline">\(Y\)</span>?</p>
+<ul>
+<li>Em epidemiologia e demografia, <span class="math inline">\(Y_i\)</span> são contagens.</li>
+</ul>
+<p><span class="math inline">\(y_i \mid \theta_i \sim \text{Poisson}(E_i \theta_i)\)</span></p>
+<ol type="1">
+<li class="fragment">O risco <span class="math inline">\(\theta_i\)</span> deve ser <span class="math inline">\(&gt;0\)</span>. Modelos lineares clássicos podem prever valores negativos.</li>
+</ol>
+<p>2.GLM: Modelamos o logaritmo do risco (função de ligação canônica).</p>
+<p><span class="math inline">\(\eta_i = \log(\theta_i) = \mu + \mathbf{x}_i^\top \boldsymbol{\beta} + \varepsilon_i\)</span></p>
+<ol start="3" type="1">
+<li class="fragment">O termo <span class="math inline">\(\varepsilon_i\)</span> captura a variabilidade residual latente, que pode ter estrutura espacial.</li>
+</ol>
+</div>
+<div id="tabset-11-2">
+<p>Diferente da modelagem direta da resposta, aqui modelamos o preditor linear.</p>
+<p><span class="math display">\[
+\begin{align}
+\text{Observado:} &amp; \quad y_i \sim \text{Poisson}(E_i e^{\eta_i}) \\
+\text{Latente:} &amp; \quad \eta_i = \underbrace{\mu + \mathbf{x}_i^\top \boldsymbol{\beta}}_{\text{Fixo}} + \underbrace{\varepsilon_i}_{\text{Aleatório}}
+\end{align}
+\]</span></p>
+<blockquote>
+<p>A grande questão é: como estruturar <span class="math inline">\(\varepsilon_i\)</span>?</p>
+</blockquote>
+</div>
+<div id="tabset-11-3">
+<p>Proposto por <span class="citation" data-cites="besag1991bayesian">Besag; York; Mollié (<a href="#/references" role="doc-biblioref" onclick="">1991</a>)</span>, decompõe o erro em dois componentes aditivos:</p>
+<p><span class="math inline">\(\varepsilon_i = u_i + v_i\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>Estrutural (<span class="math inline">\(u_i\)</span>) - Espacial</li>
+</ol>
+<ul>
+<li><p>Prior: ICAR.</p></li>
+<li><p>Captura dependência local (suavização).</p></li>
+<li><p>Distribuição condicional aos vizinhos.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ol start="2" type="1">
+<li>Não estrutural (<span class="math inline">\(v_i\)</span>) - iid</li>
+</ol>
+<ul>
+<li><p>Prior: <span class="math inline">\(N(0, \tau_v^{-1})\)</span>.</p></li>
+<li><p>Captura heterogeneidade pura (ruído)</p></li>
+<li><p>Independente entre áreas.</p></li>
+</ul>
+</div></div>
+</div>
+<div id="tabset-11-4">
+<p>Apesar de clássico, o BYM tem falhas graves apontadas por <span class="citation" data-cites="riebler2016intuitive">Riebler et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>:</p>
+<ol type="1">
+<li class="fragment"><p><strong>Identificabilidade:</strong> Apenas a soma <span class="math inline">\(\varepsilon = u+v\)</span> é vista pelos dados. <span class="math inline">\(u\)</span> e <span class="math inline">\(v\)</span> competem pela explicação da variância.</p></li>
+<li class="fragment"><p>A variância do componente espacial depende da geometria do grafo.</p></li>
+</ol>
+<blockquote>
+<p><strong>Consequência:</strong> A mesma prior <span class="math inline">\(\tau_u\)</span> tem significados diferentes em mapas diferentes (ex: SP vs.&nbsp;Amazonas).</p>
+</blockquote>
+</div>
+<div id="tabset-11-5">
+<p><span class="citation" data-cites="riebler2016intuitive">Riebler et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> resolvem o problema do modelo BYM escalonando a matriz (<span class="math inline">\(\mathbf{Q}_*\)</span>) para que a variância geométrica média seja 1 e reparametrizando: <span class="math inline">\(\boldsymbol{\varepsilon} = \frac{1}{\sqrt{\tau}} \left( \sqrt{1 - \phi}\,\mathbf{v} + \sqrt{\phi}\,\mathbf{u}_* \right)\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\tau\)</span> (Precisão Marginal): Controla a variância total do efeito latente.</p></li>
+<li><p><span class="math inline">\(\phi \in [0, 1]\)</span> (Peso Espacial): Proporção da variância explicada pela estrutura espacial.</p></li>
+</ul>
+<p>A grande vantagem do BYM2 é a interpretação direta de <span class="math inline">\(\phi\)</span>: <span class="math inline">\(\text{Var}(\boldsymbol{\varepsilon}) = \underbrace{(1 - \phi)\sigma^2}_{\text{Ruído IID}} + \underbrace{\phi \sigma^2}_{\text{Espacial}}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\phi \to 1\)</span>: O fenômeno é puramente espacial (ICAR). O mapa é suave.</p></li>
+<li><p><span class="math inline">\(\phi \to 0\)</span>: O fenômeno é puramente ruído aleatório. O mapa é irregular.</p></li>
+<li><p><span class="math inline">\(\phi \approx 0.5\)</span>: Metade da variação vem dos vizinhos, metade é idiossincrasia local.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modelos-econométricos-espaciais" class="title-slide slide level1 center">
+<h1>Modelos Econométricos Espaciais</h1>
+
+</section>
+<section id="diferenças-fundamentais" class="slide level2">
+<h2>Diferenças fundamentais</h2>
+<div class="panel-tabset">
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Estatística vs.&nbsp;Econometria</a></li><li><a href="#tabset-12-2">Tipos de interação</a></li><li><a href="#tabset-12-3">O Modelo Geral (GNS)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Qual o foco da análise?</p>
+<ul>
+<li><p><strong>Estatística Espacial (CAR/ICAR)</strong></p>
+<ul>
+<li><p>Suavização, predição e ajuste.</p></li>
+<li><p>Condicional (<span class="math inline">\(Y_i \mid Y_{-i}\)</span>).</p></li>
+</ul></li>
+<li><p><strong>Econometria Espacial</strong></p>
+<ul>
+<li><p>Foco: Causalidade, teste de hipóteses e impacto de políticas.</p></li>
+<li><p>Mecanismo: Simultâneo (<span class="math inline">\(\mathbf{y} = (\mathbf{I} - \rho\mathbf{W})^{-1}\mathbf{X}\boldsymbol{\beta}\)</span>).</p></li>
+<li><p>Base Teórica: Interação estratégica, contágio, externalidades <span class="citation" data-cites="anselin1988spatial">(<a href="#/references" role="doc-biblioref" onclick="">Anselin, 1988</a>)</span>.</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-12-2">
+<p><span class="citation" data-cites="elhorst2014spatial">Elhorst et al. (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span> define três canais de dependência:</p>
+<ol type="1">
+<li class="fragment"><p>Defasagem em Y (<span class="math inline">\(\mathbf{W}\mathbf{y}\)</span>):</p>
+<ul>
+<li class="fragment"><p><em>Endógena</em>. O meu resultado depende do resultado do vizinho.</p></li>
+<li class="fragment"><p>Ex: Competição fiscal, efeitos de pares, contágio de preços.</p></li>
+</ul></li>
+<li class="fragment"><p>Defasagem em X (<span class="math inline">\(\mathbf{W}\mathbf{X}\)</span>)</p>
+<ul>
+<li class="fragment"><p><em>Exógena</em>. O meu resultado depende das características do vizinho.</p></li>
+<li class="fragment"><p>Ex: Criminalidade local afetada pelo policiamento vizinho (deslocamento).</p></li>
+</ul></li>
+<li class="fragment"><p>Defasagem no erro (<span class="math inline">\(\mathbf{W}\mathbf{u}\)</span>)</p>
+<ul>
+<li class="fragment"><p><em>Residual</em>. Choques não observados correlacionados.</p></li>
+<li class="fragment"><p>Ex: Variáveis ambientais omitidas (poluição, clima) que afetam regiões vizinhas igualmente.</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="tabset-12-3">
+<p>O Modelo Geral de Aninhamento Espacial (GNS - <em>General Nesting Spatial Model</em>) engloba todas as interações <span class="citation" data-cites="elhorst2022dynamic">(<a href="#/references" role="doc-biblioref" onclick="">Elhorst, 2022</a>)</span>: <span class="math inline">\(\mathbf{y} = \rho \mathbf{W}\mathbf{y} + \mathbf{X}\boldsymbol{\beta} +\mathbf{W}\mathbf{X}\boldsymbol{\theta} + \mathbf{u}, \: \:\mathbf{u} = \lambda \mathbf{W}\mathbf{u} + \boldsymbol{\epsilon}\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Componentes Principais</strong></p>
+<ul>
+<li><p><span class="math inline">\(\rho \mathbf{W}\mathbf{y}\)</span>: Efeito de feedback simultâneo.</p></li>
+<li><p><span class="math inline">\(\mathbf{W}\mathbf{X}\boldsymbol{\theta}\)</span>: Efeito de transbordamento local (<em>spillover</em>).</p></li>
+<li><p><span class="math inline">\(\lambda \mathbf{W}\mathbf{u}\)</span>: Correlação nos erros não observados.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><p><span class="math inline">\(\rho\)</span>: Intensidade do contágio endógeno.</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: Efeito direto das covariáveis.</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\theta}\)</span>: Efeito indireto (vizinhos).</p></li>
+<li><p><span class="math inline">\(\lambda\)</span>: Intensidade da correlação residual.</p></li>
+</ul>
+</div></div>
+<blockquote>
+<p><strong>Nota:</strong> A escolha do modelo é teórica. Você acredita em contágio real (<span class="math inline">\(\rho\)</span>) ou apenas em variáveis omitidas (<span class="math inline">\(\lambda\)</span>)?</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="a-família-de-modelos-gns" class="slide level2">
+<h2>A família de modelos GNS</h2>
+<div class="panel-tabset">
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">SAR</a></li><li><a href="#tabset-13-2">SEM</a></li><li><a href="#tabset-13-3">SLX</a></li><li><a href="#tabset-13-4">SDM</a></li><li><a href="#tabset-13-5">SDEM</a></li><li><a href="#tabset-13-6">SARAR</a></li><li><a href="#tabset-13-7">SMA</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo de Defasagem Espacial (<em>Spatial Autoregressive Model</em>: <span class="math inline">\(\rho \neq 0, \lambda = 0, \theta = 0\)</span></p>
+<p><span class="math display">\[
+Y_i = \rho \sum_{j=1}^n w_{ij} Y_j + \mathbf{x}_i^\top \boldsymbol{\beta} + \epsilon_i, \quad \epsilon_i \sim \mathcal{N}(0, \sigma^2)
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação dos coeficientes</strong></p>
+<ul>
+<li><p>Efeito direto: Impacto da mudança em <span class="math inline">\(x_{ik}\)</span> sobre <span class="math inline">\(y_i\)</span>.</p></li>
+<li><p>Efeito indireto (Spillover): Impacto da mudança em <span class="math inline">\(x_{ik}\)</span> sobre todos os outros <span class="math inline">\(y_j\)</span>.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>Máxima Verossimilhança (ML) ou Variáveis Instrumentais (GMM/IV) usando defasagens de X (<span class="math inline">\(\mathbf{WX}\)</span>) como instrumentos.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-2">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo de erro espacial (<em>Spatial Error Model</em>: <span class="math inline">\(\lambda \neq 0, \rho = 0, \theta = 0\)</span>)</p>
+<p><span class="math display">\[
+y_i = \sum_{k=1}^K x_{ik}\beta_k + u_i, \qquad
+u_i = \lambda \sum_{j=1}^N w_{ij} u_j + \epsilon_i, \qquad
+\epsilon_i \sim \mathcal{N}(0, \sigma^2).
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação dos coeficientes</strong></p>
+<ul>
+<li><p><span class="math inline">\(\beta_k\)</span> são os efeitos marginais diretos (Derivadas Parciais).</p></li>
+<li><p>Uma variação em <span class="math inline">\(x_{ik}\)</span> afeta apenas <span class="math inline">\(y_i\)</span> (sem <em>feedback</em> ou <em>spillovers</em> na média).</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>Máxima Verossimilhança (ML) ou GMM para incorporar a estrutura não esférica da covariância (<span class="math inline">\(\boldsymbol{\Omega}\)</span>).</li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-3">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo de defasagem espacial de X (<em>Spatial Lag of X</em>: <span class="math inline">\(\rho = 0, \lambda = 0, \boldsymbol{\theta} \neq \mathbf{0}\)</span>)</p>
+<p><span class="math display">\[
+y_i = \alpha + \sum_{k=1}^K x_{ik}\beta_k + \sum_{k=1}^K \theta_k \left( \sum_{j=1}^n w_{ij} x_{jk} \right) + \epsilon_i
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação dos coeficientes</strong></p>
+<ul>
+<li><p>Efeito direto (<span class="math inline">\(\beta_k\)</span>): Mudança em <span class="math inline">\(x_{ik}\)</span> afeta <span class="math inline">\(y_i\)</span>.</p></li>
+<li><p>Efeito indireto (<span class="math inline">\(\theta_k\)</span>): <em>Spillover</em> local. Mudança em <span class="math inline">\(x_{jk}\)</span> afeta <span class="math inline">\(y_i\)</span>.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação e Vantagens</strong></p>
+<ul>
+<li>Mínimos quadrados (OLS): Como <span class="math inline">\(\mathbf{W}\mathbf{X}\)</span> é exógena, estimadores OLS são não viesados, consistentes e eficientes <span class="citation" data-cites="halleck2015slx">(<a href="#/references" role="doc-biblioref" onclick="">Halleck Vega; Elhorst, 2015</a>)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-4">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo Espacial de Durbin (<em>Spatial Durbin Model</em>: <span class="math inline">\(\lambda = 0, \rho \neq 0, \boldsymbol{\theta} \neq \mathbf{0}\)</span>)</p>
+<p><span class="math display">\[
+y_i = \rho \sum_{j=1}^n w_{ij} y_j + \sum_{k=1}^K x_{ik}\beta_k + \sum_{k=1}^K \theta_k \left( \sum_{j=1}^n w_{ij} x_{jk} \right) + \epsilon_i
+\]</span></p>
+<div class="fragment">
+<p><strong>Decomposição de impactos</strong></p>
+<ul>
+<li><p>Efeito direto: Impacto de <span class="math inline">\(x_{ik}\)</span> em <span class="math inline">\(y_i\)</span> (com feedback).</p></li>
+<li><p>Efeito indireto: Impacto de <span class="math inline">\(x_{ik}\)</span> em todos os outros <span class="math inline">\(y_j\)</span>.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>Requer Máxima Verossimilhança (ML) ou MCMC (Bayesiano) devido ao termo endógeno <span class="math inline">\(\mathbf{W}\mathbf{y}\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-5">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo Espacial de Durbin com Erro (<em>Spatial Durbin Error Model</em>: <span class="math inline">\(\rho = 0, \lambda \neq 0, \boldsymbol{\theta} \neq \mathbf{0}\)</span>)</p>
+<p><span class="math display">\[
+y_i = \sum_{k=1}^K x_{ik}\beta_k + \sum_{k=1}^K \theta_k \left( \sum_{j=1}^n w_{ij} x_{jk} \right) + u_i, \quad u_i = \lambda \sum_{j=1}^n w_{ij} u_j + \epsilon_i.
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação dos coeficientes</strong></p>
+<ul>
+<li><p>Efeito direto (<span class="math inline">\(\beta_k\)</span>): Impacto de <span class="math inline">\(x_{ik}\)</span> em <span class="math inline">\(y_i\)</span>. Idêntico à regressão clássica.</p></li>
+<li><p>Efeito indireto (<span class="math inline">\(\theta_k\)</span>): Impacto de <span class="math inline">\(x_{jk}\)</span> em <span class="math inline">\(y_i\)</span>. Se <span class="math inline">\(w_{ij}=0\)</span>, o efeito é nulo.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>Requer Máxima Verossimilhança (ML) ou GMM para tratar a estrutura de covariância não esférica dos erros.</li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-6">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo Autorregressivo Espacial com Erros Autorregressivos (<em>Spatial Combined</em>: <span class="math inline">\(\rho \neq 0, \lambda \neq 0, \boldsymbol{\theta} = \mathbf{0}\)</span>)</p>
+<p><span class="math display">\[
+y_i = \rho \sum_{j=1}^n w_{1,ij} y_j + \sum_{k=1}^K x_{ik}\beta_k + u_i, \quad u_i = \lambda \sum_{j=1}^n w_{2,ij} u_j + \epsilon_i.
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação dos coeficientes</strong></p>
+<ul>
+<li><p>Segue a lógica do SAR: <span class="math inline">\(\mathbb{E}[\mathbf{y}] = (\mathbf{I}_n - \rho \mathbf{W}_1)^{-1}\mathbf{X}\boldsymbol{\beta}\)</span>.</p></li>
+<li><p>Requer decomposição em efeitos diretos, indiretos e totais.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>GMM (GS2SLS) ver <a href="Aula02.html">aula</a></li>
+</ul>
+</div>
+</div>
+<div id="tabset-13-7">
+<p><span class="math inline">\(\Longrightarrow\)</span> Modelo de Média Móvel Espacial (<em>Spatial Moving Average</em>)</p>
+<p><span class="math display">\[
+y_i = \sum_{k=1}^K x_{ik}\beta_k + \epsilon_i + \lambda \sum_{j=1}^n w_{ij} \epsilon_j, \quad \epsilon_i \sim \mathcal{N}(0, \sigma^2)
+\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação da Covariância</strong></p>
+<p>A estrutura de covariância é finita: <span class="math inline">\(\boldsymbol{\Omega} = \sigma^2 (\mathbf{I}_n + \lambda \mathbf{W})(\mathbf{I}_n + \lambda \mathbf{W})^{\top}\)</span>.</p>
+<ul>
+<li><p>A correlação é nula para unidades que não sejam vizinhas diretas nem compartilhem um vizinho comum.</p></li>
+<li><p>Decaimento abrupto da correlação espacial (ao contrário do SEM).</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estimação</strong></p>
+<ul>
+<li>Máxima Verossimilhança.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modelos-para-respostas-limitadas-e-discretas" class="title-slide slide level1 center">
+<h1>Modelos para respostas limitadas e discretas</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Probit</a></li><li><a href="#tabset-14-2">Estimação</a></li><li><a href="#tabset-14-3">Probit ordenado</a></li><li><a href="#tabset-14-4">Interpretação</a></li><li><a href="#tabset-14-5">Tobit</a></li><li><a href="#tabset-14-6">Estimação</a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Variável dependente binária (<span class="math inline">\(y_i \in \{0, 1\}\)</span>) com dependência espacial.</p>
+<ul>
+<li>O modelo assume uma variável latente contínua <span class="math inline">\(y_i^*\)</span> que segue um processo espacial autoregressivo:</li>
+</ul>
+<p><span class="math display">\[
+y_i^* = \rho \sum_{j=1}^n w_{ij} y_j^* + \mathbf{x}_i^{\top}\boldsymbol{\beta} + \epsilon_i, \: \epsilon_i \sim \mathcal{N}(0, 1)
+\Rightarrow
+y_i = \begin{cases} 1, &amp; \text{se } y_i^* &gt; 0 \\ 0, &amp; \text{se } y_i^* \le 0 \end{cases}
+\]</span></p>
+</div>
+<div id="tabset-14-2">
+<ol type="1">
+<li><p>Bayesiana (MCMC): Trata <span class="math inline">\(y^*\)</span> como parâmetro latente e amostra sequencialmente de uma normal truncada <span class="citation" data-cites="lesage2000bayesian">(<a href="#/references" role="doc-biblioref" onclick="">LeSage, 2000</a>)</span>.</p></li>
+<li><p>GMM</p></li>
+</ol>
+<p><strong>Interpretação</strong></p>
+<ol type="1">
+<li>Uma mudança em <span class="math inline">\(x_{ik}\)</span> altera a probabilidade <span class="math inline">\(P(y_i=1)\)</span>. Essa alteração afeta os vizinhos via <span class="math inline">\(\rho\)</span>. O efeito retorna a <span class="math inline">\(i\)</span> (feedback).</li>
+</ol>
+<blockquote>
+<p>Use os efeitos médios diretos, indiretos e totais calculados via simulação ou MCMC <span class="citation" data-cites="lesage2009introduction">(<a href="#/references" role="doc-biblioref" onclick="">LeSage; Pace, 2009</a>)</span>.</p>
+</blockquote>
+</div>
+<div id="tabset-14-3">
+<p><span class="math inline">\(\Longrightarrow\)</span> Variável dependente categórica ordenada (ex: Nível de satisfação: Baixo &lt; Médio &lt; Alto).</p>
+<p><span class="math display">\[
+y_i = j \quad \iff \quad \gamma_j &lt; y_i^* \le \gamma_{j+1}, \: y_i \in \{0, \dots, J\}\\
+\Downarrow\\
+\mathbf{y}^* = \rho \mathbf{W}\mathbf{y}^* + \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I}_n)
+\]</span></p>
+<ul>
+<li>Estimação Bayesiana (MCMC)</li>
+</ul>
+</div>
+<div id="tabset-14-4">
+<p>Deve-se reportar para CADA categoria <span class="math inline">\(j\)</span>:</p>
+<ul>
+<li><p>Efeito direto: Impacto médio na própria unidade.</p></li>
+<li><p>Efeito indireto: Impacto médio nos vizinhos.</p></li>
+<li><p>Efeito total: Soma dos dois.</p></li>
+</ul>
+</div>
+<div id="tabset-14-5">
+<p><span class="math inline">\(\Longrightarrow\)</span> Variável contínua censurada (ex: muitos zeros e cauda contínua).</p>
+<ul>
+<li>O modelo assume uma variável latente contínua <span class="math inline">\(y_i^*\)</span> que segue um processo espacial autoregressivo (SAR Tobit):</li>
+</ul>
+<p><span class="math display">\[
+y_i^* = \rho \sum_{j=1}^n w_{ij} y_j^* + \mathbf{x}_i^{\top}\boldsymbol{\beta} + \epsilon_i, \quad \epsilon_i \sim \mathcal{N}(0, \sigma^2)\\
+\Downarrow\\
+y_i = \max(0, y_i^*)
+\]</span></p>
+</div>
+<div id="tabset-14-6">
+<ol type="1">
+<li><p>Bayesiana (MCMC)</p></li>
+<li><p>EM (Expectation-Maximization): Imputa valores esperados para os dados censurados e maximiza a verossimilhança <span class="citation" data-cites="mcmillen1992probit">(<a href="#/references" role="doc-biblioref" onclick="">McMillen, 1992</a>)</span>.</p></li>
+</ol>
+<p><strong>Interpretação</strong></p>
+<ul>
+<li><p>Efeito direto: Impacto de <span class="math inline">\(x_{ik}\)</span> em <span class="math inline">\(y_i\)</span> (considerando a probabilidade de <span class="math inline">\(y_i &gt; 0\)</span>).</p></li>
+<li><p>Efeito indireto: <em>Spillover</em> espacial.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreto-os-coeficientes-ou-os-impactos" class="slide level2">
+<h2>Interpreto os coeficientes ou os impactos?</h2>
+<div class="panel-tabset">
+<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">Intuição</a></li><li><a href="#tabset-15-2">Tabela Resumo</a></li></ul>
+<div class="tab-content">
+<div id="tabset-15-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> A chave é o parâmetro de defasagem espacial em <span class="math inline">\(Y\)</span> (<span class="math inline">\(\rho\)</span>).</p>
+<ul>
+<li>A interpretação depende se existe um multiplicador espacial que gera ciclos de <em>feedback</em> (<span class="math inline">\(i \to j \to i\)</span>).</li>
+</ul>
+<ol type="1">
+<li><p>Sem feedback global (<span class="math inline">\(\rho = 0\)</span>):</p>
+<ul>
+<li><p><span class="math inline">\(\frac{\partial y_i}{\partial x_{ik}} = \beta_k\)</span>. O que acontece no vizinho fica no vizinho.</p></li>
+<li><p><strong>Ação:</strong> Interprete os <span class="math inline">\(\beta\)</span> e <span class="math inline">\(\theta\)</span> diretamente da tabela (<code>summary()</code>).</p></li>
+</ul></li>
+<li><p>Com Feedback Global (<span class="math inline">\(\rho \neq 0\)</span>):</p>
+<ul>
+<li><p><span class="math inline">\(\frac{\partial \mathbf{y}}{\partial \mathbf{x}_k} = (\mathbf{I} - \rho \mathbf{W})^{-1} \beta_k\)</span>. O <span class="math inline">\(\beta\)</span> estimado é apenas o impulso inicial, não o resultado final.</p></li>
+<li><p><strong>Ação:</strong> Ignore o <code>summary()</code>. Calcule os Efeitos diretos, indiretos e totais (função <code>impacts()</code>).</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="tabset-15-2">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;"><strong>Modelos Locais</strong><br><small>(OLS, SEM, SLX, SDEM)</small></th>
+<th style="text-align: left;"><strong>Modelos Globais</strong><br><small>(SAR, SDM, SAC)</small></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Parâmetro <span class="math inline">\(\rho\)</span></strong></td>
+<td style="text-align: left;"><span class="math inline">\(\rho = 0\)</span> (Ausente)</td>
+<td style="text-align: left;"><span class="math inline">\(\rho \neq 0\)</span> (Presente)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Mecanismo</strong></td>
+<td style="text-align: left;">Transmissão direta</td>
+<td style="text-align: left;">Multiplicador <span class="math inline">\((\mathbf{I} - \rho \mathbf{W})^{-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Feedback</strong></td>
+<td style="text-align: left;">Finito (<span class="math inline">\(i \to j\)</span>)</td>
+<td style="text-align: left;">Infinito (<span class="math inline">\(i \leftrightarrow j \leftrightarrow \dots\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Interpretação</strong></td>
+<td style="text-align: left;">Direto do <code>summary()</code></td>
+<td style="text-align: left;"><strong>Obrigatório <code>impacts()</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Coeficiente <span class="math inline">\(\beta\)</span></strong></td>
+<td style="text-align: left;">É o Efeito Direto</td>
+<td style="text-align: left;">Impulso inicial (Pré-feedback)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Coeficiente <span class="math inline">\(\theta\)</span></strong></td>
+<td style="text-align: left;">É o <em>Spillover</em></td>
+<td style="text-align: left;">Compõe o cálculo total</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>No R</strong></td>
+<td style="text-align: left;"><code>coef(modelo)</code></td>
+<td style="text-align: left;"><code>impacts(modelo)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modelos-locais-e-não-estacionários" class="title-slide slide level1 center">
+<h1>Modelos locais e não estacionários</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">O Problema Global</a></li><li><a href="#tabset-16-2">A solução local</a></li></ul>
+<div class="tab-content">
+<div id="tabset-16-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> A falácia da média espacial.</p>
+<p>Modelos globais (OLS, SAR, SEM) assumem estacionariedade espacial: a relação entre <span class="math inline">\(Y\)</span> e <span class="math inline">\(X\)</span> é constante em todo o mapa (<span class="math inline">\(\boldsymbol{\beta}\)</span> fixo).</p>
+<ul>
+<li><p><strong>Exemplo:</strong> Um modelo global assume que o preço por <span class="math inline">\(m^2\)</span> da área construída é o mesmo na periferia e em bairros nobres.</p></li>
+<li><p><strong>Realidade:</strong> Existe um valor intrínseco de localização:</p>
+<ul>
+<li><p>Bairros nobres: <span class="math inline">\(\beta_{area}\)</span> alto.</p></li>
+<li><p>Periferia: <span class="math inline">\(\beta_{area}\)</span> baixo.</p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Modelos globais aplicados a processos heterogêneos produzem estimativas médias enganosas, mascarando variações locais. <span class="citation" data-cites="fotheringham2002geographically">(<a href="#/references" role="doc-biblioref" onclick="">Lu et al., 2014</a>)</span></p>
+</blockquote>
+</div>
+</div>
+<div id="tabset-16-2">
+<p><span class="math inline">\(\Longrightarrow\)</span> Decomposição de parâmetros.</p>
+<p>Modelos locais (GWR, MGWR) permitem que os parâmetros flutuem no espaço <span class="math inline">\((u_i, v_i)\)</span>.</p>
+<p><span class="math display">\[
+y_i = \beta_0(u_i, v_i) + \sum_{k=1}^{p} \beta_k(u_i, v_i) x_{ik} + \epsilon_i
+\]</span></p>
+<ul>
+<li>O objetivo é estimar um vetor <span class="math inline">\(\boldsymbol{\beta}_i\)</span> para cada localização <span class="math inline">\(i\)</span>, revelando a estrutura espacial oculta nas relações entre variáveis.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="gwr" class="slide level2">
+<h2>GWR</h2>
+<div class="panel-tabset">
+<ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1">GWR</a></li><li><a href="#tabset-17-2">O que é <span class="math inline">\(w_{ij}\)</span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-17-1">
+<p><span class="math inline">\(\Longrightarrow\)</span> Regressão Geograficamente Ponderada</p>
+<ul>
+<li>Em vez de minimizar os quadrados globais, minimizamos os erros ponderados pela proximidade a <span class="math inline">\(i\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+y_i = \beta_0(u_i, v_i) + \sum_{k=1}^{p} \beta_k(u_i, v_i) x_{ik} + \epsilon_i\: \Longrightarrow
+\hat{\boldsymbol{\beta}}(u_i, v_i) = \left( \mathbf{X}^\top \mathbf{W}(i) \mathbf{X} \right)^{-1} \mathbf{X}^\top \mathbf{W}(i) \mathbf{y}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{W}(i) = \text{diag}\left(w_{i1}, w_{i2}, \dots, w_{in}\right) = \begin{bmatrix}
+w_{i1} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; w_{i2} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; w_{in}
+\end{bmatrix}_{n \times n},
+\]</span></p>
+</div>
+<div id="tabset-17-2">
+<ul>
+<li><p><span class="math inline">\(w_{ij}\)</span>: Peso da observação <span class="math inline">\(j\)</span> na calibração do ponto <span class="math inline">\(i\)</span>. Decai com a distância <span class="math inline">\(d_{ij}\)</span>.</p></li>
+<li><p>A forma como <span class="math inline">\(w_{ij}\)</span> decai é crucial.</p>
+<ul>
+<li><p>Fixo: <span class="math inline">\(b\)</span> constante (raio fixo). Ruim para dados com densidade variável.</p></li>
+<li><p>Adaptativo: <span class="math inline">\(b\)</span> definido por <span class="math inline">\(N\)</span> vizinhos mais próximos. Ajusta-se à densidade dos dados <span class="citation" data-cites="guo2008comparison">(<a href="#/references" role="doc-biblioref" onclick="">Guo; Ma; Zhang, 2008</a>)</span>.</p></li>
+</ul></li>
+<li><p>Trade-off:</p>
+<ul>
+<li><p><span class="math inline">\(b\)</span> pequeno <span class="math inline">\(\to\)</span> Alta variância (<em>overfitting</em>).</p></li>
+<li><p><span class="math inline">\(b\)</span> grande <span class="math inline">\(\to\)</span> Alto viés (tende ao OLS global).</p></li>
+</ul></li>
+</ul>
+<p><strong>Seleção de <span class="math inline">\(b\)</span> (AICc)</strong></p>
+<p>Busca-se o <span class="math inline">\(b\)</span> que minimiza o AIC corrigido. O</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mgwr" class="slide level2">
+<h2>MGWR</h2>
+<div class="panel-tabset">
+<ul id="tabset-18" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-18-1">GWR vs MGWR</a></li><li><a href="#tabset-18-2">Estimação</a></li><li><a href="#tabset-18-3">Interpretação das escalas</a></li></ul>
+<div class="tab-content">
+<div id="tabset-18-1">
+<p><strong>A Limitação da GWR:</strong> Assume um único <span class="math inline">\(b\)</span> para todas as covariáveis. Força o modelo a assumir que o “Clima” (global) varia na mesma escala que a “Renda” (local).</p>
+<p><strong>A Solução MGWR:</strong> Permite uma largura de banda <span class="math inline">\(bw_j\)</span> específica para cada covariável <span class="math inline">\(j\)</span>.</p>
+<p><span class="math display">\[
+y_i = \beta_0(u_i, v_i; bw_0) + \sum_{j=1}^{p} \beta_j(u_i, v_i; bw_j) \, x_{ij} + \epsilon_i
+\]</span></p>
+<ul>
+<li>O parâmetro <span class="math inline">\(bw_j\)</span> deixa de ser apenas técnico e torna-se um indicador da escala do processo <span class="citation" data-cites="fotheringham2017multiscale">(<a href="#/references" role="doc-biblioref" onclick="">Fotheringham; Yang; Kang, 2017</a>)</span>.</li>
+</ul>
+</div>
+<div id="tabset-18-2">
+<ul>
+<li><p>Não existe solução analítica direta (como no WLS da GWR).</p></li>
+<li><p>Usa-se um processo iterativo inspirado em GAMs (Modelos Aditivos Generalizados) <span class="citation" data-cites="yu2019inference">(<a href="#/references" role="doc-biblioref" onclick="">Yu et al., 2020</a>)</span>.</p></li>
+</ul>
+<ol type="1">
+<li><p>Começa com estimativas OLS ou GWR padrão.</p></li>
+<li><p>Para cada variável <span class="math inline">\(j\)</span>:</p>
+<ul>
+<li><p>Calcula o resíduo parcial (<span class="math inline">\(\mathbf{r}_j\)</span>): Remove o efeito estimado de todas as outras variáveis.</p></li>
+<li><p>Ajusta uma GWR univariada de <span class="math inline">\(\mathbf{r}_j\)</span> contra <span class="math inline">\(\mathbf{x}_j\)</span>.</p></li>
+<li><p>Encontra o <span class="math inline">\(bw_j\)</span> ótimo (via AICc) para esta variável específica.</p></li>
+</ul></li>
+<li><p>Repete até que os coeficientes estabilizem.</p></li>
+</ol>
+</div>
+<div id="tabset-18-3">
+<ul>
+<li><p><span class="math inline">\(bw_j\)</span> Pequeno (Local): Processo altamente heterogêneo.</p></li>
+<li><p><span class="math inline">\(bw_j\)</span> Grande (Global): Processo estacionário.</p></li>
+</ul>
+<blockquote>
+<p>A MGWR produz modelos mais parcimoniosos (menor AICc) e reduz problemas de multicolinearidade local ao não forçar variáveis globais a variarem localmente <span class="citation" data-cites="oshan2020targeting">(<a href="#/references" role="doc-biblioref" onclick="">Oshan; Smith; Fotheringham, 2020</a>)</span>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="próximos-passos" class="slide level2">
+<h2>Próximos Passos</h2>
+<p>Na Aula 06, veremos a parte prática deste conteúdo. Por favor, leia todo o Capítulo 4, com foco na aplicação e pacotes.</p>
+<br>
+<p align="center">
+<a class="btn btn-primary" href="Aula6.R" download="" role="button" style="color: white; background-color: #007bff; padding: 10px 20px; text-decoration: none; border-radius: 5px;"> <i class="fa fa-download"></i> Baixar Script da Aula 06 (.R) </a>
+</p>
+<p><br></p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="referências-bibliográficas" class="title-slide slide level1 center">
+<h1>Referências Bibliográficas</h1>
+
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
+<div id="ref-anselin1988spatial" class="csl-entry" role="listitem">
+ANSELIN, Luc. Spatial econometrics: methods and models. <strong>Kluwer Academic Publishers google schola</strong>, v. 2, p. 283–291, 1988.
+</div>
+<div id="ref-anselin1995local" class="csl-entry" role="listitem">
+ANSELIN, Luc. Local indicators of spatial association—LISA. <strong>Geographical analysis</strong>, v. 27, n. 2, p. 93–115, 1995.
+</div>
+<div id="ref-anselin2001spatial" class="csl-entry" role="listitem">
+ANSELIN, Luc. Spatial Econometrics. <em>In</em>: BALTAGI, Badi H. (Org.). <strong>A Companion to Theoretical Econometrics</strong>. Oxford: Blackwell Publishing, 2001. p. 310–330.
+</div>
+<div id="ref-besag1974spatial" class="csl-entry" role="listitem">
+BESAG, Julian. Spatial interaction and the statistical analysis of lattice systems. <strong>Journal of the Royal Statistical Society: Series B (Methodological)</strong>, v. 36, n. 2, p. 192–225, 1974.
+</div>
+<div id="ref-besag1991bayesian" class="csl-entry" role="listitem">
+BESAG, Julian; YORK, Jeremy; MOLLIÉ, Annie. Bayesian image restoration, with two applications in spatial statistics. <strong>Annals of the institute of statistical mathematics</strong>, v. 43, n. 1, p. 1–20, 1991.
+</div>
+<div id="ref-cressie1993statistics" class="csl-entry" role="listitem">
+CRESSIE, Noel. <strong>Statistics for spatial data</strong>. <em>[S.l.]</em>: John Wiley &amp; Sons, 1993.
+</div>
+<div id="ref-cressie1989spatial" class="csl-entry" role="listitem">
+CRESSIE, Noel; CHAN, Ngai H. Spatial modeling of regional variables. <strong>Journal of the American Statistical Association</strong>, v. 84, n. 406, p. 393–401, 1989.
+</div>
+<div id="ref-cressie2022spatial" class="csl-entry" role="listitem">
+CRESSIE, Noel; MOORES, Matthew T. Spatial statistics. <em>In</em>: <strong>Encyclopedia of mathematical geosciences</strong>. <em>[S.l.]</em>: Springer, 2022. p. 1–11.
+</div>
+<div id="ref-elhorst2014spatial" class="csl-entry" role="listitem">
+ELHORST, J. Paul <em>et al.</em> <strong>Spatial econometrics: from cross-sectional data to spatial panels</strong>. <em>[S.l.]</em>: Springer, 2014. v. 479
+</div>
+<div id="ref-elhorst2022dynamic" class="csl-entry" role="listitem">
+ELHORST, J. Paul. The dynamic general nesting spatial econometric model for spatial panels with common factors: Further raising the bar. <strong>Review of Regional Research</strong>, v. 42, n. 3, p. 249–267, 2022.
+</div>
+<div id="ref-fotheringham2017multiscale" class="csl-entry" role="listitem">
+FOTHERINGHAM, A. Stewart; YANG, Wenbai; KANG, Wei. <a href="https://doi.org/10.1080/24694452.2017.1352480">Multiscale Geographically Weighted Regression (MGWR)</a>. <strong>Annals of the American Association of Geographers</strong>, v. 107, n. 6, p. 1247–1265, 2017.
+</div>
+<div id="ref-guo2008comparison" class="csl-entry" role="listitem">
+GUO, L.; MA, Z.; ZHANG, L. Comparison of bandwidth selection in application of geographically weighted regression: a case study. <strong>Canadian Journal of Forest Research</strong>, v. 38, n. 9, p. 2526–2534, 2008.
+</div>
+<div id="ref-halleck2015slx" class="csl-entry" role="listitem">
+HALLECK VEGA, Solmaria; ELHORST, J. Paul. The SLX model. <strong>Journal of Regional Science</strong>, v. 55, n. 3, p. 339–363, 2015.
+</div>
+<div id="ref-KeefeFerreiraFranck2018" class="csl-entry" role="listitem">
+KEEFE, Matthew J.; FERREIRA, Marcelo A.; FRANCK, Christopher T. <a href="https://doi.org/10.1016/j.spasta.2018.02.005">On the formal specification of sum-zero constrained intrinsic conditional autoregressive models</a>. <strong>Spatial Statistics</strong>, v. 24, p. 54–65, 2018.
+</div>
+<div id="ref-kelejian2017spatial" class="csl-entry" role="listitem">
+KELEJIAN, Harry; PIRAS, Gianfranco. <strong>Spatial econometrics</strong>. <em>[S.l.]</em>: Academic Press, 2017.
+</div>
+<div id="ref-lesage2000bayesian" class="csl-entry" role="listitem">
+LESAGE, James P. Bayesian estimation of limited dependent variable spatial autoregressive models. <strong>Geographical Analysis</strong>, v. 32, n. 1, p. 19–35, 2000.
+</div>
+<div id="ref-lesage2009introduction" class="csl-entry" role="listitem">
+LESAGE, James; PACE, Robert Kelley. <strong>Introduction to spatial econometrics</strong>. <em>[S.l.]</em>: Chapman; Hall/CRC, 2009.
+</div>
+<div id="ref-fotheringham2002geographically" class="csl-entry" role="listitem">
+LU, Binbin <em>et al.</em> Geographically weighted regression with a non-Euclidean distance metric: a case study using hedonic house price data. <strong>International Journal of Geographical Information Science</strong>, v. 28, n. 4, p. 660–681, 2014.
+</div>
+<div id="ref-mcmillen1992probit" class="csl-entry" role="listitem">
+MCMILLEN, Daniel P. Probit with spatial autocorrelation. <strong>Journal of Regional Science</strong>, v. 32, n. 3, p. 335–348, 1992.
+</div>
+<div id="ref-oshan2020targeting" class="csl-entry" role="listitem">
+OSHAN, Taylor M.; SMITH, James P.; FOTHERINGHAM, A. Stewart. <a href="https://doi.org/10.1186/s12942-020-00204-8">Targeting the spatial context of obesity determinants via multiscale geographically weighted regression</a>. <strong>International Journal of Health Geographics</strong>, v. 19, n. 1, p. 11, 2020.
+</div>
+<div id="ref-riebler2016intuitive" class="csl-entry" role="listitem">
+RIEBLER, Andrea <em>et al.</em> An intuitive Bayesian spatial model for disease mapping that accounts for scaling. <strong>Statistical methods in medical research</strong>, v. 25, n. 4, p. 1145–1165, 2016.
+</div>
+<div id="ref-yu2019inference" class="csl-entry" role="listitem">
+YU, Hanchen <em>et al.</em> Inference in multiscale geographically weighted regression. <strong>Geographical Analysis</strong>, v. 52, n. 1, p. 87–106, 2020.
+</div>
+<div id="ref-zhang2018spatial" class="csl-entry" role="listitem">
+ZHANG, Xinyu; YU, Jihai. Spatial weights matrix selection and model averaging for spatial autoregressive models. <strong>Journal of Econometrics</strong>, v. 203, n. 1, p. 1–18, 2018.
+</div>
+</div>
+<div class="center">
+
+
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': true,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiada");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiada");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/nhancololo\.github\.io");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
