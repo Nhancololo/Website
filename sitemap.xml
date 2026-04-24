@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://nhancololo.github.io/CV/artigos.html</loc>
+    <lastmod>2025-12-22T03:10:40.274Z</lastmod>
+  </url>
+  <url>
     <loc>https://nhancololo.github.io/index.html</loc>
-    <lastmod>2026-02-05T13:17:36.023Z</lastmod>
+    <lastmod>2026-04-24T13:50:18.658Z</lastmod>
   </url>
   <url>
     <loc>https://nhancololo.github.io/internacional.html</loc>
@@ -25,20 +29,16 @@
     <lastmod>2025-12-22T03:10:52.202Z</lastmod>
   </url>
   <url>
-    <loc>https://nhancololo.github.io/livros.html</loc>
-    <lastmod>2025-12-22T03:10:28.502Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nhancololo.github.io/about.html</loc>
-    <lastmod>2025-12-22T02:27:14.970Z</lastmod>
+    <loc>https://nhancololo.github.io/artigos.html</loc>
+    <lastmod>2025-12-22T03:10:40.274Z</lastmod>
   </url>
   <url>
     <loc>https://nhancololo.github.io/availability.html</loc>
     <lastmod>2026-01-03T01:47:18.828Z</lastmod>
   </url>
   <url>
-    <loc>https://nhancololo.github.io/artigos.html</loc>
-    <lastmod>2025-12-22T03:10:40.274Z</lastmod>
+    <loc>https://nhancololo.github.io/about.html</loc>
+    <lastmod>2025-12-22T02:27:14.970Z</lastmod>
   </url>
   <url>
     <loc>https://nhancololo.github.io/news.html</loc>
@@ -63,5 +63,9 @@
   <url>
     <loc>https://nhancololo.github.io/teaching.html</loc>
     <lastmod>2026-01-01T21:12:05.859Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nhancololo.github.io/CV/about.html</loc>
+    <lastmod>2025-12-22T02:27:14.970Z</lastmod>
   </url>
 </urlset>

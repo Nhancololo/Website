@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -125,6 +96,11 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./Publications.pdf">
  <span class="dropdown-text">Publications</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="https://introducao-a-estatistica-espacial.netlify.app/" target="_blank">
+ <span class="dropdown-text">Livro/Notas de Aula</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -174,20 +150,8 @@ window.Quarto = {
   </li>  
         <li class="dropdown-header">— Data Science (MAE5905) —</li>
         <li>
-    <a class="dropdown-item" href="./MonitoriaCienciadeDados/GabaritoLista-1-Ciência-de-dados.pdf" target="_blank">
+    <a class="dropdown-item" href="./MonitoriaCienciadeDados/GabaritoLista12026.pdf" target="_blank">
  <span class="dropdown-text">Assignment 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./MonitoriaCienciadeDados/GabaritoLista2.html" target="_blank">
- <span class="dropdown-text">Assignment 2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./MonitoriaCienciadeDados/Gabarito-lista-3.pdf" target="_blank">
- <span class="dropdown-text">Assignment 3</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./MonitoriaCienciadeDados/Gabaritolista 4.pdf" target="_blank">
- <span class="dropdown-text">Assignment 4</span></a>
   </li>  
         <li class="dropdown-header">— Data Analysis (MAE0261) —</li>
         <li>
@@ -253,6 +217,37 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./FinancialEngehering/MLFP3.html" target="_blank">
  <span class="dropdown-text">Hyperparameter Optimization (HPO)</span></a>
+  </li>  
+        <li class="dropdown-header">— DEEP LEARNING IN FINANCE —</li>
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/Deep_Learning_GWP1F.html" target="_blank">
+ <span class="dropdown-text">Convolutional Neural Networks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/Deep_Learning_GWP2.html" target="_blank">
+ <span class="dropdown-text">Long Short-Term Memory (LSTM)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/Deep_Learning_GWP3F.html" target="_blank">
+ <span class="dropdown-text">MLP, LSTM, and CNN in Gramian Angular Fields.</span></a>
+  </li>  
+        <li class="dropdown-header">— PORTFOLIO MANAGEMENT —</li>
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/PortFM1.html" target="_blank">
+ <span class="dropdown-text">Constrained Portfolio Optimization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/PortFM2.html" target="_blank">
+ <span class="dropdown-text">Denoised Portfolio Optimization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/PortFM3.html" target="_blank">
+ <span class="dropdown-text">Optimal Portfolio Allocation</span></a>
+  </li>  
+        <li class="dropdown-header">— RISK MANAGEMENT —</li>
+        <li>
+    <a class="dropdown-item" href="./FinancialEngehering/PortFM1.html" target="_blank">
+ <span class="dropdown-text">Probabilistic Graph and Bayesian Networks</span></a>
   </li>  
     </ul>
   </li>
@@ -355,27 +350,64 @@ window.Quarto = {
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  /* Força o fundo a ficar transparente para o mapa aparecer */
+  body { background: transparent !important; }
+
+  /* Película translúcida para o mapa não prejudicar a leitura do texto */
+  #map-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.65) 0%, rgba(238,242,245,0.95) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+<div id="map-bg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;">
+
+</div>
+<div id="map-overlay">
+
+</div>
+<canvas id="bg-canvas">
+</canvas>
+<div style="position: relative; z-index: 1;">
+<div class="about-wrapper">
 <div class="container">
-<h2 class="section-title">
+<h2 class="section-title section-header-about">
 About Me
 </h2>
 <div class="grid align-items-justify">
 <div class="g-col-12 g-col-md-4 justify-content">
 <p><img src="https://github.com/Nhancololo.png" class="rounded-circle img-fluid" style="border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" width="380"></p>
-<h1 class="mt-4 fw-bold" style="font-size: 1.8rem; color: #212529;">
+<h1 class="mt-4 fw-bold about-title" style="font-size: 1.8rem; color: #212529;">
 Alex Monito Nhancololo
 </h1>
 </div>
-<section id="ph.d.-student-in-statistics-and-probability" class="level3 g-col-12 g-col-md-8" style="text-align: justify;">
-<h3 data-anchor-id="ph.d.-student-in-statistics-and-probability">Ph.D.&nbsp;student in Statistics and Probability</h3>
-<p>A. M. Nhancololo is a Ph.D.&nbsp;student in Statistics and Probability at the Institute of Mathematics, Statistics and Computer Science, University of São Paulo (IME–USP), advised by Prof.&nbsp;<a href="https://lattes.ime.usp.br/mae/membro-9189359969730039.html">Airlane Pereira Alencar</a>. He is currently (01/01 - 30/06, 2026) conducting a Sandwich PhD at Jaume I University, advised by Prof.&nbsp;<a href="https://mateu.uji.es/">Jorge Mateu</a>.</p>
-<p>He holds an M.Sc. in Statistics and Agricultural Experimentation from the Federal University of Lavras (UFLA), advised by Prof.&nbsp;<a href="http://lattes.cnpq.br/0962359014791482">João Domingos Scalon</a>, where he received the Best Thesis Award (2024). He earned his Bachelor of Education in Mathematics with a specialization in Statistics from Universidade Save, advised by Prof.&nbsp;André Silvestre Cuinica.</p>
-<p>Additionally, he is pursuing an M.Sc. in Financial Engineering at WorldQuant University and an MBA in Artificial Intelligence and Big Data at the Institute of Mathematical and Computer Sciences, University of São Paulo (ICMC–USP). He was awarded third place in the Spatial AI Challenge 2024 (I-GUIDE), alongside Julian Huang and Yue Lin (University of Chicago).</p>
-<p>His primary research interests lie in spatio-temporal statistics and their applications to the social sciences, environmental studies, ecology, agriculture, and medicine. Methodologically, his work focuses on geospatial intelligence (GeoAI), spatial point processes, lattice/area data and geostatistics.</p>
-<p><a href="Alex_Nhancololo_CV.pdf" class="btn btn-dark rounded-pill px-4 mt-3" target="_blank">Download CV</a></p>
-</section>
+<div class="g-col-12 g-col-md-8" style="text-align: justify;">
+<h3 class="about-subtitle">
+Ph.D.&nbsp;student in Statistics and Probability
+</h3>
+<p class="about-text">
+A. M. Nhancololo is a Ph.D.&nbsp;student in Statistics and Probability at the Institute of Mathematics, Statistics and Computer Science, University of São Paulo (IME–USP), advised by Prof.&nbsp;<a href="https://lattes.ime.usp.br/mae/membro-9189359969730039.html" target="_blank">Airlane Pereira Alencar</a>. He is currently (01/01 - 30/06, 2026) a visiting researcher at Jaume I University, advised by Prof.&nbsp;<a href="https://mateu.uji.es/" target="_blank">Jorge Mateu</a>.
+</p>
+<p class="about-text">
+He holds an M.Sc. in Statistics and Agricultural Experimentation from the Federal University of Lavras (UFLA), advised by Prof.&nbsp;<a href="http://lattes.cnpq.br/0962359014791482" target="_blank">João Domingos Scalon</a>, where he received the Best Thesis Award (2024). He earned his Bachelor of Education in Mathematics with a specialization in Statistics from Universidade Save, advised by Prof.&nbsp;André Silvestre Cuinica.
+</p>
+<p class="about-text">
+Additionally, he is pursuing an M.Sc. in Financial Engineering at WorldQuant University and an MBA in Artificial Intelligence and Big Data at the Institute of Mathematical and Computer Sciences, University of São Paulo (ICMC–USP), advised by Prof.&nbsp;<a href="http://lattes.cnpq.br/5118629875846648" target="_blank">Caetano T. Júnior</a>. He was awarded third place in the Spatial AI Challenge 2024 (I-GUIDE), alongside Julian Huang and Yue Lin (University of Chicago).
+</p>
+<p class="about-text">
+His primary research interests lie in spatio-temporal statistics and their applications to the social sciences, environmental studies, ecology, agriculture, and medicine. Methodologically, his work focuses on geospatial intelligence (GeoAI), spatial point processes, lattice/area data, and geostatistics.
+</p>
+<p><a href="Alex_Nhancololo_CV.pdf" class="btn-pill" target="_blank">Download CV</a></p>
+</div>
+</div>
+</div>
 </div>
 <style>
+/* Ajustes do Carrossel de Prêmios */
 .award-row {
   display: flex;
   gap: 0;
@@ -404,6 +436,29 @@ Alex Monito Nhancololo
   display: block;
   opacity: 0.95;
 }
+
+/* Estilo do Marcador Customizado do Leaflet (Pulso) */
+.leaflet-tooltip.origin-tooltip {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #f1c40f;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.pulse-marker {
+    background: #f1c40f;
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(241, 196, 15, 0.6);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(241, 196, 15, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
+}
+
 @media (max-width: 600px) {
   .award-row { flex-direction: column; }
   .award-desc,
@@ -413,21 +468,23 @@ Alex Monito Nhancololo
   .award-img img { height: auto; width: 100%; object-fit: cover; }
 }
 </style>
+<div class="awards-wrapper">
+<div class="container">
 <div class="col justify-content-center">
-<div class="col-lg-10">
-<h3 class="text-center text-black-50 mb-4 text-uppercase fs-6 ls-2">
+<div class="col-lg-10 mx-auto">
+<h3 class="text-center text-black-50 mb-4 text-uppercase fs-6 ls-2 section-header-awards" style="display: block; border-bottom: none; font-size: 1.5rem !important;">
 Honors &amp; Awards
 </h3>
 <div id="awardsCarousel" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-inner rounded-3" style="background: #1a1a1a; border: 1px solid #333;">
+<div class="carousel-inner rounded-3" style="background: #1a1a1a; border: 1px solid #333; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
 <div class="carousel-item active" data-bs-interval="8000">
 <div class="award-row">
 <div class="award-desc">
 <div class="badge bg-warning text-dark mb-2">
-<p><a href="https://i-guide.io/spatial-ai-challenge-2024/winner-announcement/">2025 · I-GUIDE</a></p>
+<p><a href="https://i-guide.io/spatial-ai-challenge-2024/winner-announcement/" style="color: inherit; text-decoration: none;">2025 · I-GUIDE</a></p>
 </div>
 <section id="spatial-ai-challenge-2024" class="level4">
-<h4 data-anchor-id="spatial-ai-challenge-2024"><a href="https://i-guide.io/spatial-ai-challenge-2024/winner-announcement/" class="text-decoration-none text-white fw-bold" target="_blank">🥉 Spatial AI Challenge 2024</a></h4>
+<h4 data-anchor-id="spatial-ai-challenge-2024"><a href="https://i-guide.io/spatial-ai-challenge-2024/winner-announcement/" target="_blank" class="text-decoration-none text-white fw-bold">🥉 Spatial AI Challenge 2024</a></h4>
 <div class="text-secondary mt-2">
 <p>Awarded third place in the Spatial AI Challenge 2024 (I-GUIDE), together with Julian Huang and Yue Lin (University of Chicago).</p>
 </div>
@@ -442,10 +499,10 @@ Honors &amp; Awards
 <div class="award-row">
 <div class="award-desc">
 <div class="badge bg-warning text-dark mb-2">
-<p><a href="https://repositorio.ufla.br/items/e59b7719-0239-4683-b172-a3e47f547695">2025 · UFLA</a></p>
+<p><a href="https://repositorio.ufla.br/items/e59b7719-0239-4683-b172-a3e47f547695" style="color: inherit; text-decoration: none;">2025 · UFLA</a></p>
 </div>
 <section id="best-masters-thesis-award-in-statistics" class="level4">
-<h4 data-anchor-id="best-masters-thesis-award-in-statistics"><span class="text-decoration-none text-white fw-bold" target="_blank">🥇 2024 Best Master’s Thesis Award in Statistics</span></h4>
+<h4 data-anchor-id="best-masters-thesis-award-in-statistics"><span class="text-decoration-none text-white fw-bold">🥇 2024 Best Master’s Thesis Award in Statistics</span></h4>
 <div class="text-secondary mt-2">
 <p>Award for the Best Master’s Thesis in Statistics, defended in 2024</p>
 </div>
@@ -463,16 +520,22 @@ Honors &amp; Awards
 <div class="award-row">
 <div class="award-desc">
 <div class="badge bg-warning text-dark mb-2">
-<p><a href="https://www.credly.com/badges/2c7e75af-07a7-47a2-a5ce-939ed6710086/public_url">2025 · WordQuant University</a></p>
+<p><a href="https://www.credly.com/badges/2c7e75af-07a7-47a2-a5ce-939ed6710086/public_url" style="color: inherit; text-decoration: none;">2025 · WordQuant University</a></p>
 </div>
 <section id="foundations-of-financial-engineering" class="level4">
-<h4 data-anchor-id="foundations-of-financial-engineering"><span class="text-decoration-none text-white fw-bold" target="_blank">Foundations of Financial Engineering</span></h4>
+<h4 data-anchor-id="foundations-of-financial-engineering"><span class="text-decoration-none text-white fw-bold">Foundations of Financial Engineering</span></h4>
 <div class="text-secondary mt-2">
-<p>Foundations of Financial Engineering (FFE) Certificate, distinction (<span class="math inline">\(\geq 80\%\)</span> average).</p>
-<ul>
-<li><p>Applied linear algebra and Python for filtering, summarizing, and transforming structured and unstructured financial data</p></li>
-<li><p>Prepared datasets for econometrics, machine learning, and deep learning models</p></li>
-<li><p>Conducted quantitative analysis of financial risks including credit risk, volatility, and liquidity</p></li>
+Foundations of Financial Engineering (FFE) Certificate, distinction (≥ 80% average).
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li>
+Applied linear algebra and Python for filtering, summarizing, and transforming structured and unstructured financial data
+</li>
+<li>
+Prepared datasets for econometrics, machine learning, and deep learning models
+</li>
+<li>
+Conducted quantitative analysis of financial risks including credit risk, volatility, and liquidity
+</li>
 </ul>
 </div>
 </section>
@@ -486,10 +549,10 @@ Honors &amp; Awards
 <div class="award-row">
 <div class="award-desc">
 <div class="badge bg-warning text-dark mb-2">
-<p><a href="https://www.credly.com/badges/2c7e75af-07a7-47a2-a5ce-939ed6710086/public_url">2017: 04. Secondary School of Inharrime</a></p>
+<p><a href="https://www.credly.com/badges/2c7e75af-07a7-47a2-a5ce-939ed6710086/public_url" style="color: inherit; text-decoration: none;">2017: 04. Secondary School of Inharrime</a></p>
 </div>
 <section id="poultry-production" class="level4">
-<h4 data-anchor-id="poultry-production"><span class="text-decoration-none text-white fw-bold" target="_blank">Poultry Production</span></h4>
+<h4 data-anchor-id="poultry-production"><span class="text-decoration-none text-white fw-bold">Poultry Production</span></h4>
 <div class="text-secondary mt-2">
 <p>Outstanding Student in the Poultry Production Course</p>
 </div>
@@ -501,9 +564,185 @@ Honors &amp; Awards
 </div>
 </div>
 </div>
-</div>
 <p><a href="#awardsCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span></a> <a href="#awardsCarousel" class="carousel-control-next" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span></a></p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // ==========================================
+    // 1. INICIALIZAÇÃO DO MAPA LEAFLET
+    // ==========================================
+    // Coordenadas aproximadas de Inharrime, Moçambique
+    const inharrimeCoords = [-24.4833, 35.0333]; 
+
+    // Centraliza o mapa entre Moçambique e um pouco à esquerda para melhor composição visual
+    const map = L.map('map-bg', {
+        center: [-18.0, 30.0], 
+        zoom: 5,
+        zoomControl: false, // Esconde botões de zoom para visual mais limpo
+        dragging: false,    // Trava arrasto para não interferir na rolagem do site
+        scrollWheelZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        interactive: false
+    });
+
+    // Usa um tile layer minimalista (Estilo claro e limpo para focar nos dados)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }).addTo(map);
+
+    // Marcador com CSS de Pulso para indicar Origem
+    const pulseIcon = L.divIcon({
+        className: 'pulse-marker',
+        iconSize: [12, 12]
+    });
+
+    const originMarker = L.marker(inharrimeCoords, { icon: pulseIcon }).addTo(map);
+
+    // Etiqueta indicando "Origem"
+    originMarker.bindTooltip("<b>Origem:</b> Inharrime, Moçambique", {
+        permanent: true, 
+        direction: 'right',
+        className: 'origin-tooltip',
+        offset: [10, 0]
+    }).openTooltip();
+
+
+    // ==========================================
+    // 2. INICIALIZAÇÃO DO CANVAS (DAGs e Cubo 3D)
+    // ==========================================
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        map.invalidateSize(); // Atualiza o tamanho do Leaflet também
+    });
+
+    const numNodes = Math.floor(width * height / 15000);
+    const nodes = [];
+    const connectionDist = 180;
+
+    // Distribuição espalhada pela tela
+    for (let i = 0; i < numNodes; i++) {
+        nodes.push({
+            id: i,
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            radius: Math.random() * 2.5 + 1.5
+        });
+    }
+
+    // Variáveis do Cubo 3D
+    let angleX = 0;
+    let angleY = 0;
+    const cubeVertices = [
+        [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
+        [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
+    ];
+    const cubeEdges = [
+        [0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6],
+        [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]
+    ];
+
+    function drawArrowhead(x1, y1, x2, y2, radius) {
+        let angle = Math.atan2(y2 - y1, x2 - x1);
+        let midX = (x1 + x2) / 2;
+        let midY = (y1 + y2) / 2;
+        
+        ctx.beginPath();
+        ctx.moveTo(midX, midY);
+        ctx.lineTo(midX - radius * Math.cos(angle - Math.PI / 6), midY - radius * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(midX - radius * Math.cos(angle + Math.PI / 6), midY - radius * Math.sin(angle + Math.PI / 6));
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(74, 144, 226, 0.5)';
+        ctx.fill();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // --- CUBO DE BIG DATA ---
+        angleX += 0.003;
+        angleY += 0.004;
+        const cubeScale = 120;
+        // Posiciona o cubo no lado esquerdo da tela (representando o Brasil/estudos atuais)
+        const cubeCenterX = width * 0.2; 
+        const cubeCenterY = height * 0.5;
+
+        ctx.strokeStyle = 'rgba(100, 150, 200, 0.2)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        let projected = cubeVertices.map(v => {
+            let x1 = v[0] * Math.cos(angleY) - v[2] * Math.sin(angleY);
+            let z1 = v[0] * Math.sin(angleY) + v[2] * Math.cos(angleY);
+            let y2 = v[1] * Math.cos(angleX) - z1 * Math.sin(angleX);
+            return [x1 * cubeScale + cubeCenterX, y2 * cubeScale + cubeCenterY];
+        });
+
+        cubeEdges.forEach(edge => {
+            ctx.moveTo(projected[edge[0]][0], projected[edge[0]][1]);
+            ctx.lineTo(projected[edge[1]][0], projected[edge[1]][1]);
+        });
+        ctx.stroke();
+
+        // --- ANIMAÇÃO DE DAGs (Redes) ---
+        nodes.forEach(node => {
+            node.x += node.vx;
+            node.y += node.vy;
+
+            if (node.x < 0 || node.x > width) node.vx *= -1;
+            if (node.y < 0 || node.y > height) node.vy *= -1;
+            
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(50, 60, 70, 0.5)';
+            ctx.fill();
+        });
+
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                let dx = nodes[i].x - nodes[j].x;
+                let dy = nodes[i].y - nodes[j].y;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < connectionDist) {
+                    let opacity = 1 - (dist / connectionDist);
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.strokeStyle = `rgba(100, 130, 160, ${opacity * 0.4})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+
+                    if (dist > 50 && Math.random() > 0.95) { 
+                        drawArrowhead(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y, 6 * opacity + 2);
+                    }
+                }
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
+</script>
+
+
 </div>
 </div>
 
@@ -910,14 +1149,14 @@ Honors &amp; Awards
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2026 ALMONHA | Desenvolvido com Quarto</p>
+<p>© 2026 ALMONHA | Quarto</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

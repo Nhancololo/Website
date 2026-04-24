@@ -4,17 +4,29 @@
 body {
     margin: 0;
     padding: 0;
-    padding-top: 70px; /* Aumentei levemente para garantir que a navbar não corte o topo */
+    padding-top: 70px; 
     font-family: 'Inter', sans-serif;
-    background-color: white;
+    /* CORREÇÃO AQUI: Força o fundo a ser transparente para revelar o Leaflet */
+    background: transparent !important;
     
-    /* Sticky Footer: Garante que o rodapé vá para o fundo em páginas curtas */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
 }
 
-/* Garante que o conteúdo principal expanda e empurre o footer */
+/* --- DYNAMIC FOREGROUND CANVAS --- */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; 
+    pointer-events: none; 
+    background: transparent; 
+}
+
 .page-footer {
     margin-top: auto;
 }
@@ -28,13 +40,11 @@ body {
     display: inline-block;
 }
 
-/* CORREÇÃO PARA MENUS LONGOS (Scrollbar) */
 .dropdown-menu {
-    max-height: 500px;  /* Altura máxima do menu */
-    overflow-y: auto;   /* Cria barra de rolagem se passar da altura */
+    max-height: 500px;  
+    overflow-y: auto;   
 }
 
-/* Estilo da barra de rolagem do menu (Opcional - Fica mais bonito) */
 .dropdown-menu::-webkit-scrollbar {
     width: 8px;
 }
@@ -49,12 +59,14 @@ body {
     background: #555; 
 }
 
-/* --- 3. SEÇÃO ABOUT (FUNDO CINZA) --- */
+/* --- 3. SEÇÃO ABOUT (FUNDO TRANSLÚCIDO / GLASSMORPHISM) --- */
 .about-wrapper {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.80); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
     padding: 80px 0;
     width: 100%;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid rgba(234, 234, 234, 0.5);
 }
 
 .section-header-about {
@@ -62,24 +74,21 @@ body {
     font-weight: 800;
     color: #212529;
     margin-bottom: 3rem;
-    border-bottom: 2px solid #dee2e6; /* Engrossei um pouco a linha */
+    border-bottom: 2px solid #dee2e6;
     padding-bottom: 10px;
-    display: inline-block; /* A linha fica apenas do tamanho do texto */
+    display: inline-block;
 }
 
-/* Foto de Perfil */
 .profile-img {
     width: 260px;
     height: 260px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid white;
-    /* Sombra mais suave e moderna */
     box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-    transition: transform 0.3s ease; /* Animação suave */
+    transition: transform 0.3s ease; 
 }
 
-/* Efeito ao passar o mouse na foto */
 .profile-img:hover {
     transform: scale(1.02); 
 }
@@ -95,19 +104,18 @@ body {
 .about-subtitle {
     font-weight: 600;
     font-size: 1.1rem;
-    color: #495057; /* Cinza escuro elegante */
+    color: #495057; 
     margin-bottom: 1.5rem;
 }
 
 .about-text {
     color: #333;
-    line-height: 1.7; /* Melhor leitura */
+    line-height: 1.7; 
     margin-bottom: 1.2rem;
     font-size: 1.05rem;
-    text-align: justify; /* Opcional: deixa o texto quadrado */
+    text-align: justify; 
 }
 
-/* Botão Pílula */
 .btn-pill {
     display: inline-block;
     background-color: #212529;
@@ -119,19 +127,21 @@ body {
     font-size: 0.95rem;
     margin-top: 15px;
     transition: all 0.2s ease;
-    border: 2px solid #212529; /* Garante tamanho igual no hover */
+    border: 2px solid #212529; 
 }
 
 .btn-pill:hover {
     background-color: white;
     color: #212529 !important;
-    transform: translateY(-2px); /* O botão "sobe" levemente */
+    transform: translateY(-2px); 
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* --- 4. SEÇÃO AWARDS & NEWS --- */
+/* --- 4. SEÇÃO AWARDS & NEWS (FUNDO TRANSLÚCIDO) --- */
 .awards-wrapper {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 80px 0;
     width: 100%;
 }
@@ -141,7 +151,7 @@ body {
     font-weight: 800;
     color: #212529;
     margin-bottom: 3rem;
-    border-bottom: 2px solid #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
     display: inline-block;
 }
 
@@ -174,12 +184,12 @@ body {
     max-height: 220px;
     width: auto;
     object-fit: contain;
-    border-radius: 8px; /* Cantos arredondados na imagem */
+    border-radius: 8px; 
 }
 
 /* --- 5. RODAPÉ --- */
 .footer-wrapper {
-    background-color: #1a1a1a; /* Mais escuro para contraste */
+    background-color: rgba(26, 26, 26, 0.95); 
     color: #adb5bd;
     text-align: center;
     padding: 40px 0;
@@ -193,7 +203,6 @@ body {
 
 /* --- 6. RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 767px) {
-    /* Ajusta padding para telas pequenas */
     .about-wrapper, .awards-wrapper {
         padding: 40px 0; 
     }
@@ -201,7 +210,7 @@ body {
     .profile-img {
         width: 200px;
         height: 200px;
-        margin-bottom: 20px; /* Espaço abaixo da foto no celular */
+        margin-bottom: 20px; 
     }
     
     .section-header-about, .section-header-awards {
@@ -210,7 +219,6 @@ body {
         display: block;
     }
     
-    /* Ordem dos elementos no carrossel/grid */
     .carousel-item .col-md-8 { order: 1; }
     .carousel-item .col-md-4 { 
         order: 2; 
